@@ -2,16 +2,75 @@
   <head>
     <title> Angular Contacts </title>
     <link rel='stylesheet' href='/style.css' />
+    <link rel='stylesheet' href='/foundation/css/foundation.css' />
+    <link rel='stylesheet' href='/foundation/css/normalize.css' />
     <base href="/" />
   </head>
   <body>
-    <div id='main'>
-      <header>
-        <h1> <a href='/'> Angular Contacts </a> </h1>
-      </header>
-      <div ng-app='ParkourEndureApp' ng-view></div>
+
+      <div class="off-canvas-wrap" data-offcanvas="">
+        <div class="inner-wrap">
+          <nav class="top-bar hide-for-small-only" data-topbar="" role="navigation">
+          <ul class="title-area">
+            <li class="name show-for-small">
+              <h1><a href="#">Parkour<strong>ENDURE</strong></a></h1>
+            </li>
+            <li class="toggle-topbar">
+              <a href="#"><span></span></a>
+            </li>
+          </ul>
+          
+          <section class="top-bar-section">
+            <ul class="left">
+              <li class="active" data-nav-target="home"><a href="/home">Home</a></li>
+              <li data-nav-target="classes"><a href="/classes">Classes</a></li>
+              <li data-nav-target="privateLessons"><a href="private-lessons">Private Lessons</a></li>
+              <li data-nav-target="coaches"><a href="/coaches">The Coaches</a></li>
+              <li data-nav-target="contact"><a href="/contact">Contact Us</a></li>
+            </ul>
+          </section>
+        </nav>
+        
+        <nav class="tab-bar show-for-small-only">
+          <section class="left-small">
+            <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+          </section>
+          
+          <section class="middle tab-bar-section">
+                <h1 class="title">Parkour<strong>ENDURE</strong></h1>
+          </section>
+        </nav>
+        
+        <aside class="left-off-canvas-menu">
+          <ul class="off-canvas-list">
+            <li><label>Foundation</label></li>
+            <li class="active" data-nav-target="home"><a href="/home">Home</a></li>
+            <li data-nav-target="classes"><a href="/classes">Classes</a></li>
+            <li data-nav-target="privateLessons"><a href="private-lessons">Private Lessons</a></li>
+            <li data-nav-target="coaches"><a href="/coaches">The Coaches</a></li>
+            <li data-nav-target="contact"><a href="/contact">Contact Us</a></li>
+          </ul>
+        </aside>
+        
+        <a class="exit-off-canvas"></a>
+        
+        <section class="main-section">
+          <div id="carousel-section" class="main-section medium-12 large-12 show-for-medium-up">
+            <div th:include="imageCarousel :: imageCarouselModule"></div>
+          </div>
+        
+          <div id="content" class="main-section small-12">
+            <div id='main'>
+              <div ng-app='ParkourEndureApp' ng-view></div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
+    
+
+    <script src='/jquery/dist/jquery.js'> </script>
     <script src='/angular/angular.min.js'> </script>
     <script src='/angular-resource/angular-resource.min.js'> </script>
     <script src='/angular-route/angular-route.min.js'> </script>

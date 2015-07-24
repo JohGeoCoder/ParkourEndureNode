@@ -1,1 +1,29 @@
-<h2>Coaches</h2>
+<div id="coaches" class="small-12" ng-controller="coachController">
+	<p class="text-center show-for-medium-down">Press on an image for more details about the coach</p>
+	
+	<!-- The list of coaches -->
+	<div class="coach small-12 medium-4 columns" th:each="coach,status : ${coaches}" th:inline="text">
+		<h3 class="text-center" th:text="${coach.getFullName()}"></h3>
+		<a href="#" data-reveal-id="coachModal" th:attr="ng-click=#{ng.click.attr(${status.index})}">
+			<div class="image-container hide-for-small-only">
+				<img class="center" th:src="${coach.imageUrl}"></img>
+			</div>
+			<div class="image-container show-for-small-only">
+				<img class="center small-6" th:src="${coach.imageUrl}"></img>
+			</div>
+		</a>
+		<div class="coach-description text-justify">
+			<p class="show-for-large-up" th:text="${coach.details}"></p>
+		</div>
+	</div>
+	
+	<!-- The shared modal to display coach information -->
+	<div id="coachModal" class="reveal-modal medium" data-reveal="">
+		<h3>{{coaches[selected.index].firstName + " " + coaches[selected.index].lastName}}</h3>
+		<div class="image-container">
+			<img class="center small-6" ng-src="{{coaches[selected.index].imageUrl}}"></img>
+		</div>
+		<p>{{coaches[selected.index].details}}</p>
+		<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+	</div>
+</div>	

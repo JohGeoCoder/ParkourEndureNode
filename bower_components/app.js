@@ -1,3 +1,21 @@
+(function() {
+	var FunctionContainer = function(){
+		var init = function(){
+			$(document).foundation();
+		};
+		
+		return{
+			init:init,
+		};
+	};
+	
+	$(function() {
+		GlobalFunctions = FunctionContainer();
+		GlobalFunctions.init();
+	});
+	
+})();
+
 var app = angular.module('ParkourEndureApp', ['ngRoute', 'ngResource']);
 
 app.config(function($routeProvider, $locationProvider){
