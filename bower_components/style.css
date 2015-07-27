@@ -1,3 +1,21 @@
+body,p,div,span,h1,h2,h3,h4,h5,h6,input,form,a,ul,li{
+	margin: 0px;
+	padding: 0px;	
+	font-family: sans-serif;
+}
+
+#background {
+	background-image: url("/img/mochaGrunge.png");
+}
+
+#pkEndureLogo{
+	background-color: #FAFAFA;
+	background-image: url("../img/ParkourEndure.png");
+	background-repeat: no-repeat;
+	height: 45px;
+}
+
+/*Makes the off-canvas navigation menu highlight properly*/
 aside .off-canvas-list li.active {
 	background-color: #008CBA;
 }
