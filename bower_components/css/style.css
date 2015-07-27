@@ -1,0 +1,73 @@
+#pkEndureLogo {
+  background-image: url("../img/ParkourEndure.png");
+  background-repeat: no-repeat;
+  /*width: 434px;*/
+  height: 42px; }
+
+body, p, div, span, h1, h2, h3, h4, h5, h6, input, form, a, ul, li {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif; }
+
+#background {
+  background-image: url("../img/mochaGrunge.png"); }
+
+.main-section {
+  padding-left: 0px !important;
+  padding-right: 0px !important; }
+
+#main {
+  color: #EEE; }
+  #main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
+    color: #EEE; }
+  #main strong {
+    font-size: 1.2em; }
+  #main a {
+    color: #1E3447 !important;
+    font-weight: bold;
+    text-decoration: underline !important;
+    cursor: pointer; }
+  #main #coaches .coach {
+    margin-bottom: 20px; }
+    #main #coaches .coach img {
+      max-height: 260px; }
+
+.inline-list li {
+  text-decoration: none;
+  display: inline; }
+
+.center-text {
+  text-align: center; }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.image-carousel {
+  width: 600px;
+  height: 200px;
+  position: relative;
+  background-color: white; }
+
+.carousel-wrapper {
+  background-color: black; }
+  .carousel-wrapper .slick-slide {
+    position: relative; }
+    .carousel-wrapper .slick-slide .carousel-text {
+      position: absolute;
+      width: 70%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .carousel-wrapper .slick-slide .carousel-text .attribution {
+        text-align: right; }
+
+/* Makes the off-canvas navigation menu highlight properly */
+aside .off-canvas-list li.active {
+  background-color: #008CBA; }
+
+ul.plain {
+  list-style-type: none; }
+
+/*# sourceMappingURL=style.css.map */
