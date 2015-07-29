@@ -82,9 +82,6 @@ app.controller('ContactController', function($scope){
 });
 
 app.controller('CarouselController', function($scope, $http, $timeout, CarouselItems){
-	// $scope.carouselItems = CarouselItems.query();
-	// $timeout(function () { $scope.runSlickOnCarousel(); }, 1000); //0ms timeout
-
 	$scope.carouselItems = [];
 	
 	$http.get('/api/carousel')
