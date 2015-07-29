@@ -55,8 +55,13 @@ app.factory('Coaches', function ($resource) {
 	return resourceResult;
 });
 
-app.controller('HomeController', function($scope){
+app.factory('CarouselItems', function($resource) {
+	var resourceResult = $resource('/api/carousel');
+	return resourceResult;
+});
 
+app.controller('HomeController', function($scope){
+	
 });
 
 app.controller('ClassesController', function($scope){
@@ -70,9 +75,36 @@ app.controller('PrivateLessonsController', function($scope){
 app.controller('CoachesController', function($scope, Coaches){
 	$scope.coaches = Coaches.query();
 	$scope.selected = {index:0};
-	var i = 1;
 });
 
 app.controller('ContactController', function($scope){
 
+});
+
+app.controller('CarouselController', function($scope, $http, $timeout, CarouselItems){
+	// $scope.carouselItems = CarouselItems.query();
+	// $timeout(function () { $scope.runSlickOnCarousel(); }, 1000); //0ms timeout
+
+	$scope.carouselItems = [];
+	
+	$http.get('/api/carousel')
+	.success(function(data, status, headers, config){
+		$scope.carouselItems = data;
+		
+		//This is required to run Slick after Angular renders the view.
+		$timeout(function () { $scope.runSlickOnCarousel(data); }, 0); //0ms timeout
+	})
+	.error(function(data, status, headers, config){
+		$scope.carouselItems = [];
+	});
+	
+	$scope.runSlickOnCarousel = function()
+    {
+		$('.image-carousel').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 5000,
+		});
+    };
 });

@@ -1,6 +1,8 @@
 <html>
   <head>
     <title> Angular Contacts </title>
+    <link rel="stylesheet" href="/slick/slick.css"></link>
+    <link rel="stylesheet" href="/slick/slick-theme.css"></link>
     <link rel='stylesheet' href='/css/style.css' />
     <link rel='stylesheet' href='/foundation/css/foundation.css' />
     <link rel='stylesheet' href='/foundation/css/normalize.css' />
@@ -54,14 +56,29 @@
         
         <a class="exit-off-canvas"></a>
         
-        <section class="main-section">
-          <div id="carousel-section" class="main-section medium-12 large-12 show-for-medium-up">
-            <div th:include="imageCarousel :: imageCarouselModule"></div>
+        <section class="main-section" ng-app='ParkourEndureApp'>
+          <div id="carousel-section" class="main-section medium-12 large-12 show-for-medium-up" ng-controller="CarouselController">
+            <div class="small-12 medium-12 large-12">
+              <div class="carousel-wrapper">
+                <div class="image-carousel center">
+                  <!-- The list of carousel objects -->
+                  <div ng-repeat="item in carouselItems">
+                    <div class="carousel-text" ng-if="item.type == 'Q'">
+                      <p class="quote">{{item.quote}}</p>
+                      <p class="attribution">{{item.attribution}}</p>
+                    </div>
+                    <div class="carousel-image" th:if="${item.type == 'I'}">
+                      <img src="{{item.imageUrl}}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         
           <div id="content" class="main-section small-12">
             <div id='main'>
-              <div ng-app='ParkourEndureApp' ng-view></div>
+              <div ng-view></div>
             </div>
           </div>
         </section>
@@ -76,6 +93,7 @@
     <script src='/foundation/js/foundation/foundation.offcanvas.js'></script>
     <script src='/foundation/js/foundation/foundation.topbar.js'></script>
     <script src='/foundation/js/foundation/foundation.reveal.js'></script>
+    <script src='/slick/slick.js'></script>
     <script src='/app.js'> </script>
     <script src='/main.js'> </script>
   </body>
