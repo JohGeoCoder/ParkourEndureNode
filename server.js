@@ -54,4 +54,4 @@ app.get('*', function(req, res){
 	res.sendFile(__dirname + '/bower_components/index.html');
 });
 
-app.listen(3000);
+app.listen(80);
