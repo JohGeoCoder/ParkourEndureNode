@@ -55,13 +55,8 @@ app.factory('Coaches', function ($resource) {
 	return resourceResult;
 });
 
-app.factory('CarouselItems', function($resource) {
-	var resourceResult = $resource('/api/carousel');
-	return resourceResult;
-});
-
-app.controller('HomeController', function($scope){
-	
+app.controller('HomeController', function($scope, $location){
+	$scope.url = $location.absUrl();
 });
 
 app.controller('ClassesController', function($scope){
@@ -81,7 +76,7 @@ app.controller('ContactController', function($scope){
 
 });
 
-app.controller('CarouselController', function($scope, $http, $timeout, CarouselItems){
+app.controller('CarouselController', function($scope, $http, $timeout){
 	$scope.carouselItems = [];
 	
 	$http.get('/api/carousel')
