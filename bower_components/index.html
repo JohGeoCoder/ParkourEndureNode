@@ -14,7 +14,7 @@
     <base href="/" />
   </head>
   <body id="background">
-      <a id="logoLink" href="http://parkourendure.com" style="display: block;">
+      <a id="logoLink" href="{{$location.host()}}" style="display: block;">
         <div id="pkEndureLogo" class="show-for-medium-up small-12 medium-12 large-12"></div>
       </a>
       <div class="off-canvas-wrap" data-offcanvas="">
@@ -31,11 +31,11 @@
           
           <section class="top-bar-section">
             <ul class="left">
-              <li data-nav-target="home"><a href="http://parkourendure.com/home">Home</a></li>
-              <li data-nav-target="classes"><a href="http://parkourendure.com/classes">Classes</a></li>
-              <li data-nav-target="privateLessons"><a href="http://parkourendure.com/private-lessons">Private Lessons</a></li>
-              <li data-nav-target="coaches"><a href="http://parkourendure.com/coaches">The Coaches</a></li>
-              <li data-nav-target="contact"><a href="http://parkourendure.com/contact">Contact Us</a></li>
+              <li data-nav-target="home"><a href="{{$location.host()}}/home">Home</a></li>
+              <li data-nav-target="classes"><a href="{{$location.host()}}/classes">Classes</a></li>
+              <li data-nav-target="privateLessons"><a href="{{$location.host()}}/private-lessons">Private Lessons</a></li>
+              <li data-nav-target="coaches"><a href="{{$location.host()}}/coaches">The Coaches</a></li>
+              <li data-nav-target="contact"><a href="{{$location.host()}}/contact">Contact Us</a></li>
             </ul>
           </section>
         </nav>
@@ -53,11 +53,11 @@
         <aside class="left-off-canvas-menu">
           <ul class="off-canvas-list">
             <li><label>Foundation</label></li>
-            <li data-nav-target="home"><a href="http://parkourendure.com/home">Home</a></li>
-            <li data-nav-target="classes"><a href="http://parkourendure.com/classes">Classes</a></li>
-            <li data-nav-target="privateLessons"><a href="/http://parkourendure.com/private-lessons">Private Lessons</a></li>
-            <li data-nav-target="coaches"><a href="http://parkourendure.com/coaches">The Coaches</a></li>
-            <li data-nav-target="contact"><a href="http://parkourendure.com/contact">Contact Us</a></li>
+            <li data-nav-target="home"><a href="{{$location.host()}}/home">Home</a></li>
+            <li data-nav-target="classes"><a href="{{$location.host()}}/classes">Classes</a></li>
+            <li data-nav-target="privateLessons"><a href="{{$location.host()}}/private-lessons">Private Lessons</a></li>
+            <li data-nav-target="coaches"><a href="{{$location.host()}}/coaches">The Coaches</a></li>
+            <li data-nav-target="contact"><a href="{{$location.host()}}/contact">Contact Us</a></li>
           </ul>
         </aside>
         
