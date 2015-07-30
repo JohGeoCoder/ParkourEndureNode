@@ -56,7 +56,7 @@ app.factory('Coaches', function ($resource) {
 });
 
 app.controller('HomeController', function($scope, $location){
-	$scope.url = $location.absUrl();
+	
 });
 
 app.controller('ClassesController', function($scope){
