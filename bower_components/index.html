@@ -5,7 +5,7 @@
     <meta name="description" content="Parkour Endure - Parkour and freerunning classes and lessons for the Scranton and Wilkes-Barre, Pennsylvania regions." />
     <meta name="robots" content="index, follow" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    
+
     <link rel="stylesheet" href="/slick/slick.css"></link>
     <link rel="stylesheet" href="/slick/slick-theme.css"></link>
     <link rel='stylesheet' href='/css/style.css' />
@@ -13,7 +13,7 @@
     <link rel='stylesheet' href='/foundation/css/normalize.css' />
     <base href="/" />
   </head>
-  <body id="background">
+  <body id="background" ng-app='ParkourEndureApp'>
       <a id="logoLink" href="{{$location.host()}}" style="display: block;">
         <div id="pkEndureLogo" class="show-for-medium-up small-12 medium-12 large-12"></div>
       </a>
@@ -63,7 +63,7 @@
         
         <a class="exit-off-canvas"></a>
         
-        <section class="main-section" ng-app='ParkourEndureApp'>
+        <section class="main-section">
           <div id="carousel-section" class="main-section medium-12 large-12 show-for-medium-up" ng-controller="CarouselController">
             <div class="small-12 medium-12 large-12">
               <div class="carousel-wrapper">
