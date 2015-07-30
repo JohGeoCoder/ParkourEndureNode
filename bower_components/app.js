@@ -21,7 +21,7 @@ var app = angular.module('ParkourEndureApp', ['ngRoute', 'ngResource']);
 app.config(function($routeProvider, $locationProvider){
 
 	$routeProvider
-		.when('/home', {
+		.when('/', {
 			controller: 'HomeController',
 			templateUrl: 'views/home.html'
 		})
@@ -42,7 +42,7 @@ app.config(function($routeProvider, $locationProvider){
 			templateUrl: 'views/contact.html'
 		})
 		.otherwise({
-			redirectTo: '/home'
+			redirectTo: '/'
 		});
 
 	$locationProvider.html5Mode(true);
