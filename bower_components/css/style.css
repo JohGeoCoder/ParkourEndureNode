@@ -5,8 +5,10 @@
   background-image: url("../img/ParkourEndure.png");
   background-color: #FCFCFC;
   background-repeat: no-repeat;
-  /*width: 434px;*/
   height: 42px; }
+  #pkEndureLogo .logoLocation {
+    line-height: 1em;
+    color: black; }
 
 body, p, div, span, h1, h2, h3, h4, h5, h6, input, form, a, ul, li {
   margin: 0px;
@@ -73,5 +75,9 @@ aside .off-canvas-list li.active {
 
 ul.plain {
   list-style-type: none; }
+
+.title {
+  white-space: nowrap;
+  text-overflow: ellipsis; }
 
 /*# sourceMappingURL=style.css.map */

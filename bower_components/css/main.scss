@@ -100,3 +100,8 @@ aside .off-canvas-list li.active {
 ul.plain{
 	list-style-type: none;
 }
+
+.title {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

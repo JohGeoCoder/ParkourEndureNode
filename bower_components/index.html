@@ -15,19 +15,14 @@
   </head>
   <body id="background" ng-app='ParkourEndureApp'>
       <a id="logoLink" href="{{$location.host()}}/" style="display: block;">
-        <div id="pkEndureLogo" class="show-for-medium-up small-12 medium-12 large-12"></div>
+        <div id="pkEndureLogo" class="show-for-medium-up small-12 medium-12 large-12">
+          <p class="text-right logoLocation">Parkour in</p>
+          <p class="text-right logoLocation">Scranton, Pennsylvania</p>
+        </div>
       </a>
       <div class="off-canvas-wrap" data-offcanvas="">
         <div class="inner-wrap">
           <nav class="top-bar hide-for-small-only" data-topbar="" role="navigation">
-          <ul class="title-area">
-            <li class="name show-for-small">
-              <h1><a href="#">Parkour<strong>ENDURE</strong></a></h1>
-            </li>
-            <li class="toggle-topbar">
-              <a href="#"><span></span></a>
-            </li>
-          </ul>
           
           <section class="top-bar-section">
             <ul class="left">
@@ -48,13 +43,13 @@
           </section>
           
           <section class="middle tab-bar-section">
-                <h1 class="title">Parkour<strong>ENDURE</strong></h1>
+                <h1 class="title">Parkour<strong>ENDURE</strong> - Scranton</h1>
           </section>
         </nav>
         
         <aside class="left-off-canvas-menu">
           <ul class="off-canvas-list">
-            <li><label>Foundation</label></li>
+            <li><label>Navigation</label></li>
             <li data-nav-target="home"><a href="{{$location.host()}}/">Home</a></li>
             <li data-nav-target="classes"><a href="{{$location.host()}}/classes">Classes</a></li>
             <li data-nav-target="privateLessons"><a href="{{$location.host()}}/private-lessons">Private Lessons</a></li>
