@@ -8,9 +8,9 @@
 
     <link rel="stylesheet" href="/slick/slick.css"></link>
     <link rel="stylesheet" href="/slick/slick-theme.css"></link>
-    <link rel='stylesheet' href='/css/style.css' />
     <link rel='stylesheet' href='/foundation/css/foundation.css' />
     <link rel='stylesheet' href='/foundation/css/normalize.css' />
+    <link rel='stylesheet' href='/css/style.css' />
     <base href="/" />
   </head>
   <body id="background" ng-app='ParkourEndureApp'>
@@ -35,7 +35,9 @@
               <li data-nav-target="classes"><a href="{{$location.host()}}/classes">Classes</a></li>
               <li data-nav-target="privateLessons"><a href="{{$location.host()}}/private-lessons">Private Lessons</a></li>
               <li data-nav-target="coaches"><a href="{{$location.host()}}/coaches">The Coaches</a></li>
-              <li data-nav-target="contact"><a href="{{$location.host()}}/contact">Contact Us</a></li>
+            </ul>
+            <ul class="right">
+              <li data-nav-target="contact"><a class="contact-nav" href="{{$location.host()}}/contact">Contact Us</a></li>
             </ul>
           </section>
         </nav>
