@@ -63,7 +63,19 @@ app.factory('Page', function(){
 		coachesTitle: 'Parkour Endure - Coaches in the Scranton area',
 		contactTitle: 'Parkour Endure - Contact details'
 	};
+
+	var descriptions = {
+		homeDescription: 'Parkour and freerunning community, classes, and lessons for the Scranton and Wilkes-Barre, Pennsylvania regions.',
+		classesDescription: 'Parkour and freerunning classes in the Scranton and Wilkes-Barre, Pennsylvania regions.',
+		privateLessonsDescription: 'Parkour and freerunning private lessons in the Scranton and Wilkes-Barre, Pennsylvania regions.',
+		coachesDescription: 'Parkour and freerunning coaches in the Scranton and Wilkes-Barre, Pennsylvania regions.',
+		contactDescription: 'Contact information for Parkour Endure in Scranton, Pennsylvania.'
+	}
+
+
 	var currentTitle = titles['homeTitle'];
+	var currentDescription = descriptions['homeDescription'];
+
 	return {
 		title: function(){
 			return currentTitle;
@@ -75,9 +87,20 @@ app.factory('Page', function(){
 			else{
 				currentTitle = titles['homeTitle'];
 			}
+		},
+		description: function(){
+			return currentDescription;
+		},
+		setDescription: function(newDescription){
+			if(descriptions[newDescription]){
+				currentDescription = descriptions[newDescription];
+			}
+			else{
+				currentDescription = descriptions['homeDescription'];
+			}
 		}
 	};
-})
+});
 
 app.controller('MainController', function($scope, Page){
 	$scope.Page = Page;
@@ -85,25 +108,30 @@ app.controller('MainController', function($scope, Page){
 
 app.controller('HomeController', function($scope, $location, Page){
 	Page.setTitle('hometitle');
+	Page.setDescription('homeDescription');
 	$scope.url = $location.absUrl();
 });
 
 app.controller('ClassesController', function($scope, Page){
 	Page.setTitle('classesTitle');
+	Page.setDescription('classesDescription');
 });
 
 app.controller('PrivateLessonsController', function($scope, Page){
 	Page.setTitle('privateLessonsTitle');
+	Page.setDescription('privateLessonsDescription');
 });
 
 app.controller('CoachesController', function($scope, Coaches, Page){
 	Page.setTitle('coachesTitle');
+	Page.setDescription('coachesDescription');
 	$scope.coaches = Coaches.query();
 	$scope.selected = {index:0};
 });
 
 app.controller('ContactController', function($scope, Page){
 	Page.setTitle('contactTitle');
+	Page.setDescription('contactDescription');
 });
 
 app.controller('CarouselController', function($scope, $http, $timeout){
