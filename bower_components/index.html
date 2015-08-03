@@ -1,6 +1,6 @@
-<html>
+<html ng-app='ParkourEndureApp' ng-controller="MainController">
   <head>
-    <title>Parkour Endure - A Parkour community for the Scranton and Wilkes-Barre areas</title>
+    <title>{{ Page.title() }}</title>
     <link href="http://parkourendure.com" rel="canonical" />
     <meta name="description" content="Parkour Endure - Parkour and freerunning classes and lessons for the Scranton and Wilkes-Barre, Pennsylvania regions." />
     <meta name="robots" content="index, follow" />
@@ -13,7 +13,7 @@
     <link rel='stylesheet' href='/css/style.css' />
     <base href="/" />
   </head>
-  <body id="background" ng-app='ParkourEndureApp'>
+  <body id="background">
       <a id="logoLink" href="{{$location.host()}}/" style="display: block;">
         <div id="pkEndureLogo" class="show-for-medium-up small-12 medium-12 large-12">
           <p class="text-right logoLocation">Parkour and Freerunning in</p>
