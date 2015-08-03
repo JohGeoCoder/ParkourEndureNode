@@ -57,10 +57,10 @@ app.factory('Coaches', function ($resource) {
 
 app.factory('Page', function(){
 	var titles = {
-		homeTitle: 'Parkour Endure - A parkour community for the Scranton and Wilkes-Barre areas',
-		classesTitle: 'Parkour Endure - Classes in the Scranton and Wilkes-Barre areas',
-		privateLessonsTitle: 'Parkour Endure - Private lessons in the Scranton and Wilkes-Barre areas',
-		coachesTitle: 'Parkour Endure - Coaches in the Scranton and Wilkes-Barre areas',
+		homeTitle: 'Parkour Endure - A community for the Scranton area',
+		classesTitle: 'Parkour Endure - Classes in the Scranton area',
+		privateLessonsTitle: 'Parkour Endure - Private lessons in the Scranton area',
+		coachesTitle: 'Parkour Endure - Coaches in the Scranton area',
 		contactTitle: 'Parkour Endure - Contact details'
 	};
 	var currentTitle = titles['homeTitle'];
