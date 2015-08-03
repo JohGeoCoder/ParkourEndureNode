@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+	<url>
+		<loc>http://parkourendure.com</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.7</priority>
+	</url>
+
+	<url>
+		<loc>http://parkourendure.com/classes</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>http://parkourendure.com/private-lessons</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+
+	<url>
+		<loc>http://parkourendure.com/coaches</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+
+	<url>
+		<loc>http://parkourendure.com/contact</loc>
+		<changefreq>monthly</changefreq>
+	</url>
+
+</urlset>
