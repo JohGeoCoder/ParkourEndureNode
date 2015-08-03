@@ -1,0 +1,14 @@
+/* TEAM */                   
+Head Coach and Webmaster: John George                
+Site: parkourendure.com/contact               
+Twitter: @GlelinScaleskin             
+Location: Scrantion, Pennsylvania
+								
+/* THANKS */
+
+/* SITE */                 
+Last update: 2015/08/03               
+Standards: HTML5, CSS3             
+Components: NodeJS, ExpressJS, jQuery, AngularJS
+Hosting: Ubuntu virtual private server (VPS) on Linode.com          
+Software: Sublime Text
