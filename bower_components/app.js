@@ -170,6 +170,9 @@ app.controller('EmailListController', function($scope, $http, EmailList){
 	$scope.newEmail = new EmailList();
 
 	$scope.submitEmail = function(){
-		$scope.newEmail.$update();
+		if($scope.newEmail.email){
+			$scope.newEmail.$update();
+			$scope.newEmail = new EmailList();
+		}
 	};
 });
