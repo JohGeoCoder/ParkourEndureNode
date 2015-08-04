@@ -1,6 +1,8 @@
-var express = require('express'),
+var express = require('express'), 
 			bodyParser = require('body-parser'),
 			app = express();
+
+var db = require('mongoskin').db('mongodb://localhost:27017/pkendure');
 
 var coachId = 1;
 var coachData = {
@@ -19,9 +21,10 @@ app.use(express.static('./bower_components'));
 
 app.route('/api/coaches')
 	.get(function(req, res){
-		res.json(Object.keys(coachData).map(function(key){
-			return coachData[key];
-		}));
+		db.collection('coaches').find().toArray(function(err, result){
+			if(err) throw err;
+			res.json(result);
+		});
 	})
 	.post(function(req, res){
 		var record = req.body;
