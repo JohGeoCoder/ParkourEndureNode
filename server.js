@@ -48,9 +48,10 @@ app.route('/api/coaches/:id')
 
 app.route('/api/carousel')
 	.get(function(req, res){
-		res.json(Object.keys(carouselData).map(function(key){
-			return carouselData[key];
-		}));
+		db.collection('carouselItems').find().toArray(function(err, result){
+			if(err) throw err;
+			res.json(result);
+		});
 	});
 
 app.get('*', function(req, res){
