@@ -42,6 +42,15 @@ app.route('/api/carousel')
 		});
 	});
 
+app.route('/api/mailing-list')
+	.put(function(req, res){
+		console.log(req.body['email']);
+		db.collection('emailList').insert({email: req.body['email']}, function(err, result) {
+			if(err) throw result;
+		    console.log(result);
+		});
+	});
+
 app.get('*', function(req, res){
 	res.sendFile(__dirname + '/bower_components/index.html');
 });

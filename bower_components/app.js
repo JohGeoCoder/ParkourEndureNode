@@ -55,6 +55,13 @@ app.factory('Coaches', function ($resource) {
 	return resourceResult;
 });
 
+app.factory('EmailList', function ($resource){
+	var resourceResult = $resource('/api/mailing-list/', {}, {
+		'update': { method: 'PUT' }
+	});
+	return resourceResult;
+});
+
 app.factory('Page', function(){
 	var titles = {
 		homeTitle: 'Parkour Endure - A community for the Scranton area',
@@ -157,4 +164,12 @@ app.controller('CarouselController', function($scope, $http, $timeout){
 			autoplaySpeed: 5000,
 		});
     };
+});
+
+app.controller('EmailListController', function($scope, $http, EmailList){
+	$scope.newEmail = new EmailList();
+
+	$scope.submitEmail = function(){
+		$scope.newEmail.$update();
+	};
 });

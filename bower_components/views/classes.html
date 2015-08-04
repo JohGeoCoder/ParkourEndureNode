@@ -6,8 +6,30 @@
 		<p>If you have any questions, please <a href="{{$location.host()}}/contact">Contact Us</a></p>
 	</div>
 </div>
+<br />
+<div class="center small-12 medium-8 large-6" ng-controller="EmailListController">
+	<p>Would you like to be sent updates regarding the status of classes?</p>
+	<p>If so, feel free to submit your email address below.</p>
+	<p>Your email address will never be displayed on the site, nor will it be disclosed to any party outside of Parkour Endure.</p>
+	<form id="mailingListForm" action="api/mailing-list" method="post">
+		<div class="row">
+			<div class="large-12">
+				<label> Email address:
+					<input type="text" ng-model="newEmail.email" placeholder="abc@email.com" />
+				</label>
+			</div>
+			<div class="large-2">
+			<button ng-click="submitEmail()">Submit Email</button>
+			</div>
+		</div>
+	</form>
+</div>
 
 <script type="text/javascript">
 	$("[data-nav-target]").removeClass('active');
 	$("[data-nav-target='classes']").addClass('active');
+
+	$('#mailingListForm button').on('click', function(e){
+		e.preventDefault();
+	});
 </script>
