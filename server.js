@@ -44,7 +44,6 @@ app.route('/api/carousel')
 
 app.route('/api/mailing-list')
 	.put(function(req, res){
-		console.log(req.body['email']);
 		db.collection('emailList').insert({email: req.body['email']}, function(err, result) {
 			if(err) throw result;
 		});
