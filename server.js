@@ -47,7 +47,6 @@ app.route('/api/mailing-list')
 		console.log(req.body['email']);
 		db.collection('emailList').insert({email: req.body['email']}, function(err, result) {
 			if(err) throw result;
-		    console.log(result);
 		});
 	});
 
