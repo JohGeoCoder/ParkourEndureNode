@@ -1,59 +1,29 @@
 <h1 class="section-title text-center">A Parkour Community in Scranton, Pennsylvania</h1>
-<div id="home" class="small-12 medium-12 large-12">
-	<div class="small-12 medium-6 large-4 columns">
-		<h2 class="text-center">What is Parkour?</h2>
-		<div class="text-justify">
-			<p>In a nutshell, parkour is a discipline of movement that focuses on self-improvement through creative use of the practitioner's surroundings.</p>
-			<p>There are a few main ideas that make parkour stand out from other physical disciplines and sports.</p>
-			<ul class="plain">
-				<li>
-					<h3><strong>Core Values</strong></h3> 
-					<p class="text-center"><strong>Perseverance, Courage, Humility, Integrity, Respect</strong></p>
-					<p>
-						Traditional sports end at the sound of a buzzer, a certain score is reached, or when the opponent taps out. In parkour, the game never ends. With even occasional training and dedication, parkour's Five Core Values become part of your everyday life.
-					</p>
-				</li>
-				<li>
-					<h3><strong>Autonomy</strong></h3>
-					<p>
-						A parkour practitioner has no adversary or opponent to focus on. The only tools you need are the shirt on your back and a pair of shoes. The world is your playing field and your mind is your opponent. Parkour is a discipline that can be practiced in a completely individualistic manner, but it doesn't have to be.
-					</p>
-				</li>
-				
-			</ul>
-		</div>
-	</div>
+<div id="home" class="large-12">
+<!-- 	<div id="core-values" class="large-12">
+		<h3 class="large-2 columns text-center">Autonomy</h3>
+		<h3 class="large-2 columns text-center">Perseverance</h3>
+		<h3 class="large-2 columns text-center">Courage</h3>
+		<h3 class="large-2 columns text-center">Humility</h3>
+		<h3 class="large-2 columns text-center">Integrity</h3>
+		<h3 class="large-2 columns text-center">Respect</h3>
+	</div> -->
 	
-	<div class="small-12 medium-6 large-4 columns">
-		<h2 class="text-center">Our Group Classes</h2>
-		<div class="text-justify">
+	<div class="small-12 medium-6 large-6 columns">
+		<a href="{{$location.host()}}/classes" class="button header-button center">Our Group Classes</a>
+		<div class="text-justify text-medium center small-11">
 			<p>
 				Group classes are the heart and soul of any parkour community!
 			</p>
-			<p>
-				It is certain that parkour is about individual development. But the parkour practitioner also knows that parkour is also about <strong>community, kinship, and camaraderie.</strong> The gathering and communal training of parkour practitioners is the catalyst for creating life-long friendships and the glue that holds the community together.
-			</p>
-			<p>
-				If you're not fond of doing something alone or you learn best when there are others around to cheer you on, then our group classes are perfect for you.
-			</p>
-			<p>
-				Our group classes will be in full force beginning in October, 2015. In the meantime, please visit our <a href="{{$location.host()}}/classes">Classes</a> page!
-			</p>
 		</div>
 	</div>
 	
-	<div class="small-12 medium-6 large-4 columns">
-		<h2 class="text-center">Private Lessons</h2>
-		<div class="text-justify">
+	<div class="small-12 medium-6 large-6 columns">
+		<a href="{{$location.host()}}/private-lessons" class="button header-button center">Private Lessons</a>
+		<div class="text-justify text-medium center small-11">
 			<p>
 				Private lessons are for anybody. From the absolute beginner to the seasoned traceur, private lessons can become a valuable part of your
 				training. 
-			</p>
-			<p>
-				Here is your chance to have a qualified coach help you focus on a particular aspect of your fitness and health. Private lessons can focus on any particular health or fitness goal. Maybe you feel you're not quite ready to join the group classes. Or maybe you're an advanced practitioner looking to go above and beyond the group classes.
-			</p>
-			<p>
-				Take a look at our <a class="link" href="{{$location.host()}}/private-lessons">Private Lessons</a> page for more details.
 			</p>
 		</div>
 	</div>
@@ -62,4 +32,5 @@
 <script type="text/javascript">
 	$("[data-nav-target]").removeClass('active');
 	$("[data-nav-target='home']").addClass('active');
+	$(document).foundation('reveal', 'reflow');
 </script>

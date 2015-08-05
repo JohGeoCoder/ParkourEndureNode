@@ -27,8 +27,8 @@ p {
 
 #main {
   color: #EEE; }
-  #main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
-    color: #EEE; }
+  #main h1, #main h2, #main h3, #main h4, #main h5, #main h6, #main .header-button {
+    color: #EEE !important; }
   #main strong {
     font-size: 1.2em; }
   #main a {
@@ -42,6 +42,10 @@ p {
       max-height: 260px; }
   #main .section-title {
     background-color: rgba(23, 27, 99, 0.25); }
+  #main .header-button {
+    margin-top: 30px;
+    font-size: 2em;
+    text-decoration: none !important; }
 
 .inline-list li {
   text-decoration: none;
@@ -84,5 +88,10 @@ ul.plain {
 .title {
   white-space: nowrap;
   text-overflow: ellipsis; }
+
+.text-medium {
+  font-size: 1.2em; }
+  .text-medium p, .text-medium span, .text-medium div, .text-medium li, .text-medium td, .text-medium th {
+    font-size: 1.2em; }
 
 /*# sourceMappingURL=style.css.map */

@@ -15,91 +15,118 @@
     <base href="/" />
   </head>
   <body id="background">
-      <a id="logoLink" href="{{$location.host()}}/" style="display: block;">
-        <div id="pkEndureLogo" class="show-for-medium-up small-12 medium-12 large-12">
-          <p class="text-right logoLocation">Parkour and Freerunning in</p>
-          <p class="text-right logoLocation">Scranton, Pennsylvania</p>
-        </div>
-      </a>
-      <div class="off-canvas-wrap" data-offcanvas="">
-        <div class="inner-wrap">
-          <nav class="top-bar hide-for-small-only" data-topbar="" role="navigation">
-          
-          <section class="top-bar-section">
-            <ul class="left">
-              <li data-nav-target="home"><a href="{{$location.host()}}/">Home</a></li>
-              <li data-nav-target="classes"><a href="{{$location.host()}}/classes">Classes</a></li>
-              <li data-nav-target="privateLessons"><a href="{{$location.host()}}/private-lessons">Private Lessons</a></li>
-              <li data-nav-target="coaches"><a href="{{$location.host()}}/coaches">The Coaches</a></li>
-            </ul>
-            <ul class="right">
-              <li data-nav-target="contact"><a class="contact-nav" href="{{$location.host()}}/contact">Contact Us</a></li>
-            </ul>
-          </section>
-        </nav>
+    <a id="logoLink" href="{{$location.host()}}/" style="display: block;">
+      <div id="pkEndureLogo" class="show-for-medium-up small-12 medium-12 large-12">
+        <p class="text-right logoLocation">Parkour and Freerunning in</p>
+        <p class="text-right logoLocation">Scranton, Pennsylvania</p>
+      </div>
+    </a>
+    <div class="off-canvas-wrap" data-offcanvas="">
+      <div class="inner-wrap">
+        <nav class="top-bar hide-for-small-only" data-topbar="" role="navigation">
         
-        <nav class="tab-bar show-for-small-only">
-          <section class="left-small">
-            <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-          </section>
-          
-          <section class="middle tab-bar-section">
-                <h1 class="title">Parkour Classes in Scranton</h1>
-          </section>
-        </nav>
-        
-        <aside class="left-off-canvas-menu">
-          <ul class="off-canvas-list">
-            <li><label>Navigation</label></li>
+        <section class="top-bar-section">
+          <ul class="left">
             <li data-nav-target="home"><a href="{{$location.host()}}/">Home</a></li>
             <li data-nav-target="classes"><a href="{{$location.host()}}/classes">Classes</a></li>
             <li data-nav-target="privateLessons"><a href="{{$location.host()}}/private-lessons">Private Lessons</a></li>
             <li data-nav-target="coaches"><a href="{{$location.host()}}/coaches">The Coaches</a></li>
-            <li data-nav-target="contact"><a href="{{$location.host()}}/contact">Contact Us</a></li>
+            <li><a data-reveal-id="whatIsParkourModal" href="#">What is Parkour?</a></li>
           </ul>
-        </aside>
+          <ul class="right">
+            <li data-nav-target="contact"><a class="contact-nav" href="{{$location.host()}}/contact">Contact Us</a></li>
+          </ul>
+        </section>
+      </nav>
+      
+      <nav class="tab-bar show-for-small-only">
+        <section class="left-small">
+          <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+        </section>
         
-        <a class="exit-off-canvas"></a>
-        
-        <section class="main-section">
-          <div id="carousel-section" class="main-section medium-12 large-12 show-for-medium-up" ng-controller="CarouselController">
-            <div class="small-12 medium-12 large-12">
-              <div class="carousel-wrapper">
-                <div class="image-carousel center">
-                  <!-- The list of carousel objects -->
-                  <div ng-repeat="item in carouselItems">
-                    <div class="carousel-text" ng-if="item.type == 'Q'">
-                      <p class="quote">{{item.quote}}</p>
-                      <p class="attribution">{{item.attribution}}</p>
-                    </div>
-                    <div class="carousel-image" th:if="${item.type == 'I'}">
-                      <img src="{{item.imageUrl}}" />
-                    </div>
+        <section class="middle tab-bar-section">
+              <h1 class="title">Parkour Classes in Scranton</h1>
+        </section>
+      </nav>
+      
+      <aside class="left-off-canvas-menu">
+        <ul class="off-canvas-list">
+          <li><label>Navigation</label></li>
+          <li data-nav-target="home"><a href="{{$location.host()}}/">Home</a></li>
+          <li data-nav-target="classes"><a href="{{$location.host()}}/classes">Classes</a></li>
+          <li data-nav-target="privateLessons"><a href="{{$location.host()}}/private-lessons">Private Lessons</a></li>
+          <li data-nav-target="coaches"><a href="{{$location.host()}}/coaches">The Coaches</a></li>
+          <li data-nav-target="contact"><a href="{{$location.host()}}/contact">Contact Us</a></li>
+          <li><a data-reveal-id="whatIsParkourModal" href="#">What is Parkour?</a></li>
+        </ul>
+      </aside>
+      
+      <a class="exit-off-canvas"></a>
+      
+      <section class="main-section">
+        <div id="carousel-section" class="main-section medium-12 large-12 show-for-medium-up" ng-controller="CarouselController">
+          <div class="small-12 medium-12 large-12">
+            <div class="carousel-wrapper">
+              <div class="image-carousel center">
+                <!-- The list of carousel objects -->
+                <div ng-repeat="item in carouselItems">
+                  <div class="carousel-text" ng-if="item.type == 'Q'">
+                    <p class="quote">{{item.quote}}</p>
+                    <p class="attribution">{{item.attribution}}</p>
+                  </div>
+                  <div class="carousel-image" th:if="${item.type == 'I'}">
+                    <img src="{{item.imageUrl}}" />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        
-          <div id="content" class="main-section small-12">
-            <div id='main'>
-              <div ng-view></div>
-            </div>
+        </div>
+      
+        <div id="content" class="main-section small-12">
+          <div id='main'>
+            <div ng-view></div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
+  </div>
 
-    <script src='/jquery/dist/jquery.js'> </script>
-    <script src='/angular/angular.min.js'> </script>
-    <script src='/angular-resource/angular-resource.min.js'> </script>
-    <script src='/angular-route/angular-route.min.js'> </script>
-    <script src='/foundation/js/foundation/foundation.js'></script>
-    <script src='/foundation/js/foundation/foundation.offcanvas.js'></script>
-    <script src='/foundation/js/foundation/foundation.topbar.js'></script>
-    <script src='/foundation/js/foundation/foundation.reveal.js'></script>
-    <script src='/slick/slick.js'></script>
-    <script src='/app.js'> </script>
-    <script src='/main.js'> </script>
+  <div id="whatIsParkourModal" class="reveal-modal medium" data-reveal>
+    <h3 class="text-center">What is Parkour?</h3>
+    <div class="text-justify">
+      <p>In a nutshell, parkour is a discipline of movement that focuses on self-improvement through creative use of the practitioner's surroundings.</p>
+      <p>There are a few main ideas that make parkour stand out from other physical disciplines and sports.</p>
+      <ul class="plain">
+        <li>
+          <h3><strong>Core Values</strong></h3> 
+          <p class="text-center"><strong>Perseverance, Courage, Humility, Integrity, Respect</strong></p>
+          <p>
+            Traditional sports end at the sound of a buzzer, a certain score is reached, or when the opponent taps out. In parkour, the game never ends. With even occasional training and dedication, parkour's Five Core Values become part of your everyday life.
+          </p>
+        </li>
+        <li>
+          <h3><strong>Autonomy</strong></h3>
+          <p>
+            A parkour practitioner has no adversary or opponent to focus on. The only tools you need are the shirt on your back and a pair of shoes. The world is your playing field and your mind is your opponent. Parkour is a discipline that can be practiced in a completely individualistic manner, but it doesn't have to be.
+          </p>
+        </li>
+        
+      </ul>
+    </div>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+
+  <script src='/jquery/dist/jquery.js'> </script>
+  <script src='/angular/angular.min.js'> </script>
+  <script src='/angular-resource/angular-resource.min.js'> </script>
+  <script src='/angular-route/angular-route.min.js'> </script>
+  <script src='/foundation/js/foundation/foundation.js'></script>
+  <script src='/foundation/js/foundation/foundation.offcanvas.js'></script>
+  <script src='/foundation/js/foundation/foundation.topbar.js'></script>
+  <script src='/foundation/js/foundation/foundation.reveal.js'></script>
+  <script src='/slick/slick.js'></script>
+  <script src='/app.js'> </script>
+  <script src='/main.js'> </script>
   </body>
 </html>

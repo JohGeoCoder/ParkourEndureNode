@@ -25,8 +25,8 @@ p {
 #main{
 	color: #EEE;
 	
-	h1, h2, h3, h4, h5, h6{
-		color: #EEE;
+	h1, h2, h3, h4, h5, h6, .header-button{
+		color: #EEE !important;
 	}
 	
 	strong{
@@ -52,6 +52,12 @@ p {
 
 	.section-title{
 		background-color: rgba(23, 27, 99, 0.25);
+	}
+
+	.header-button{
+		margin-top: 30px;
+    	font-size: 2em;
+    	text-decoration: none !important;
 	}
 }
 
@@ -112,4 +118,12 @@ ul.plain{
 .title {
 	white-space: nowrap;
 	text-overflow: ellipsis;
+}
+
+.text-medium{
+	font-size: 1.2em;
+
+	p,span,div,li,td,th{
+		font-size: 1.2em;
+	}
 }
