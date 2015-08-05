@@ -1,1 +1,1 @@
-sass main.scss style.css
+sass main.scss ../style.css
