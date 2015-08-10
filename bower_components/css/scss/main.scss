@@ -78,7 +78,7 @@ p {
 	margin-right: auto;
 }
 
-.image-carousel{
+.owl-carousel{
 	width: 600px;
 	height: 200px;
 	position: relative;
@@ -88,7 +88,7 @@ p {
 .carousel-wrapper{
 	background-color: black;
 	
-	.slick-slide{
+	.carousel-item{
 		position: relative;
 		
 		.carousel-text{

@@ -7,10 +7,10 @@
     <meta name="robots" content="index, follow" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <link rel="stylesheet" href="/slick/slick.css"></link>
-    <link rel="stylesheet" href="/slick/slick-theme.css"></link>
     <link rel='stylesheet' href='/foundation/css/foundation.css' />
     <link rel='stylesheet' href='/foundation/css/normalize.css' />
+    <link rel='stylesheet' href='/owl-carousel/assets/owl.carousel.css' />
+    <link rel='stylesheet' href='/owl-carousel/assets/owl.theme.green.css' />
     <link rel='stylesheet' href='/css/style.css' />
     <base href="/" />
   </head>
@@ -67,9 +67,9 @@
         <div id="carousel-section" class="main-section medium-12 large-12 show-for-medium-up" ng-controller="CarouselController">
           <div class="small-12 medium-12 large-12">
             <div class="carousel-wrapper">
-              <div class="image-carousel center">
+              <div class="owl-carousel owl-theme center">
                 <!-- The list of carousel objects -->
-                <div ng-repeat="item in carouselItems">
+                <div class="carousel-item" ng-repeat="item in carouselItems">
                   <div class="carousel-text" ng-if="item.type == 'Q'">
                     <p class="quote">{{item.quote}}</p>
                     <p class="attribution">{{item.attribution}}</p>
@@ -125,8 +125,12 @@
   <script src='/foundation/js/foundation/foundation.offcanvas.js'></script>
   <script src='/foundation/js/foundation/foundation.topbar.js'></script>
   <script src='/foundation/js/foundation/foundation.reveal.js'></script>
-  <script src='/slick/slick.js'></script>
+  <script src='/owl-carousel/owl.carousel.js'></script>
   <script src='/app.js'> </script>
   <script src='/main.js'> </script>
+
+  <script>
+
+  </script>
   </body>
 </html>

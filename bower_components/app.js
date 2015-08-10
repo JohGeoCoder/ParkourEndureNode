@@ -157,12 +157,21 @@ app.controller('CarouselController', function($scope, $http, $timeout){
 	
 	$scope.runSlickOnCarousel = function()
     {
-		$('.image-carousel').slick({
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			autoplay: true,
-			autoplaySpeed: 5000,
-		});
+		$('.owl-carousel').owlCarousel({
+	        loop:true,
+	        margin:0,
+	        nav:false,
+	        dots:false,
+	        autoplay:true,
+	        autoplayTimeout:5000,
+	        autoplayHoverPause:true,
+	        smartSpeed:1000,
+	        responsive:{
+	            0:{
+	                items:1
+	            }
+	        }
+	    });
     };
 });
 

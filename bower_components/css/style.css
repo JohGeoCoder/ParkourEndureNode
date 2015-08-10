@@ -59,7 +59,7 @@ p {
   margin-left: auto;
   margin-right: auto; }
 
-.image-carousel {
+.owl-carousel {
   width: 600px;
   height: 200px;
   position: relative;
@@ -67,15 +67,15 @@ p {
 
 .carousel-wrapper {
   background-color: black; }
-  .carousel-wrapper .slick-slide {
+  .carousel-wrapper .carousel-item {
     position: relative; }
-    .carousel-wrapper .slick-slide .carousel-text {
+    .carousel-wrapper .carousel-item .carousel-text {
       position: absolute;
       width: 70%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%); }
-      .carousel-wrapper .slick-slide .carousel-text .attribution {
+      .carousel-wrapper .carousel-item .carousel-text .attribution {
         text-align: right; }
 
 /* Makes the off-canvas navigation menu highlight properly */
