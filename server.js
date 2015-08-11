@@ -35,13 +35,13 @@ app.route('/api/carousel')
 	});
 
 app.route('/api/mailing-list')
-	.put(function(req, res){
+	.post(function(req, res){
 		db.collection('emailList').insert({email: req.body['email']}, function(err, result) {
 			if(err){
 				throw result;
 			}
 			else{
-				res.json(result);
+				res.json(result[0]);
 			}
 		});
 	});

@@ -56,9 +56,7 @@ app.factory('Coaches', function ($resource) {
 });
 
 app.factory('EmailList', function ($resource){
-	var resourceResult = $resource('/api/mailing-list/', {}, {
-		'update': { method: 'PUT' }
-	});
+	var resourceResult = $resource('/api/mailing-list/');
 	return resourceResult;
 });
 
@@ -175,13 +173,16 @@ app.controller('CarouselController', function($scope, $http, $timeout){
     };
 });
 
-app.controller('EmailListController', function($scope, $http, EmailList){
+app.controller('EmailListController', function($scope, $http, $timeout, EmailList){
 	$scope.newEmail = new EmailList();
 
 	$scope.submitEmail = function(){
 		if($scope.newEmail.email){
-			$scope.newEmail.$update();
+			var result = $scope.newEmail.$save(function(data, headers){
+				$scope.submittedEmail = data['email'];
+				$scope.submittedEmailId = data['_id'];
+			});
 			$scope.newEmail = new EmailList();
-		}
+		}		
 	};
 });
