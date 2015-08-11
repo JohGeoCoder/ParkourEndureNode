@@ -10,8 +10,11 @@ app.use(express.static('./bower_components'));
 app.route('/api/coaches')
 	.get(function(req, res){
 		db.collection('coaches').find().toArray(function(err, result){
-			if(err) throw err;
-			res.json(result);
+			if(err){
+				throw err;
+			} else{
+				res.json(result);
+			}
 		});
 	})
 	.post(function(req, res){
@@ -22,15 +25,24 @@ app.route('/api/coaches')
 app.route('/api/carousel')
 	.get(function(req, res){
 		db.collection('carouselItems').find().toArray(function(err, result){
-			if(err) throw err;
-			res.json(result);
+			if(err){
+				throw err;
+			} else{
+				res.json(result);
+			}
+			
 		});
 	});
 
 app.route('/api/mailing-list')
 	.put(function(req, res){
 		db.collection('emailList').insert({email: req.body['email']}, function(err, result) {
-			if(err) throw result;
+			if(err){
+				throw result;
+			}
+			else{
+				res.json(result);
+			}
 		});
 	});
 
