@@ -16,22 +16,7 @@ app.route('/api/coaches')
 	})
 	.post(function(req, res){
 		var record = req.body;
-		record.id = ++coachId;
-		coachData[record.id] = record;
 		res.json(record);
-	});
-
-app.route('/api/coaches/:id')
-	.get(function(req, res){
-		res.json(coachData[req.params.id]);
-	})
-	.put(function(req, res){
-		coachData[req.params.id] = req.body;
-		res.json(req.body);
-	})
-	.delete(function(req, res){
-		delete coachData[req.params.id];
-		res.json(null);
 	});
 
 app.route('/api/carousel')
