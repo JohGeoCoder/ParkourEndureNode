@@ -44,6 +44,16 @@ app.route('/api/mailing-list')
 				res.json(result[0]);
 			}
 		});
+	})
+	.delete(function(req, res){
+		console.log(req.body['submittedEmail']);
+		db.collection('emailList').remove({email: req.body['submittedEmail']}, function(err, result){
+			if(err){
+				throw result;
+			} else {
+				res.json({result: 'success'});
+			}
+		});
 	});
 
 app.get('*', function(req, res){

@@ -178,11 +178,23 @@ app.controller('EmailListController', function($scope, $http, $timeout, EmailLis
 
 	$scope.submitEmail = function(){
 		if($scope.newEmail.email){
-			var result = $scope.newEmail.$save(function(data, headers){
-				$scope.submittedEmail = data['email'];
-				$scope.submittedEmailId = data['_id'];
+			$scope.newEmail.$save(function(data, headers){
+				$scope.newEmail.submittedEmail = data['email'];
+				$scope.newEmail.submittedEmailId = data['_id'];
+				$scope.newEmail.email = '';
 			});
-			$scope.newEmail = new EmailList();
 		}		
+	};
+
+	$scope.undoEmailSubmit = function(){
+		$scope.newEmail.$remove(function(data, headers){
+			if(data['result'] == 'success'){
+				console.log("removed");
+				/*$scope.newEmail.submittedEmail = '';
+				$scope.newEmail.submittedEmailId = '';*/
+			} else{
+				console.log("Failed to remove");
+			}
+		});
 	};
 });
