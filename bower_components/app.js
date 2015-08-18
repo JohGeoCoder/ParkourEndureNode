@@ -168,36 +168,6 @@ app.controller('CarouselController', function($scope, $http, $timeout, CarouselI
 	        }
 	    });
     };
-	
-/*	$http.get('/api/carousel')
-	.success(function(data, status, headers, config){
-		$scope.carouselItems = data;
-		
-		//This is required to run Slick after Angular renders the view.
-		$timeout(function () { $scope.runSlickOnCarousel(data); }, 0); //0ms timeout
-	})
-	.error(function(data, status, headers, config){
-		$scope.carouselItems = [];
-	});
-	
-	$scope.runSlickOnCarousel = function()
-    {
-		$('.owl-carousel').owlCarousel({
-	        loop:true,
-	        margin:0,
-	        nav:false,
-	        dots:false,
-	        autoplay:true,
-	        autoplayTimeout:5000,
-	        autoplayHoverPause:true,
-	        smartSpeed:1000,
-	        responsive:{
-	            0:{
-	                items:1
-	            }
-	        }
-	    });
-    };*/
 });
 
 app.controller('EmailListController', function($scope, $http, $timeout, EmailList){
