@@ -60,6 +60,11 @@ app.factory('EmailList', function ($resource){
 	return resourceResult;
 });
 
+app.factory('CarouselItems', function($resource){
+	var resourceResult = $resource('/api/carousel');
+	return resourceResult;
+});
+
 app.factory('Page', function(){
 	var titles = {
 		homeTitle: 'Parkour Endure - A community for the Scranton area',
@@ -139,10 +144,32 @@ app.controller('ContactController', function($scope, Page){
 	Page.setDescription('contactDescription');
 });
 
-app.controller('CarouselController', function($scope, $http, $timeout){
-	$scope.carouselItems = [];
+app.controller('CarouselController', function($scope, $http, $timeout, CarouselItems){
+	$scope.carouselItems = CarouselItems.query({}, function(data, headers){
+		//This is required to run Slick after Angular renders the view.
+		$timeout(function () { $scope.runSlickOnCarousel(); }, 0); //0ms timeout
+	});
+
+	$scope.runSlickOnCarousel = function()
+    {
+		$('.owl-carousel').owlCarousel({
+	        loop:true,
+	        margin:0,
+	        nav:false,
+	        dots:false,
+	        autoplay:true,
+	        autoplayTimeout:5000,
+	        autoplayHoverPause:true,
+	        smartSpeed:1000,
+	        responsive:{
+	            0:{
+	                items:1
+	            }
+	        }
+	    });
+    };
 	
-	$http.get('/api/carousel')
+/*	$http.get('/api/carousel')
 	.success(function(data, status, headers, config){
 		$scope.carouselItems = data;
 		
@@ -170,7 +197,7 @@ app.controller('CarouselController', function($scope, $http, $timeout){
 	            }
 	        }
 	    });
-    };
+    };*/
 });
 
 app.controller('EmailListController', function($scope, $http, $timeout, EmailList){
