@@ -56,7 +56,7 @@ app.factory('Coaches', function ($resource) {
 });
 
 app.factory('EmailList', function ($resource){
-	var resourceResult = $resource('/api/mailing-list/');
+	var resourceResult = $resource('/api/mailing-list/:emailId', { emailId: '@emailId' });
 	return resourceResult;
 });
 
@@ -187,14 +187,18 @@ app.controller('EmailListController', function($scope, $http, $timeout, EmailLis
 	};
 
 	$scope.undoEmailSubmit = function(){
-		$scope.newEmail.$remove(function(data, headers){
+		$scope.newEmail.$delete({'emailId':$scope.newEmail.submittedEmailId}, function(data, headers){
 			if(data['result'] == 'success'){
-				console.log("removed");
-				/*$scope.newEmail.submittedEmail = '';
-				$scope.newEmail.submittedEmailId = '';*/
+				$scope.newEmail.submittedEmail = '';
+				$scope.newEmail.submittedEmailId = '';
 			} else{
-				console.log("Failed to remove");
+				$scope.newEmail.undoFailMessage = 'The system was unable to remove your email address. Please go to the Contact Us page and send us an email.'
 			}
 		});
+	};
+
+	$scope.acceptEmailSubmit = function(){
+		$scope.newEmail.submittedEmail = '';
+		$scope.newEmail.submittedEmailId = '';
 	};
 });

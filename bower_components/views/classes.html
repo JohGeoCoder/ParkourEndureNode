@@ -16,29 +16,25 @@
 		To stay updated about parkour classes in Scranton, submit your email address below to become a member of our mailing list.
 	</p>
 
-	<div class="row">
+	<div ng-if="!newEmail.submittedEmail">
 		<div class="large-12">
 			<label> Email address:
 				<input type="text" ng-model="newEmail.email" placeholder="abc@email.com" />
 			</label>
 		</div>
-	</div>
-	<div>
-		<button ng-click="submitEmail()">Submit Email</button>
+		<div>
+			<button ng-click="submitEmail()">Submit Email</button>
+		</div>
 	</div>
 	<div ng-if="newEmail.submittedEmail">
-		<div class="large-12">
-			<label> Submitted Email:
-				<input type="text" ng-model="newEmail.submittedEmail" />
-			</label>
+		<div>
+			<div>You submitted {{newEmail.submittedEmail}}</div>
+			<button ng-click="undoEmailSubmit()">Undo</button>
+			<button ng-click="acceptEmailSubmit()">Okay</button>
 		</div>
-		<div class="large-12">
-			<label> Submitted Email ID:
-				<input type="text" ng-model="newEmail.submittedEmailId" />
-			</label>
-		</div>
-		<button ng-click="undoEmailSubmit()">Undo</button>
 	</div>
+
+	
 </div>
 
 <script type="text/javascript">

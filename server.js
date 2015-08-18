@@ -2,7 +2,9 @@ var express = require('express'),
 			bodyParser = require('body-parser'),
 			app = express();
 
-var db = require('mongoskin').db('mongodb://localhost:27017/pkendure');
+var mongo = require('mongoskin')
+var db = mongo.db('mongodb://localhost:27017/pkendure');
+ObjectID = mongo.ObjectID;
 
 app.use(bodyParser.json());
 app.use(express.static('./bower_components'));
@@ -44,10 +46,12 @@ app.route('/api/mailing-list')
 				res.json(result[0]);
 			}
 		});
-	})
+	});
+	
+
+app.route('/api/mailing-list/:emailId')
 	.delete(function(req, res){
-		console.log(req.body['submittedEmail']);
-		db.collection('emailList').remove({email: req.body['submittedEmail']}, function(err, result){
+		db.collection('emailList').remove({'_id': new ObjectID(req.params.emailId)}, function(err, result){
 			if(err){
 				throw result;
 			} else {
