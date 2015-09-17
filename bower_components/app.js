@@ -67,7 +67,7 @@ app.factory('CarouselItems', function($resource){
 
 app.factory('Page', function(){
 	var titles = {
-		homeTitle: 'Parkour Endure - A community for the Scranton area',
+		homeTitle: 'Parkour Endure - A parkour community for the Scranton area',
 		classesTitle: 'Parkour Endure - Classes in the Scranton area',
 		privateLessonsTitle: 'Parkour Endure - Private lessons in the Scranton area',
 		coachesTitle: 'Parkour Endure - Coaches in the Scranton area',
