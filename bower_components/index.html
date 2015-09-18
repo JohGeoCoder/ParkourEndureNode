@@ -9,8 +9,7 @@
 
     <link rel='stylesheet' href='/foundation/css/foundation.css' />
     <link rel='stylesheet' href='/foundation/css/normalize.css' />
-    <link rel='stylesheet' href='/owl-carousel/assets/owl.carousel.css' />
-    <link rel='stylesheet' href='/owl-carousel/assets/owl.theme.green.css' />
+    <link rel='stylesheet' href='/slick/slick.css' />
     <link rel='stylesheet' href='/css/style.css' />
     <base href="/" />
   </head>
@@ -66,15 +65,15 @@
       <section class="main-section">
         <div id="carousel-section" class="main-section medium-12 large-12 show-for-medium-up" ng-controller="CarouselController">
           <div class="small-12 medium-12 large-12">
-            <div class="carousel-wrapper">
-              <div class="owl-carousel owl-theme center">
+            <div class="slick-wrapper">
+              <div class="center slick-carousel">
                 <!-- The list of carousel objects -->
                 <div class="carousel-item" ng-repeat="item in carouselItems">
                   <div class="carousel-text" ng-if="item.type == 'Q'">
                     <p class="quote">{{item.quote}}</p>
                     <p class="attribution">{{item.attribution}}</p>
                   </div>
-                  <div class="carousel-image" th:if="${item.type == 'I'}">
+                  <div class="carousel-image" ng-if="item.type == 'I'">
                     <img src="{{item.imageUrl}}" />
                   </div>
                 </div>
@@ -125,7 +124,7 @@
   <script src='/foundation/js/foundation/foundation.offcanvas.js'></script>
   <script src='/foundation/js/foundation/foundation.topbar.js'></script>
   <script src='/foundation/js/foundation/foundation.reveal.js'></script>
-  <script src='/owl-carousel/owl.carousel.js'></script>
+  <script src='/slick/slick.js'></script>
   <script src='/app.js'> </script>
   <script src='/main.js'> </script>
 

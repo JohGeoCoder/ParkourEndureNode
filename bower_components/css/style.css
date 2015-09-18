@@ -66,26 +66,28 @@ p {
 
 .center {
   display: block;
-  margin-left: auto;
-  margin-right: auto; }
+  margin-left: auto !important;
+  margin-right: auto !important; }
 
-.owl-carousel {
+.slick-carousel {
   width: 600px;
-  height: 200px;
-  position: relative;
+  height: 200px !important;
+  overflow: hidden;
   background-color: white; }
 
-.carousel-wrapper {
-  background-color: black; }
-  .carousel-wrapper .carousel-item {
-    position: relative; }
-    .carousel-wrapper .carousel-item .carousel-text {
+.slick-wrapper {
+  background-color: black;
+  height: 200px !important; }
+  .slick-wrapper .carousel-item {
+    position: relative;
+    height: 200px; }
+    .slick-wrapper .carousel-item .carousel-text {
       position: absolute;
       width: 70%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%); }
-      .carousel-wrapper .carousel-item .carousel-text .attribution {
+      .slick-wrapper .carousel-item .carousel-text .attribution {
         text-align: right; }
 
 /* Makes the off-canvas navigation menu highlight properly */

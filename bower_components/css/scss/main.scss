@@ -75,22 +75,24 @@ p {
 
 .center{
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
 
-.owl-carousel{
+.slick-carousel{
 	width: 600px;
-	height: 200px;
-	position: relative;
-	background-color: white;
+	height: 200px !important;
+	overflow:hidden;
+	background-color:white;
 }
 
-.carousel-wrapper{
+.slick-wrapper{
 	background-color: black;
+	height: 200px !important;
 	
 	.carousel-item{
 		position: relative;
+		height: 200px;
 		
 		.carousel-text{
 			position: absolute;
@@ -102,6 +104,10 @@ p {
 			.attribution{
 				text-align: right;
 			}
+		}
+
+		.carousel-image{
+
 		}
 	}
 	
