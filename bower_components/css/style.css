@@ -10,6 +10,16 @@
     line-height: 1em;
     color: black; }
 
+div.important {
+  background: #4D4D4D;
+  background: #4d4d4d;
+  border-style: Solid;
+  border-color: #000000;
+  border-color: black;
+  border-width: 1px;
+  opacity: 0.65;
+  filter: alpha(opacity=65) progid:DXImageTransform.Microsoft.Alpha(opacity=65); }
+
 body, p, div, span, h1, h2, h3, h4, h5, h6, input, form, a, ul, li {
   margin: 0px;
   padding: 0px;
