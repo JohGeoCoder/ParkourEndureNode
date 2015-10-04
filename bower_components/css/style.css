@@ -106,4 +106,9 @@ ul.plain {
   .text-medium p, .text-medium span, .text-medium div, .text-medium li, .text-medium td, .text-medium th {
     font-size: 1.2em; }
 
+.text-small {
+  font-size: 0.8em; }
+  .text-small p, .text-small span, .text-small div, .text-small li, .text-small td, .text-small th {
+    font-size: 0.8em; }
+
 /*# sourceMappingURL=style.css.map */
