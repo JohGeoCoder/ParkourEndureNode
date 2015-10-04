@@ -101,13 +101,18 @@ ul.plain {
   white-space: nowrap;
   text-overflow: ellipsis; }
 
+.text-large {
+  font-size: 1.8em !important; }
+  .text-large p, .text-large span, .text-large div, .text-large li, .text-large td, .text-large th {
+    font-size: 1.8em; }
+
 .text-medium {
-  font-size: 1.2em; }
+  font-size: 1.2em !important; }
   .text-medium p, .text-medium span, .text-medium div, .text-medium li, .text-medium td, .text-medium th {
     font-size: 1.2em; }
 
 .text-small {
-  font-size: 0.8em; }
+  font-size: 0.8em !important; }
   .text-small p, .text-small span, .text-small div, .text-small li, .text-small td, .text-small th {
     font-size: 0.8em; }
 

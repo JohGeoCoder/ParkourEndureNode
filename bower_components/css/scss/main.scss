@@ -127,8 +127,16 @@ ul.plain{
 	text-overflow: ellipsis;
 }
 
+.text-large{
+	font-size: 1.8em !important;
+
+	p,span,div,li,td,th{
+		font-size: 1.8em;
+	}
+}
+
 .text-medium{
-	font-size: 1.2em;
+	font-size: 1.2em !important;
 
 	p,span,div,li,td,th{
 		font-size: 1.2em;
@@ -136,7 +144,7 @@ ul.plain{
 }
 
 .text-small{
-	font-size: 0.8em;
+	font-size: 0.8em !important;
 
 	p,span,div,li,td,th{
 		font-size: 0.8em;
