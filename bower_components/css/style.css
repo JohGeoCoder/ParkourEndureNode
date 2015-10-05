@@ -57,6 +57,15 @@ p {
     font-size: 2em;
     text-decoration: none !important; }
 
+#carousel-section {
+  position: relative; }
+  #carousel-section .social-media {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 30px; }
+
 .inline-list li {
   text-decoration: none;
   display: inline; }
