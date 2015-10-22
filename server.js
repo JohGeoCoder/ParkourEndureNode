@@ -2,12 +2,24 @@ var express = require('express'),
 			bodyParser = require('body-parser'),
 			app = express();
 
+var MongoStore = require('connect-mongo')(express);
+
 var mongo = require('mongoskin')
 var db = mongo.db('mongodb://localhost:27017/pkendure');
 ObjectID = mongo.ObjectID;
 
 app.use(bodyParser.json());
 app.use(express.static('./bower_components'));
+
+app.use(express.session({
+	store: new MongoStore({
+		url: 'mongodb://localhost:27017/pkendure',
+		ttl: 7*24*60*60,
+		autoRemove: 'interval',
+		autoRemoveInterval: 10 //Minutes
+	}),
+	secret: '1234567890'
+}));
 
 app.route('/api/coaches')
 	.get(function(req, res){
