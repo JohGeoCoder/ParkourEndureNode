@@ -14,39 +14,87 @@
     <base href="/" />
   </head>
   <body id="background">
-    <a id="logoLink" href="{{$location.host()}}/" style="display: block;">
-      <div id="pkEndureLogo" class="show-for-medium-up small-12 medium-12 large-12">
-        <p class="text-right logoLocation">Parkour and Freerunning in</p>
-        <p class="text-right logoLocation">Scranton, Pennsylvania</p>
-      </div>
-    </a>
+    
     <div class="off-canvas-wrap" data-offcanvas="">
+      <a id="logoLink" class="logoLink" href="{{$location.host()}}/">
+        <div id="pkEndureLogo" class="show-for-medium-up small-12 medium-12 large-12">
+          <p class="text-right logoLocation">Parkour and Freerunning in</p>
+          <p class="text-right logoLocation">Scranton, Pennsylvania</p>
+        </div>
+      </a>
+
       <div class="inner-wrap">
-        <nav class="top-bar hide-for-small-only" data-topbar="" role="navigation">
+        <div class="leftNavigation">
+          <li data-nav-target="home">
+            <a href="{{$location.host()}}/">Home</a>
+          </li>
+          <li data-nav-target="classes">
+            <a href="{{$location.host()}}/classes">Classes</a>
+          </li>
+          <li data-nav-target="privateLessons">
+            <a href="{{$location.host()}}/private-lessons">Private Lessons</a>
+          </li>
+          <li data-nav-target="coaches">
+            <a href="{{$location.host()}}/coaches">The Coaches</a>
+          </li>
+          <li>
+            <a data-reveal-id="whatIsParkourModal" href="#">What is Parkour?</a>
+          </li>
+          <li data-nav-target="contact">
+            <a class="contact-nav" href="{{$location.host()}}/contact">Contact Us</a>
+          </li>
+        </div>
+
+        <div class="stuff">
         
-        <section class="top-bar-section">
-          <ul class="left">
-            <li data-nav-target="home"><a href="{{$location.host()}}/">Home</a></li>
-            <li data-nav-target="classes"><a href="{{$location.host()}}/classes">Classes</a></li>
-            <li data-nav-target="privateLessons"><a href="{{$location.host()}}/private-lessons">Private Lessons</a></li>
-            <li data-nav-target="coaches"><a href="{{$location.host()}}/coaches">The Coaches</a></li>
-            <li><a data-reveal-id="whatIsParkourModal" href="#">What is Parkour?</a></li>
-          </ul>
-          <ul class="right">
-            <li data-nav-target="contact"><a class="contact-nav" href="{{$location.host()}}/contact">Contact Us</a></li>
-          </ul>
-        </section>
-      </nav>
-      
-      <nav class="tab-bar show-for-small-only">
-        <section class="left-small">
-          <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-        </section>
+          <nav class="tab-bar show-for-small-only">
+            <section class="left-small">
+              <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+            </section>
+            
+            <section class="middle tab-bar-section">
+                  <h1 class="title">Parkour Classes in Scranton</h1>
+            </section>
+          </nav>
+
+          <section class="main-section">
+          <div id="carousel-section" class="main-section medium-12 large-12 show-for-medium-up" ng-controller="CarouselController">
+            <div class="small-12 medium-12 large-12">
+              <div class="slick-wrapper">
+                <div class="center slick-carousel">
+                  <!-- The list of carousel objects -->
+                  <div class="carousel-item" ng-repeat="item in carouselItems">
+                    <div class="carousel-text" ng-if="item.type == 'Q'">
+                      <p class="quote">{{item.quote}}</p>
+                      <p class="attribution">{{item.attribution}}</p>
+                    </div>
+                    <div class="carousel-image" ng-if="item.type == 'I'">
+                      <img src="{{item.imageUrl}}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-media">
+              <p>
+                <a href="https://www.facebook.com/groups/1609497595970045/">Join our community on Facebook!</a>
+              </p>
+              <p>
+                <a href="http://www.meetup.com/Scranton-Parkour-Fitness-Community/">Meet us at Meetup!</a>
+              </p>
+            </div>
+          </div>
         
-        <section class="middle tab-bar-section">
-              <h1 class="title">Parkour Classes in Scranton</h1>
+          <div id="content" class="main-section small-12">
+            <div id='main'>
+              <div ng-view></div>
+            </div>
+          </div>
         </section>
-      </nav>
+      </div>
+
+        
       
       <aside class="left-off-canvas-menu">
         <ul class="off-canvas-list">
@@ -62,41 +110,7 @@
       
       <a class="exit-off-canvas"></a>
       
-      <section class="main-section">
-        <div id="carousel-section" class="main-section medium-12 large-12 show-for-medium-up" ng-controller="CarouselController">
-          <div class="small-12 medium-12 large-12">
-            <div class="slick-wrapper">
-              <div class="center slick-carousel">
-                <!-- The list of carousel objects -->
-                <div class="carousel-item" ng-repeat="item in carouselItems">
-                  <div class="carousel-text" ng-if="item.type == 'Q'">
-                    <p class="quote">{{item.quote}}</p>
-                    <p class="attribution">{{item.attribution}}</p>
-                  </div>
-                  <div class="carousel-image" ng-if="item.type == 'I'">
-                    <img src="{{item.imageUrl}}" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="social-media">
-            <p>
-              <a href="https://www.facebook.com/groups/1609497595970045/">Join our community on Facebook!</a>
-            </p>
-            <p>
-              <a href="http://www.meetup.com/Scranton-Parkour-Fitness-Community/">Meet us at Meetup!</a>
-            </p>
-          </div>
-        </div>
       
-        <div id="content" class="main-section small-12">
-          <div id='main'>
-            <div ng-view></div>
-          </div>
-        </div>
-      </section>
     </div>
   </div>
 

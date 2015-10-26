@@ -1,0 +1,61 @@
+$header-height: 42px;
+$navigation-width: 150px;
+
+@media screen and (max-width: 640px){
+
+	.logoLink {
+		display: none;
+	}
+
+	.leftNavigation {
+		display: none;
+	}
+
+	.stuff {
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+	}
+}
+
+@media screen and (min-width: 641px){
+
+	.logoLink {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		height: $header-height;
+
+		#pkEndureLogo {
+			background-image: url("../img/ParkourEndure.png");
+			background-color: #FCFCFC;
+			background-repeat: no-repeat;
+			height: $header-height;
+
+			.logoLocation {
+				line-height: 1em;
+				color: black;
+			}
+		}
+	}
+
+	.leftNavigation {
+		position: absolute;
+		top: $header-height;
+		bottom: 0px;
+		left: 0px;
+		width: $navigation-width;
+		background-color: blue;
+	}
+
+	.stuff {
+		position: absolute;
+		top: $header-height;
+		bottom: 0px;
+		left: $navigation-width;
+		right: 0px;
+	}
+}
