@@ -1,55 +1,48 @@
 div.important {
-  background: #4D4D4D;
-  background: #4d4d4d;
   border-style: Solid;
   border-color: #000000;
   border-color: black;
   border-width: 1px;
-  opacity: 0.65;
-  filter: alpha(opacity=65) progid:DXImageTransform.Microsoft.Alpha(opacity=65); }
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 4px; }
 
 @media screen and (max-width: 640px) {
-  .logoLink {
+  .header {
     display: none; }
 
   .leftNavigation {
     display: none; }
 
   .stuff {
+    overflow-y: auto;
     position: absolute;
     top: 0px;
     bottom: 0px;
     left: 0px;
     right: 0px; } }
 @media screen and (min-width: 641px) {
-  .logoLink {
+  .header {
     position: absolute;
     top: 0px;
     left: 0px;
     right: 0px;
     height: 42px; }
-    .logoLink #pkEndureLogo {
-      background-image: url("../img/ParkourEndure.png");
-      background-color: #FCFCFC;
-      background-repeat: no-repeat;
-      height: 42px; }
-      .logoLink #pkEndureLogo .logoLocation {
-        line-height: 1em;
-        color: black; }
 
   .leftNavigation {
     position: absolute;
     top: 42px;
     bottom: 0px;
     left: 0px;
-    width: 150px;
-    background-color: blue; }
+    width: 200px; }
 
   .stuff {
+    overflow-y: auto;
     position: absolute;
     top: 42px;
     bottom: 0px;
-    left: 150px;
+    left: 200px;
     right: 0px; } }
 .off-canvas-wrap {
   position: absolute;
@@ -65,54 +58,115 @@ div.important {
   left: 0px;
   right: 0px; }
 
-.leftNavigation li {
-  list-style: none; }
+.leftNavigation {
+  border-right: 1px solid black; }
+  .leftNavigation a {
+    color: #EEE;
+    display: block;
+    font-size: 1.5em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 7px;
+    white-space: nowrap; }
+  .leftNavigation a.active {
+    background-color: rgba(0, 0, 0, 0.5); }
+  .leftNavigation a:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.5); }
 
-body, p, div, span, h1, h2, h3, h4, h5, h6, input, form, a, ul, li {
+.header {
+  position: relative; }
+  .header .logo {
+    background-image: url("../img/ParkourEndure.png");
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 440px; }
+    .header .logo a {
+      display: block;
+      width: 100%;
+      height: 100%; }
+  .header .social-media-section {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 440px;
+    overflow: hidden; }
+    @media screen and (max-width: 1024px) {
+      .header .social-media-section .social-media {
+        height: 100%;
+        width: auto;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-top: 4px;
+        float: left; }
+        .header .social-media-section .social-media .social-media-icon {
+          height: 35px;
+          width: 35px; } }
+    @media screen and (min-width: 1025px) {
+      .header .social-media-section .social-media {
+        height: 100%;
+        width: auto;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-top: 4px;
+        float: left; }
+        .header .social-media-section .social-media .social-media-icon {
+          height: 35px;
+          width: 35px;
+          float: left; }
+        .header .social-media-section .social-media .social-media-text {
+          padding-left: 4px;
+          padding-right: 4px;
+          padding-top: 3px;
+          width: 195px;
+          height: 100%;
+          float: left; }
+          .header .social-media-section .social-media .social-media-text p {
+            line-height: 95%; } }
+    .header .social-media-section .social-media:hover {
+      background-color: rgba(255, 255, 255, 0.5); }
+    .header .social-media-section a {
+      color: #EEE; }
+
+body, p, div, span, h1, h2, h3, h4, h5, h6, input, form, a, ul, li, label {
   margin: 0px;
   padding: 0px;
-  font-family: sans-serif; }
+  font-family: 'Gentium Book Basic', serif;
+  color: #EEE; }
 
 p {
   margin-bottom: 0.5rem; }
 
 #background {
-  background-image: url("../img/mochaGrunge.png"); }
+  background: url(../img/friendsdarkened.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 .main-section {
   padding-left: 0px !important;
   padding-right: 0px !important; }
 
-#main {
-  color: #EEE; }
-  #main h1, #main h2, #main h3, #main h4, #main h5, #main h6, #main .header-button {
-    color: #EEE !important; }
-  #main strong {
-    font-size: 1.2em; }
-  #main a {
-    color: #1E3447 !important;
-    font-weight: bold;
-    text-decoration: underline !important;
-    cursor: pointer; }
-  #main #coaches .coach {
-    margin-bottom: 20px; }
-    #main #coaches .coach img {
-      max-height: 260px; }
-  #main .section-title {
-    background-color: rgba(23, 27, 99, 0.25); }
-  #main .header-button {
-    margin-top: 30px;
-    font-size: 2em;
-    text-decoration: none !important; }
-
-#carousel-section {
-  position: relative; }
-  #carousel-section .social-media {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 100px;
-    height: 30px; }
+#main h1, #main h2, #main h3, #main h4, #main h5, #main h6, #main .header-button {
+  color: #EEE !important; }
+#main strong {
+  font-size: 1.2em; }
+#main a {
+  color: #02ABF8 !important;
+  font-weight: bold;
+  text-decoration: underline !important;
+  cursor: pointer; }
+#main #coaches .coach {
+  margin-bottom: 20px; }
+  #main #coaches .coach img {
+    max-height: 260px; }
+#main .section-title {
+  background-color: rgba(23, 27, 99, 0.25); }
+#main .header-button {
+  margin-top: 30px;
+  font-size: 2em;
+  text-decoration: none !important; }
 
 .inline-list li {
   text-decoration: none;
@@ -125,27 +179,6 @@ p {
   display: block;
   margin-left: auto !important;
   margin-right: auto !important; }
-
-.slick-carousel {
-  width: 600px;
-  height: 200px !important;
-  overflow: hidden;
-  background-color: white; }
-
-.slick-wrapper {
-  background-color: black;
-  height: 200px !important; }
-  .slick-wrapper .carousel-item {
-    position: relative;
-    height: 200px; }
-    .slick-wrapper .carousel-item .carousel-text {
-      position: absolute;
-      width: 70%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
-      .slick-wrapper .carousel-item .carousel-text .attribution {
-        text-align: right; }
 
 /* Makes the off-canvas navigation menu highlight properly */
 aside .off-canvas-list li.active {
@@ -172,5 +205,13 @@ ul.plain {
   font-size: 0.8em !important; }
   .text-small p, .text-small span, .text-small div, .text-small li, .text-small td, .text-small th {
     font-size: 0.8em; }
+
+.text-xsmall {
+  font-size: 0.7em !important; }
+  .text-xsmall p, .text-xsmall span, .text-xsmall div, .text-xsmall li, .text-xsmall td, .text-xsmall th {
+    font-size: 0.7em; }
+
+#whatIsParkourModal {
+  background-color: #333333; }
 
 /*# sourceMappingURL=style.css.map */

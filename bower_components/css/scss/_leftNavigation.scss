@@ -1,5 +1,21 @@
 .leftNavigation {
-	li {
-		list-style: none;
+	border-right: 1px solid black;
+
+	a {
+		color: $text-color-primary;
+		display: block;
+		font-size: 1.5em;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 7px;
+		white-space: nowrap;
+	}
+
+	a.active {
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	a:hover:not(.active){
+		background-color: rgba(255,255,255,0.5);
 	}
 }

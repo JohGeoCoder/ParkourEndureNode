@@ -1,9 +1,9 @@
 $header-height: 42px;
-$navigation-width: 150px;
+$navigation-width: 200px;
 
 @media screen and (max-width: 640px){
 
-	.logoLink {
+	.header {
 		display: none;
 	}
 
@@ -12,6 +12,7 @@ $navigation-width: 150px;
 	}
 
 	.stuff {
+		overflow-y: auto;
 		position: absolute;
 		top: 0px;
 		bottom: 0px;
@@ -22,24 +23,12 @@ $navigation-width: 150px;
 
 @media screen and (min-width: 641px){
 
-	.logoLink {
+	.header {
 		position: absolute;
 		top: 0px;
 		left: 0px;
 		right: 0px;
 		height: $header-height;
-
-		#pkEndureLogo {
-			background-image: url("../img/ParkourEndure.png");
-			background-color: #FCFCFC;
-			background-repeat: no-repeat;
-			height: $header-height;
-
-			.logoLocation {
-				line-height: 1em;
-				color: black;
-			}
-		}
 	}
 
 	.leftNavigation {
@@ -48,10 +37,10 @@ $navigation-width: 150px;
 		bottom: 0px;
 		left: 0px;
 		width: $navigation-width;
-		background-color: blue;
 	}
 
 	.stuff {
+		overflow-y: auto;
 		position: absolute;
 		top: $header-height;
 		bottom: 0px;

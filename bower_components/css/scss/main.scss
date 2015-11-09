@@ -1,16 +1,20 @@
 $blue-primary: #004EB2 rgb(0, 78, 178);
+$text-color-primary: #EEE;
+
 
 @import 'home';
 @import 'general';
 @import 'responsiveLayout';
 @import 'foundationCustom';
 @import 'leftNavigation';
+@import 'header';
 
 
-body,p,div,span,h1,h2,h3,h4,h5,h6,input,form,a,ul,li{
+body,p,div,span,h1,h2,h3,h4,h5,h6,input,form,a,ul,li,label{
 	margin: 0px;
 	padding: 0px;	
-	font-family: sans-serif;
+	font-family: 'Gentium Book Basic', serif;
+	color: $text-color-primary;
 }
 
 p {
@@ -18,7 +22,11 @@ p {
 }
 
 #background {
-	background-image: url("../img/mochaGrunge.png");
+	background: url(../img/friendsdarkened.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 .main-section{
@@ -26,11 +34,9 @@ p {
 	padding-right: 0px !important;
 }
 
-#main{
-	color: #EEE;
-	
+#main{	
 	h1, h2, h3, h4, h5, h6, .header-button{
-		color: #EEE !important;
+		color: $text-color-primary !important;
 	}
 	
 	strong{
@@ -38,7 +44,7 @@ p {
 	}
 	
 	a{
-		color: #1E3447 !important;
+		color: #02ABF8 !important;
 		font-weight: bold;
 		text-decoration: underline !important;
 		cursor: pointer;
@@ -65,18 +71,6 @@ p {
 	}
 }
 
-#carousel-section{
-	position: relative;
-
-	.social-media{
-		position: absolute;
-		top: 10px;
-		left: 10px;
-		width: 100px;
-		height: 30px;
-	}
-}
-
 .inline-list{
 	li{
 		text-decoration: none;
@@ -92,40 +86,6 @@ p {
 	display: block;
 	margin-left: auto !important;
 	margin-right: auto !important;
-}
-
-.slick-carousel{
-	width: 600px;
-	height: 200px !important;
-	overflow:hidden;
-	background-color:white;
-}
-
-.slick-wrapper{
-	background-color: black;
-	height: 200px !important;
-	
-	.carousel-item{
-		position: relative;
-		height: 200px;
-		
-		.carousel-text{
-			position: absolute;
-			width: 70%;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			
-			.attribution{
-				text-align: right;
-			}
-		}
-
-		.carousel-image{
-
-		}
-	}
-	
 }
 
 /* Makes the off-canvas navigation menu highlight properly */
@@ -164,6 +124,18 @@ ul.plain{
 	p,span,div,li,td,th{
 		font-size: 0.8em;
 	}
+}
+
+.text-xsmall{
+	font-size: 0.7em !important;
+
+	p,span,div,li,td,th{
+		font-size: 0.7em;
+	}
+}
+
+#whatIsParkourModal {
+	background-color: rgb(51, 51, 51);
 }
 
 
