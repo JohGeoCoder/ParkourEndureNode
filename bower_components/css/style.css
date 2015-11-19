@@ -1,9 +1,20 @@
 html {
-  font-family: 'Gentium Book Basic', serif !important;
   font-size: 16px; }
 
 body {
+  font-family: 'Gentium Book Basic', serif !important;
   color: #EEE !important; }
+
+label {
+  color: #EEE; }
+
+a {
+  color: #02ABF8;
+  font-weight: bold; }
+
+a[data-nav-target] {
+  color: #EEE;
+  font-weight: normal; }
 
 a:not(.button, .button-link) {
   color: #02ABF8 !important;
@@ -37,25 +48,9 @@ h1, h2, h3, h4, h5, h6, .header-button {
   padding-left: 0px !important;
   padding-right: 0px !important; }
 
-#main {
-  font-family: 'Gentium Book Basic', serif;
-  color: #EEE;
-  -webkit-text-fill-color: #EEE;
-  /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgba(50, 50, 50, 0.4); }
-  #main a:not(.button, .button-link) {
-    color: #02ABF8 !important;
-    -webkit-text-fill-color: #02ABF8;
-    /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(50, 50, 50, 0.4);
-    font-weight: bold;
-    text-decoration: underline;
-    cursor: pointer; }
-  #main .section-title {
-    margin: 0;
-    background-color: rgba(23, 27, 99, 0.25); }
+#main .section-title {
+  margin: 0;
+  background-color: rgba(23, 27, 99, 0.25); }
 
 .center {
   display: block;
@@ -147,8 +142,8 @@ div.important {
     color: #EEE;
     display: block;
     font-size: 1.5em;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 7px;
     white-space: nowrap; }
   .leftNavigation a.active {

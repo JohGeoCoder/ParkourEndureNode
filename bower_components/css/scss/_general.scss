@@ -1,10 +1,24 @@
 html {
-	font-family: 'Gentium Book Basic', serif !important;
 	font-size: 16px;
 }
 
 body {
+	font-family: 'Gentium Book Basic', serif !important;
 	color: $text-color-primary !important;
+}
+
+label {
+	color: $text-color-primary;
+}
+
+a {
+	color: $link-color;
+	font-weight: bold;
+}
+
+a[data-nav-target] {
+	color: $text-color-primary;
+	font-weight: normal;
 }
 
 a:not(.button, .button-link) {
@@ -46,22 +60,7 @@ h1, h2, h3, h4, h5, h6, .header-button {
 	padding-right: 0px !important;
 }
 
-#main{	
-	font-family: 'Gentium Book Basic', serif;
-	color: $text-color-primary;
-	-webkit-text-fill-color: $text-color-primary; /* Will override color (regardless of order) */
-	-webkit-text-stroke-width: $text-stroke-width;
-	-webkit-text-stroke-color: $text-stroke-color;
-		
-	a:not(.button, .button-link) {
-		color: $link-color !important;
-		-webkit-text-fill-color: $link-color; /* Will override color (regardless of order) */
-		-webkit-text-stroke-width: $text-stroke-width;
-		-webkit-text-stroke-color: $text-stroke-color;
-		font-weight: bold;
-		text-decoration: underline;
-		cursor: pointer;
-	}
+#main{			
 
 	.section-title{
 		margin: 0;
