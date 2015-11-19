@@ -1,3 +1,84 @@
+html {
+  font-family: 'Gentium Book Basic', serif !important;
+  font-size: 16px; }
+
+body {
+  color: #EEE !important; }
+
+a:not(.button, .button-link) {
+  color: #02ABF8 !important;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer; }
+
+a.button {
+  color: #EEE !important;
+  cursor: pointer; }
+
+a.button-link {
+  margin-top: 30px;
+  font-size: 2em;
+  text-decoration: none; }
+
+p {
+  margin-bottom: 0.5rem; }
+
+h1, h2, h3, h4, h5, h6, .header-button {
+  color: #EEE !important; }
+
+#background {
+  background: url(../img/friendsdarkened.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.main-section {
+  padding-left: 0px !important;
+  padding-right: 0px !important; }
+
+#main {
+  font-family: 'Gentium Book Basic', serif;
+  color: #EEE;
+  -webkit-text-fill-color: #EEE;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(50, 50, 50, 0.4); }
+  #main a:not(.button, .button-link) {
+    color: #02ABF8 !important;
+    -webkit-text-fill-color: #02ABF8;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(50, 50, 50, 0.4);
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer; }
+  #main .section-title {
+    margin: 0;
+    background-color: rgba(23, 27, 99, 0.25); }
+
+.center {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+/* Makes the off-canvas navigation menu highlight properly */
+aside .off-canvas-list li.active {
+  background-color: #008CBA; }
+
+ul.list-indent {
+  margin-left: 20px; }
+
+ul.plain {
+  list-style-type: none; }
+
+.title {
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.reveal-modal {
+  background-color: #333333; }
+
 div.important {
   border-style: Solid;
   border-color: #000000;
@@ -59,7 +140,9 @@ div.important {
   right: 0px; }
 
 .leftNavigation {
-  border-right: 1px solid black; }
+  border-right: 1px solid black;
+  overflow-y: auto;
+  overflow-x: hidden; }
   .leftNavigation a {
     color: #EEE;
     display: block;
@@ -83,7 +166,8 @@ div.important {
     .header .logo a {
       display: block;
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      opacity: 0; }
   .header .social-media-section {
     position: absolute;
     top: 0px;
@@ -101,7 +185,11 @@ div.important {
         float: left; }
         .header .social-media-section .social-media .social-media-icon {
           height: 35px;
-          width: 35px; } }
+          width: 35px; }
+        .header .social-media-section .social-media a {
+          display: block;
+          width: 100%;
+          height: 100%; } }
     @media screen and (min-width: 1025px) {
       .header .social-media-section .social-media {
         height: 100%;
@@ -122,96 +210,210 @@ div.important {
           height: 100%;
           float: left; }
           .header .social-media-section .social-media .social-media-text p {
-            line-height: 95%; } }
+            line-height: 95%; }
+        .header .social-media-section .social-media a {
+          display: block;
+          width: 100%;
+          height: 100%; } }
     .header .social-media-section .social-media:hover {
       background-color: rgba(255, 255, 255, 0.5); }
     .header .social-media-section a {
       color: #EEE; }
 
-body, p, div, span, h1, h2, h3, h4, h5, h6, input, form, a, ul, li, label {
-  margin: 0px;
-  padding: 0px;
-  font-family: 'Gentium Book Basic', serif;
-  color: #EEE; }
+html {
+  font-size: 16px; }
 
-p {
-  margin-bottom: 0.5rem; }
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 2rem; }
 
-#background {
-  background: url(../img/friendsdarkened.png) no-repeat center center fixed;
+  h2 {
+    font-size: 1.8rem; }
+
+  h3 {
+    font-size: 1.5rem; }
+
+  h4 {
+    font-size: 1.3rem; }
+
+  h5 {
+    font-size: 1rem; }
+
+  h6 {
+    font-size: 0.8rem; }
+
+  .text-xlarge {
+    font-size: 2rem !important; }
+    .text-xlarge p, .text-xlarge span, .text-xlarge div, .text-xlarge li, .text-xlarge ul, .text-xlarge a {
+      font-size: 2rem; }
+
+  .text-large {
+    font-size: 1.8rem !important; }
+    .text-large p, .text-large span, .text-large div, .text-large li, .text-large ul, .text-large a {
+      font-size: 1.8rem; }
+
+  .text-medium {
+    font-size: 1.5rem !important; }
+    .text-medium p, .text-medium span, .text-medium div, .text-medium li, .text-medium ul, .text-medium a {
+      font-size: 1.5rem; }
+
+  .text-normal {
+    font-size: 1.3rem !important; }
+    .text-normal p, .text-normal span, .text-normal div, .text-normal li, .text-normal ul, .text-normal a {
+      font-size: 1.3rem; }
+
+  .text-small {
+    font-size: 1rem !important; }
+    .text-small p, .text-small span, .text-small div, .text-small li, .text-small ul, .text-small a {
+      font-size: 1rem; }
+
+  .text-xsmall {
+    font-size: 0.8rem !important; }
+    .text-xsmall p, .text-xsmall span, .text-xsmall div, .text-xsmall li, .text-xsmall ul, .text-xsmall a {
+      font-size: 0.8rem; } }
+@media screen and (min-width: 641px) {
+  h1 {
+    font-size: 2rem; }
+
+  h2 {
+    font-size: 1.8rem; }
+
+  h3 {
+    font-size: 1.5rem; }
+
+  h4 {
+    font-size: 1.3rem; }
+
+  h5 {
+    font-size: 1rem; }
+
+  h6 {
+    font-size: 0.8rem; }
+
+  .text-xlarge {
+    font-size: 2rem !important; }
+    .text-xlarge p, .text-xlarge span, .text-xlarge div, .text-xlarge li, .text-xlarge ul, .text-xlarge a {
+      font-size: 2rem; }
+
+  .text-large {
+    font-size: 1.8rem !important; }
+    .text-large p, .text-large span, .text-large div, .text-large li, .text-large ul, .text-large a {
+      font-size: 1.8rem; }
+
+  .text-medium {
+    font-size: 1.5rem !important; }
+    .text-medium p, .text-medium span, .text-medium div, .text-medium li, .text-medium ul, .text-medium a {
+      font-size: 1.5rem; }
+
+  .text-normal {
+    font-size: 1.3rem !important; }
+    .text-normal p, .text-normal span, .text-normal div, .text-normal li, .text-normal ul, .text-normal a {
+      font-size: 1.3rem; }
+
+  .text-small {
+    font-size: 1rem !important; }
+    .text-small p, .text-small span, .text-small div, .text-small li, .text-small ul, .text-small a {
+      font-size: 1rem; }
+
+  .text-xsmall {
+    font-size: 0.8rem !important; }
+    .text-xsmall p, .text-xsmall span, .text-xsmall div, .text-xsmall li, .text-xsmall ul, .text-xsmall a {
+      font-size: 0.8rem; } }
+@media screen and (min-width: 1025px) {
+  h1 {
+    font-size: 2rem; }
+
+  h2 {
+    font-size: 1.8rem; }
+
+  h3 {
+    font-size: 1.5rem; }
+
+  h4 {
+    font-size: 1.3rem; }
+
+  h5 {
+    font-size: 1rem; }
+
+  h6 {
+    font-size: 0.8rem; }
+
+  .text-xlarge {
+    font-size: 2rem !important; }
+    .text-xlarge p, .text-xlarge span, .text-xlarge div, .text-xlarge li, .text-xlarge ul, .text-xlarge a {
+      font-size: 2rem; }
+
+  .text-large {
+    font-size: 1.8rem !important; }
+    .text-large p, .text-large span, .text-large div, .text-large li, .text-large ul, .text-large a {
+      font-size: 1.8rem; }
+
+  .text-medium {
+    font-size: 1.5rem !important; }
+    .text-medium p, .text-medium span, .text-medium div, .text-medium li, .text-medium ul, .text-medium a {
+      font-size: 1.5rem; }
+
+  .text-normal {
+    font-size: 1.3rem !important; }
+    .text-normal p, .text-normal span, .text-normal div, .text-normal li, .text-normal ul, .text-normal a {
+      font-size: 1.3rem; }
+
+  .text-small {
+    font-size: 1rem !important; }
+    .text-small p, .text-small span, .text-small div, .text-small li, .text-small ul, .text-small a {
+      font-size: 1rem; }
+
+  .text-xsmall {
+    font-size: 0.8rem !important; }
+    .text-xsmall p, .text-xsmall span, .text-xsmall div, .text-xsmall li, .text-xsmall ul, .text-xsmall a {
+      font-size: 0.8rem; } }
+#kids-classes .background {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: url(../img/kidvaultingdarkened.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  z-index: -2; }
+#kids-classes .background-filter {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: black;
+  opacity: 0.3;
+  z-index: -1; }
 
-.main-section {
-  padding-left: 0px !important;
-  padding-right: 0px !important; }
-
-#main h1, #main h2, #main h3, #main h4, #main h5, #main h6, #main .header-button {
-  color: #EEE !important; }
-#main strong {
-  font-size: 1.2em; }
-#main a {
-  color: #02ABF8 !important;
-  font-weight: bold;
-  text-decoration: underline !important;
-  cursor: pointer; }
-#main #coaches .coach {
+#coaches .coach {
   margin-bottom: 20px; }
-  #main #coaches .coach img {
+  #coaches .coach img {
     max-height: 260px; }
-#main .section-title {
-  background-color: rgba(23, 27, 99, 0.25); }
-#main .header-button {
-  margin-top: 30px;
-  font-size: 2em;
-  text-decoration: none !important; }
 
-.inline-list li {
-  text-decoration: none;
-  display: inline; }
-
-.center-text {
-  text-align: center; }
-
-.center {
-  display: block;
-  margin-left: auto !important;
-  margin-right: auto !important; }
-
-/* Makes the off-canvas navigation menu highlight properly */
-aside .off-canvas-list li.active {
-  background-color: #008CBA; }
-
-ul.plain {
-  list-style-type: none; }
-
-.title {
-  white-space: nowrap;
-  text-overflow: ellipsis; }
-
-.text-large {
-  font-size: 1.8em !important; }
-  .text-large p, .text-large span, .text-large div, .text-large li, .text-large td, .text-large th {
-    font-size: 1.8em; }
-
-.text-medium {
-  font-size: 1.2em !important; }
-  .text-medium p, .text-medium span, .text-medium div, .text-medium li, .text-medium td, .text-medium th {
-    font-size: 1.2em; }
-
-.text-small {
-  font-size: 0.8em !important; }
-  .text-small p, .text-small span, .text-small div, .text-small li, .text-small td, .text-small th {
-    font-size: 0.8em; }
-
-.text-xsmall {
-  font-size: 0.7em !important; }
-  .text-xsmall p, .text-xsmall span, .text-xsmall div, .text-xsmall li, .text-xsmall td, .text-xsmall th {
-    font-size: 0.7em; }
-
-#whatIsParkourModal {
-  background-color: #333333; }
+#adult-classes .background {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: url(../img/railvault.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: -2; }
+#adult-classes .background-filter {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: black;
+  opacity: 0.3;
+  z-index: -1; }
 
 /*# sourceMappingURL=style.css.map */

@@ -25,13 +25,17 @@ app.config(function($routeProvider, $locationProvider){
 			controller: 'HomeController',
 			templateUrl: 'views/home.html'
 		})
-		.when('/classes', {
-			controller: 'ClassesController',
-			templateUrl: 'views/classes.html'
+		.when('/adult-classes', {
+			controller: 'AdultClassesController',
+			templateUrl: 'views/adult-classes.html'
+		})
+		.when('/kids-classes', {
+			controller: 'KidsClassesController',
+			templateUrl: 'views/kids-classes.html'
 		})
 		.when('/private-lessons', {
 			controller: 'PrivateLessonsController',
-			templateUrl: 'views/privateLessons.html'
+			templateUrl: 'views/private-lessons.html'
 		})
 		.when('/coaches', {
 			controller: 'CoachesController',
@@ -66,38 +70,19 @@ app.factory('CarouselItems', function($resource){
 });
 
 app.factory('Page', function(){
-	var titles = {
-		homeTitle: 'Parkour Endure - A parkour community for the Scranton area',
-		classesTitle: 'Parkour Endure - Classes in the Scranton area',
-		privateLessonsTitle: 'Parkour Endure - Private lessons in the Scranton area',
-		coachesTitle: 'Parkour Endure - Coaches in the Scranton area',
-		contactTitle: 'Parkour Endure - Contact details'
-	};
 
 	var descriptions = {
-		homeDescription: 'Parkour and freerunning community, classes, and lessons for the Scranton and Wilkes-Barre, Pennsylvania regions.',
-		classesDescription: 'Parkour and freerunning classes in the Scranton and Wilkes-Barre, Pennsylvania regions.',
-		privateLessonsDescription: 'Parkour and freerunning private lessons in the Scranton and Wilkes-Barre, Pennsylvania regions.',
-		coachesDescription: 'Parkour and freerunning coaches in the Scranton and Wilkes-Barre, Pennsylvania regions.',
+		homeDescription: 'Parkour and freerunning community, classes, and lessons in Scranton, Pennsylvania.',
+		adultClassesDescription: 'Adult parkour and freerunning classes in Scranton, Pennsylvania.',
+		kidsClassesDescription: 'Kids parkour and freerunning classes in Scranton, Pennsylvania.',
+		privateLessonsDescription: 'Parkour and freerunning private lessons in Scranton, Pennsylvania.',
+		coachesDescription: 'Parkour and freerunning coaches in Scranton, Pennsylvania.',
 		contactDescription: 'Contact information for Parkour Endure in Scranton, Pennsylvania.'
 	}
 
-
-	var currentTitle = titles['homeTitle'];
 	var currentDescription = descriptions['homeDescription'];
 
 	return {
-		title: function(){
-			return currentTitle;
-		},
-		setTitle: function(newTitle){
-			if(titles[newTitle]){
-				currentTitle = titles[newTitle];
-			}
-			else{
-				currentTitle = titles['homeTitle'];
-			}
-		},
 		description: function(){
 			return currentDescription;
 		},
@@ -117,52 +102,30 @@ app.controller('MainController', function($scope, Page){
 });
 
 app.controller('HomeController', function($scope, $location, Page){
-	Page.setTitle('hometitle');
 	Page.setDescription('homeDescription');
 	$scope.url = $location.absUrl();
 });
 
-app.controller('ClassesController', function($scope, Page){
-	Page.setTitle('classesTitle');
-	Page.setDescription('classesDescription');
+app.controller('AdultClassesController', function($scope, Page){
+	Page.setDescription('adultClassesDescription');
+});
+
+app.controller('KidsClassesController', function($scope, Page){
+	Page.setDescription('kidsClassesDescription');
 });
 
 app.controller('PrivateLessonsController', function($scope, Page){
-	Page.setTitle('privateLessonsTitle');
 	Page.setDescription('privateLessonsDescription');
 });
 
 app.controller('CoachesController', function($scope, Coaches, Page){
-	Page.setTitle('coachesTitle');
 	Page.setDescription('coachesDescription');
 	$scope.coaches = Coaches.query();
 	$scope.selected = {index:0};
 });
 
 app.controller('ContactController', function($scope, Page){
-	Page.setTitle('contactTitle');
 	Page.setDescription('contactDescription');
-});
-
-app.controller('CarouselController', function($scope, $http, $timeout, CarouselItems){
-	$scope.carouselItems = CarouselItems.query({}, function(data, headers){
-		//This is required to run Slick after Angular renders the view.
-		$timeout(function () { $scope.runSlickOnCarousel(); }, 0); //0ms timeout
-	});
-
-	$scope.runSlickOnCarousel = function()
-    {
-		$('.slick-carousel').slick({
-			autoplay: true,
-			autoplaySpeed: 3000,
-			dots: false,
-			infinite: true,
-			pauseOnHover: false,
-			speed: 750,
-			swipe: true,
-			touchMove: true,
-		});
-    };
 });
 
 app.controller('EmailListController', function($scope, $http, $timeout, EmailList){

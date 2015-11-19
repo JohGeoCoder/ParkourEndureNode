@@ -3,7 +3,7 @@
 	<p class="text-center show-for-medium-down">Press on an image for more details about the coach</p>
 	
 	<!-- The list of coaches -->
-	<div class="coach small-12 medium-4 columns" ng-repeat="coach in coaches">
+	<div class="coach small-12 medium-6 columns" ng-repeat="coach in coaches">
 		<h3 class="text-center">{{coach.firstName}} {{coach.lastName}}</h3>
 		<a data-reveal-id="coachModal" ng-click="selected.index = $index">
 			<div class="image-container hide-for-small-only">
@@ -13,7 +13,7 @@
 				<img class="center small-6" src="{{coach.imageUrl}}"></img>
 			</div>
 		</a>
-		<div class="coach-description text-justify">
+		<div class="coach-description text-justify text-normal">
 			<p class="show-for-large-up">{{coach.details}}</p>
 		</div>
 	</div>
@@ -24,7 +24,7 @@
 		<div class="image-container">
 			<img class="center small-6" ng-src="{{coaches[selected.index].imageUrl}}"></img>
 		</div>
-		<p>{{coaches[selected.index].details}}</p>
+		<p class="text-normal">{{coaches[selected.index].details}}</p>
 		<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 	</div>
 </div>	

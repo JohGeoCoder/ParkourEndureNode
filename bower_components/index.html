@@ -7,10 +7,9 @@
     <meta name="robots" content="index, follow" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
+    <link rel='stylesheet' href='/normalize-css/normalize.css' />
     <link rel="stylesheet" id="google-font-lato-css" href="//fonts.googleapis.com/css?family=Lato%3A400%2C300%2C700%7CGentium+Book+Basic&amp;ver=1.0" type="text/css" media="all">
     <link rel='stylesheet' href='/foundation/css/foundation.css' />
-    <link rel='stylesheet' href='/foundation/css/normalize.css' />
-    <link rel='stylesheet' href='/slick/slick.css' />
     <link rel='stylesheet' href='/css/style.css' />
     <base href="/" />
   </head>
@@ -47,11 +46,12 @@
 
         <div class="leftNavigation">
           <a data-nav-target="home" href="{{$location.host()}}/">Home</a>
-          <a data-nav-target="classes" href="{{$location.host()}}/classes">Classes</a>
-          <a data-nav-target="privateLessons" href="{{$location.host()}}/private-lessons">Private Lessons</a>
+          <a data-nav-target="adult-classes" href="{{$location.host()}}/adult-classes">Adult Classes</a>
+          <a data-nav-target="kids-classes" href="{{$location.host()}}/kids-classes">Kids Classes</a>
+          <a data-nav-target="private-lessons" href="{{$location.host()}}/private-lessons">Private Lessons</a>
           <a data-nav-target="coaches" href="{{$location.host()}}/coaches">The Coaches</a>
-          <a data-reveal-id="whatIsParkourModal" href="#">What is Parkour?</a>
           <a data-nav-target="contact" class="contact-nav" href="{{$location.host()}}/contact">Contact Us</a>
+          <a data-reveal-id="whatIsParkourModal" href="#">What is Parkour?</a>
 
           <div class="center text-justify text-medium small-11" ng-controller="EmailListController">
             <p>
@@ -103,8 +103,9 @@
           <ul class="off-canvas-list">
             <li><label>Navigation</label></li>
             <li data-nav-target="home"><a href="{{$location.host()}}/">Home</a></li>
-            <li data-nav-target="classes"><a href="{{$location.host()}}/classes">Classes</a></li>
-            <li data-nav-target="privateLessons"><a href="{{$location.host()}}/private-lessons">Private Lessons</a></li>
+            <li data-nav-target="adult-classes"><a href="{{$location.host()}}/adult-classes">Adult Classes</a></li>
+            <li data-nav-target="kids-classes"><a data-nav-target="kids-classes" href="{{$location.host()}}/kids-classes">Kids Classes</a></li>
+            <li data-nav-target="private-lessons"><a href="{{$location.host()}}/private-lessons">Private Lessons</a></li>
             <li data-nav-target="coaches"><a href="{{$location.host()}}/coaches">The Coaches</a></li>
             <li data-nav-target="contact"><a href="{{$location.host()}}/contact">Contact Us</a></li>
             <li><a data-reveal-id="whatIsParkourModal" href="#">What is Parkour?</a></li>
@@ -118,29 +119,25 @@
   <div id="whatIsParkourModal" class="reveal-modal medium" data-reveal>
     <h3 class="text-center">What is Parkour?</h3>
     <div class="text-justify">
-      <p>In a nutshell, parkour is a discipline of movement that focuses on self-improvement through creative use of the practitioner's surroundings.</p>
-      <p>There are a few main ideas that make parkour stand out from other physical disciplines and sports.</p>
-      <ul class="plain">
-        <li>
-          <h3><strong>Core Values</strong></h3> 
-          <p class="text-center"><strong>Perseverance, Courage, Humility, Integrity, Respect</strong></p>
-          <p>
-            Traditional sports end at the sound of a buzzer, a certain score is reached, or when the opponent taps out. In parkour, the game never ends. With even occasional training and dedication, parkour's Five Core Values become part of your everyday life.
-          </p>
-        </li>
-        <li>
-          <h3><strong>Autonomy</strong></h3>
-          <p>
-            A parkour practitioner has no adversary or opponent to focus on. The only tools you need are the shirt on your back and a pair of shoes. The world is your playing field and your mind is your opponent. Parkour is a discipline that can be practiced in a completely individualistic manner, but it doesn't have to be.
-          </p>
-        </li>
-        <li>
-          <h3><strong>Discovery</strong></h3>
-          <p>
-            Not only is parkour about finding places to train or moves to try, but also it is about tapping into the creative side of yourself. Exploration helps us learn our capabilities and areas of improvement. It also helps us find fun and creative ways to approach various obstacles, whether they be physical or otherwise.
-          </p>
-        </li>
-      </ul>
+      <p>
+        In a nutshell, parkour is a discipline of movement that focuses on self-improvement through creative use of the practitioner's surroundings.
+      </p>
+      <p>
+        There are a few main ideas that make parkour stand out from other physical disciplines and sports.
+      </p>
+      <h3><strong>Core Values</strong></h3> 
+      <p class="text-center"><strong>Perseverance, Courage, Humility, Integrity, Respect</strong></p>
+      <p>
+        Traditional sports end at the sound of a buzzer, a certain score is reached, or when the opponent taps out. In parkour, the game never ends. With even occasional training and dedication, parkour's Five Core Values become part of your everyday life.
+      </p>
+      <h3><strong>Autonomy</strong></h3>
+      <p>
+        A parkour practitioner has no adversary or opponent to focus on. The only tools you need are the shirt on your back and a pair of shoes. The world is your playing field and your mind is your opponent. Parkour is a discipline that can be practiced in a completely individualistic manner, but it doesn't have to be.
+      </p>
+      <h3><strong>Discovery</strong></h3>
+      <p>
+        Not only is parkour about finding places to train or moves to try, but also it is about tapping into the creative side of yourself. Exploration helps us learn our capabilities and areas of improvement. It also helps us find fun and creative ways to approach various obstacles, whether they be physical or otherwise.
+      </p>
     </div>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>

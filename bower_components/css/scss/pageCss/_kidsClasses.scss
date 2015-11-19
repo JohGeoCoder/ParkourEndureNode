@@ -1,0 +1,27 @@
+#kids-classes {
+	.background {
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+
+		background: url(../img/kidvaultingdarkened.jpg) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		z-index: -2;
+	}
+	
+	.background-filter {
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		background-color: black;
+		opacity: 0.3;
+		z-index: -1;
+	}
+}

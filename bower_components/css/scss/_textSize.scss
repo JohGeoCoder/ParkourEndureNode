@@ -1,0 +1,195 @@
+$s-xlarge-text: 2.0rem;
+$s-large-text: 1.8rem;
+$s-medium-text: 1.5rem;
+$s-normal-text: 1.3rem;
+$s-small-text: 1.0rem;
+$s-xsmall-text: 0.8rem;
+
+$m-xlarge-text: 2.0rem;
+$m-large-text: 1.8rem;
+$m-medium-text: 1.5rem;
+$m-normal-text: 1.3rem;
+$m-small-text: 1.0rem;
+$m-xsmall-text: 0.8rem;
+
+$l-xlarge-text: 2.0rem;
+$l-large-text: 1.8rem;
+$l-medium-text: 1.5rem;
+$l-normal-text: 1.3rem;
+$l-small-text: 1.0rem;
+$l-xsmall-text: 0.8rem;
+
+html {
+	font-size: 16px;
+}
+
+@media screen and (max-width: 640px){
+	h1 { font-size: $s-xlarge-text; }
+	h2 { font-size: $s-large-text; }
+	h3 { font-size: $s-medium-text; }
+	h4 { font-size: $s-normal-text; }
+	h5 { font-size: $s-small-text; }
+	h6 { font-size: $s-xsmall-text; }
+
+	.text-xlarge{
+		font-size: $s-xlarge-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $s-xlarge-text;
+		}
+	}
+
+	.text-large{
+		font-size: $s-large-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $s-large-text;
+		}
+	}
+
+	.text-medium{
+		font-size: $s-medium-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $s-medium-text;
+		}
+	}
+
+	.text-normal{
+		font-size: $s-normal-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $s-normal-text;
+		}
+	}
+
+	.text-small{
+		font-size: $s-small-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $s-small-text;
+		}
+	}
+
+	.text-xsmall{
+		font-size: $s-xsmall-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $s-xsmall-text;
+		}
+	}
+}
+
+@media screen and (min-width: 641px){
+	h1 { font-size: $m-xlarge-text; }
+	h2 { font-size: $m-large-text; }
+	h3 { font-size: $m-medium-text; }
+	h4 { font-size: $m-normal-text; }
+	h5 { font-size: $m-small-text; }
+	h6 { font-size: $m-xsmall-text; }
+
+	.text-xlarge{
+		font-size: $m-xlarge-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $m-xlarge-text;
+		}
+	}
+
+	.text-large{
+		font-size: $m-large-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $m-large-text;
+		}
+	}
+
+	.text-medium{
+		font-size: $m-medium-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $m-medium-text;
+		}
+	}
+
+	.text-normal{
+		font-size: $m-normal-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $m-normal-text;
+		}
+	}
+
+	.text-small{
+		font-size: $m-small-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $m-small-text;
+		}
+	}
+
+	.text-xsmall{
+		font-size: $m-xsmall-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $m-xsmall-text;
+		}
+	}
+}
+
+@media screen and (min-width: 1025px){
+	h1 { font-size: $l-xlarge-text; }
+	h2 { font-size: $l-large-text; }
+	h3 { font-size: $l-medium-text; }
+	h4 { font-size: $l-normal-text; }
+	h5 { font-size: $l-small-text; }
+	h6 { font-size: $l-xsmall-text; }
+
+	.text-xlarge{
+		font-size: $l-xlarge-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $l-xlarge-text;
+		}
+	}
+
+	.text-large{
+		font-size: $l-large-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $l-large-text;
+		}
+	}
+
+	.text-medium{
+		font-size: $l-medium-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $l-medium-text;
+		}
+	}
+
+	.text-normal{
+		font-size: $l-normal-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $l-normal-text;
+		}
+	}
+
+	.text-small{
+		font-size: $l-small-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $l-small-text;
+		}
+	}
+
+	.text-xsmall{
+		font-size: $l-xsmall-text !important;
+
+		p,span,div,li,ul,a {
+			font-size: $l-xsmall-text;
+		}
+	}
+}

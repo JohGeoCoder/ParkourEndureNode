@@ -24,18 +24,6 @@ app.route('/api/coaches')
 		res.json(record);
 	});
 
-app.route('/api/carousel')
-	.get(function(req, res){
-		db.collection('carouselItems').find().toArray(function(err, result){
-			if(err){
-				throw err;
-			} else{
-				res.json(result);
-			}
-			
-		});
-	});
-
 app.route('/api/mailing-list')
 	.post(function(req, res){
 		db.collection('emailList').insert({email: req.body['email']}, function(err, result) {

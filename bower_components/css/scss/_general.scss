@@ -1,3 +1,102 @@
+html {
+	font-family: 'Gentium Book Basic', serif !important;
+	font-size: 16px;
+}
+
+body {
+	color: $text-color-primary !important;
+}
+
+a:not(.button, .button-link) {
+	color: $link-color !important;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a.button {
+	color: $text-color-primary !important;
+	cursor: pointer;
+}
+
+a.button-link {
+	margin-top: 30px;
+	font-size: 2em;
+	text-decoration: none;
+}
+
+p {
+	margin-bottom: 0.5rem;
+}
+
+h1, h2, h3, h4, h5, h6, .header-button {
+	color: $text-color-primary !important;
+}
+
+#background {
+	background: url(../img/friendsdarkened.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.main-section{
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+#main{	
+	font-family: 'Gentium Book Basic', serif;
+	color: $text-color-primary;
+	-webkit-text-fill-color: $text-color-primary; /* Will override color (regardless of order) */
+	-webkit-text-stroke-width: $text-stroke-width;
+	-webkit-text-stroke-color: $text-stroke-color;
+		
+	a:not(.button, .button-link) {
+		color: $link-color !important;
+		-webkit-text-fill-color: $link-color; /* Will override color (regardless of order) */
+		-webkit-text-stroke-width: $text-stroke-width;
+		-webkit-text-stroke-color: $text-stroke-color;
+		font-weight: bold;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	.section-title{
+		margin: 0;
+		background-color: rgba(23, 27, 99, 0.25);
+	}
+}
+
+.center{
+	display: block;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+/* Makes the off-canvas navigation menu highlight properly */
+aside .off-canvas-list li.active {
+	background-color: #008CBA;
+}
+
+ul.list-indent{
+	margin-left: 20px;
+}
+
+ul.plain{
+	list-style-type: none;
+}
+
+.title {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.reveal-modal {
+	background-color: rgb(51, 51, 51);
+}
+
 div.important
 {
   border-style : Solid;
