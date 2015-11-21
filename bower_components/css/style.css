@@ -150,6 +150,8 @@ div.important {
     background-color: rgba(0, 0, 0, 0.5); }
   .leftNavigation a:hover:not(.active) {
     background-color: rgba(255, 255, 255, 0.5); }
+  .leftNavigation [data-reveal-id="whatIsParkourModal"] {
+    background-color: rgba(255, 115, 0, 0.35); }
 
 .header {
   position: relative; }

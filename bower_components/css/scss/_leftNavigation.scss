@@ -20,4 +20,8 @@
 	a:hover:not(.active){
 		background-color: rgba(255,255,255,0.5);
 	}
+
+	[data-reveal-id="whatIsParkourModal"]{
+		background-color: rgba(255, 115, 0, 0.35);
+	}
 }
