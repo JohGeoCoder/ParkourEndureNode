@@ -79,8 +79,13 @@ app.factory('Page', function(){
 		coachesDescription: 'Parkour and freerunning coaches in Scranton, Pennsylvania.',
 		contactDescription: 'Contact information for Parkour Endure in Scranton, Pennsylvania.'
 	}
-
 	var currentDescription = descriptions['homeDescription'];
+
+	var backgroundImageClasses = {
+		kidsClass: 'kids-class',
+		adultClass: 'adult-class'
+	}
+	var currentBackground = '';
 
 	return {
 		description: function(){
@@ -93,6 +98,17 @@ app.factory('Page', function(){
 			else{
 				currentDescription = descriptions['homeDescription'];
 			}
+		},
+		background: function(){
+			return currentBackground;
+		},
+		setBackground: function(newBackground){
+			if(backgroundImageClasses[newBackground]){
+				currentBackground = backgroundImageClasses[newBackground];
+			}
+			else{
+				currentBackground = '';
+			}
 		}
 	};
 });
@@ -103,29 +119,35 @@ app.controller('MainController', function($scope, Page){
 
 app.controller('HomeController', function($scope, $location, Page){
 	Page.setDescription('homeDescription');
+	Page.setBackground('');
 	$scope.url = $location.absUrl();
 });
 
 app.controller('AdultClassesController', function($scope, Page){
 	Page.setDescription('adultClassesDescription');
+	Page.setBackground('adultClass');
 });
 
 app.controller('KidsClassesController', function($scope, Page){
 	Page.setDescription('kidsClassesDescription');
+	Page.setBackground('kidsClass');
 });
 
 app.controller('PrivateLessonsController', function($scope, Page){
 	Page.setDescription('privateLessonsDescription');
+	Page.setBackground('');
 });
 
 app.controller('CoachesController', function($scope, Coaches, Page){
 	Page.setDescription('coachesDescription');
+	Page.setBackground('');
 	$scope.coaches = Coaches.query();
 	$scope.selected = {index:0};
 });
 
 app.controller('ContactController', function($scope, Page){
 	Page.setDescription('contactDescription');
+	Page.setBackground('');
 });
 
 app.controller('EmailListController', function($scope, $http, $timeout, EmailList){

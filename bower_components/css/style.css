@@ -46,7 +46,9 @@ h1, h2, h3, h4, h5, h6, .header-button {
 
 .main-section {
   padding-left: 0px !important;
-  padding-right: 0px !important; }
+  padding-right: 0px !important;
+  height: 100%;
+  overflow-y: auto; }
 
 #main .section-title {
   margin: 0;
@@ -92,7 +94,6 @@ div.important {
     display: none; }
 
   .stuff {
-    overflow-y: auto;
     position: absolute;
     top: 0px;
     bottom: 0px;
@@ -114,7 +115,6 @@ div.important {
     width: 200px; }
 
   .stuff {
-    overflow-y: auto;
     position: absolute;
     top: 42px;
     bottom: 0px;
@@ -364,46 +364,30 @@ html {
     font-size: 0.8rem !important; }
     .text-xsmall p, .text-xsmall span, .text-xsmall div, .text-xsmall li, .text-xsmall ul, .text-xsmall a {
       font-size: 0.8rem; } }
-#kids-classes .background {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  background: url(../img/kidvaultingdarkened.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  z-index: -2; }
-#kids-classes .background-filter {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  background-color: black;
-  opacity: 0.3;
-  z-index: -1; }
-
 #coaches .coach {
   margin-bottom: 20px; }
   #coaches .coach img {
     max-height: 260px; }
 
-#adult-classes .background {
+[background-image] {
   position: absolute;
   top: 0px;
-  bottom: 0px;
   left: 0px;
+  bottom: 0px;
   right: 0px;
-  background: url(../img/railvault.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   z-index: -2; }
-#adult-classes .background-filter {
+
+[background-image="adult-class"] {
+  background: url(../img/railvault.jpg) no-repeat center center fixed; }
+
+[background-image="kids-class"] {
+  background: url(../img/kidvaultingdarkened.jpg) no-repeat center center fixed; }
+
+.background-image-filter {
   position: absolute;
   top: 0px;
   bottom: 0px;

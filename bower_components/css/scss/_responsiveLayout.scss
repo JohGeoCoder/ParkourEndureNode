@@ -12,7 +12,6 @@ $navigation-width: 200px;
 	}
 
 	.stuff {
-		overflow-y: auto;
 		position: absolute;
 		top: 0px;
 		bottom: 0px;
@@ -40,7 +39,6 @@ $navigation-width: 200px;
 	}
 
 	.stuff {
-		overflow-y: auto;
 		position: absolute;
 		top: $header-height;
 		bottom: 0px;
