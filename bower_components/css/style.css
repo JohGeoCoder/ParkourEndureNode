@@ -159,7 +159,7 @@ div.important {
     background-image: url("../img/ParkourEndure.png");
     background-repeat: no-repeat;
     height: 100%;
-    width: 440px; }
+    width: 500px; }
     .header .logo a {
       display: block;
       width: 100%;
@@ -170,7 +170,7 @@ div.important {
     top: 0px;
     right: 0px;
     bottom: 0px;
-    left: 440px;
+    left: 500px;
     overflow: hidden; }
     @media screen and (max-width: 1024px) {
       .header .social-media-section .social-media {
