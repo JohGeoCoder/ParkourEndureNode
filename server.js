@@ -1,8 +1,10 @@
-var express = require('express'), 
-			bodyParser = require('body-parser'),
-			app = express();
+var express = require('express');
+var session = require('express-session');
+var bodyParser = require('body-parser');
 
-var MongoStore = require('connect-mongo')(express);
+var app = express();
+
+var MongoStore = require('connect-mongo')(session);
 
 var mongo = require('mongoskin')
 var db = mongo.db('mongodb://localhost:27017/pkendure');
@@ -11,13 +13,17 @@ ObjectID = mongo.ObjectID;
 app.use(bodyParser.json());
 app.use(express.static('./bower_components'));
 
-app.use(express.session({
+app.use(session({
+	genid: function(req){
+		return genuuid();
+	},
 	store: new MongoStore({
 		url: 'mongodb://localhost:27017/pkendure',
 		ttl: 7*24*60*60,
-		autoRemove: 'interval',
-		autoRemoveInterval: 10 //Minutes
+		autoRemove: 'native'
 	}),
+	resave: false,
+	saveUninitialized: false,
 	secret: '1234567890'
 }));
 
