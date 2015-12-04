@@ -113,6 +113,11 @@ app.factory('Page', function(){
 	};
 });
 
+app.factory('Login', function(){
+	var resourceResult = $resource('/login');
+	return resourceResult;
+});
+
 app.controller('MainController', function($scope, Page){
 	$scope.Page = Page;
 });
@@ -177,5 +182,13 @@ app.controller('EmailListController', function($scope, $http, $timeout, EmailLis
 	$scope.acceptEmailSubmit = function(){
 		$scope.newEmail.submittedEmail = '';
 		$scope.newEmail.submittedEmailId = '';
+	};
+});
+
+app.controller('LoginController', function($scope, Login){
+	$scope.newLogin = new Login();
+
+	$scope.attemptLogin = function(){
+		$scope.newLogin.$save();
 	};
 });
