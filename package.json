@@ -1,0 +1,14 @@
+{
+  "name": "scranton-parkour",
+  "main": "server.js",
+  "dependencies": {
+    "express" : "~4.13.3",
+    "body-parser" : "~1.13.2",
+    "connect-mongo" : "~0.8.2",
+    "express-session" : "~1.12.1",
+    "mongodb" : "~1.4.39",
+    "mongoskin" : "~1.4.13",
+    "password-hash-and-salt" : "~0.1.2",
+    "passport" : "~0.3.2"
+  }
+}
