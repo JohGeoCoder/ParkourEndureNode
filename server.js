@@ -2,19 +2,25 @@ var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
+/*var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;*/
 
 var app = express();
 
 var MongoStore = require('connect-mongo')(session);
 
-var mongo = require('mongoskin')
-var db = mongo.db('mongodb://localhost:27017/pkendure');
+var mongo = require('mongoskin');
+
+var configDB = require('./config/database.js');
+var db = mongo.db(configDB.url);
+
 ObjectID = mongo.ObjectID;
 
-passport.use(new LocalStrategy(
+/*passport.use(new LocalStrategy(
 	function(username, password, done){
+		console.log(username);
+		console.log(password);
+		console.log(done);
 		User.findOne({ username: username }, function(err, user){
 			if(err) { return done(err); }
 			if(!user){
@@ -28,12 +34,12 @@ passport.use(new LocalStrategy(
 			return done(null, user);
 		});
 	}
-));
+));*/
 
 app.use(bodyParser.json());
 app.use(express.static('./bower_components'));
 
-app.use(session({
+/*app.use(session({
 	genid: function(req){
 		return genuuid();
 	},
@@ -45,57 +51,8 @@ app.use(session({
 	resave: false,
 	saveUninitialized: false,
 	secret: '1234567890'
-}));
+}));*/
 
-app.route('/api/coaches')
-	.get(function(req, res){
-		db.collection('coaches').find().toArray(function(err, result){
-			if(err){
-				throw err;
-			} else{
-				res.json(result);
-			}
-		});
-	})
-	.post(function(req, res){
-		var record = req.body;
-		res.json(record);
-	});
-
-app.route('/api/mailing-list')
-	.post(function(req, res){
-		db.collection('emailList').insert({email: req.body['email']}, function(err, result) {
-			if(err){
-				throw result;
-			}
-			else{
-				res.json(result[0]);
-			}
-		});
-	});
-	
-
-app.route('/api/mailing-list/:emailId')
-	.delete(function(req, res){
-		db.collection('emailList').remove({'_id': new ObjectID(req.params.emailId)}, function(err, result){
-			if(err){
-				throw result;
-			} else {
-				res.json({result: 'success'});
-			}
-		});
-	});
-
-app.post('/login', 
-	passport.authenticate('local', {
-		successRedirect: '/',
-		failureRedirect: '/coaches',
-		failureFlash: false
-	})
-);
-
-app.get('*', function(req, res){
-	res.sendFile(__dirname + '/bower_components/index.html');
-});
+require('./app/routes.js')(app, db);
 
 app.listen(80);

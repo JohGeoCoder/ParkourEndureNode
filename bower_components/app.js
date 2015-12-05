@@ -113,8 +113,8 @@ app.factory('Page', function(){
 	};
 });
 
-app.factory('Login', function(){
-	var resourceResult = $resource('/login');
+app.factory('Login', function($resource){
+	var resourceResult = $resource('/api/login');
 	return resourceResult;
 });
 
