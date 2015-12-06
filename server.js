@@ -6,6 +6,9 @@ var mongo = require('mongoskin');
 
 var app = express();
 
+/* Set the Passport Strategy */
+passport.Strategy = require('passport-local').Strategy;
+
 /* Connect to the database */
 var configDB = require('./config/database.js');
 var db = mongo.db(configDB.url);
