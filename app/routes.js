@@ -38,9 +38,14 @@ module.exports = function(app, db, passport, mongo) {
 		passport.authenticate('local', {
 			successRedirect: '/',
 			failureRedirect: '/coaches',
-			failureFlash: false
+			failureFlash: true
 		})
 	);
+
+	app.get('/logout', function(req, res){
+		req.logout();
+		res.redirect('/');
+	})
 
 }
 
