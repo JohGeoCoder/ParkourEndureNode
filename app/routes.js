@@ -15,7 +15,7 @@ module.exports = function(app, db, passport, mongo) {
 	app.post('/api/mailing-list', function(req, res) {
 		db.collection('emailList').insert({email: req.body['email']}, function(err, result) {
 			if(err){
-				throw result;
+				throw err;
 			}
 			else{
 				res.json(result[0]);
@@ -26,7 +26,7 @@ module.exports = function(app, db, passport, mongo) {
 	app.delete('/api/mailing-list/:emailId', function(req, res) {
 		db.collection('emailList').remove({'_id': new ObjectID(req.params.emailId)}, function(err, result){
 			if(err){
-				throw result;
+				throw err;
 			} else {
 				res.json({result: 'success'});
 			}
@@ -34,13 +34,17 @@ module.exports = function(app, db, passport, mongo) {
 	});
 
 
-	app.post('/api/login', 
-		passport.authenticate('local', {
-			successRedirect: '/',
-			failureRedirect: '/coaches',
-			failureFlash: true
-		})
-	);
+	app.post('/api/login', passport.authenticate('local-login', {
+		successRedirect: '/',
+		failureRedirect: '/coaches',
+		failureFlash: true
+	}));
+
+	app.post('/api/signup', passport.authenticate('local-signup', {
+		successRedirect: '/',
+		failureRedirect: '/coaches',
+		failureFlash: true
+	}));
 
 	app.get('/logout', function(req, res){
 		req.logout();

@@ -2,22 +2,22 @@ var passhash = require('password-hash-and-salt');
 
 module.exports = {
 
-    findUser : function(db, username){
-        var user = {};
-
+    findUser : function(db, username, callback){
         db.collection('users').find({'username' : username}).toArray(function(err, result){
             if(err){
-                throw err;
+                callback(err, null);
             }
 
-            if(result[0]){
+            var user = {};
+
+            if(result.length > 0){
                 user = result[0];
             } else{
                 user = null;
             }
-        });
 
-        return user;
+            callback(null, user);
+        });
     },
 
     generateHash : function(password){

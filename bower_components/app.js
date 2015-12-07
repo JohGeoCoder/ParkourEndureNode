@@ -118,6 +118,11 @@ app.factory('Login', function($resource){
 	return resourceResult;
 });
 
+app.factory('Signup', function($resource){
+	var resourceResult = $resource('/api/signup');
+	return resourceResult;
+});
+
 app.controller('MainController', function($scope, Page){
 	$scope.Page = Page;
 });
@@ -191,4 +196,12 @@ app.controller('LoginController', function($scope, Login){
 	$scope.attemptLogin = function(){
 		$scope.newLogin.$save();
 	};
+});
+
+app.controller('SignUpController', function($scope, Signup){
+	$scope.newSignup = new Signup();
+
+	$scope.attemptSignup = function(){
+		$scope.newSignup.$save();
+	}
 });
