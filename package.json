@@ -11,6 +11,7 @@
     "password-hash-and-salt" : "~0.1.2",
     "passport" : "~0.3.2",
     "passport-local" : "~1.0.0",
-    "crypto" : "~0.0.3"
+    "crypto" : "~0.0.3",
+    "connect-flash" : "~0.1.1"
   }
 }

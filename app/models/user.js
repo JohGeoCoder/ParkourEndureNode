@@ -16,38 +16,33 @@ module.exports = {
                 user = null;
             }
 
+            
             callback(null, user);
         });
     },
 
-    generateHash : function(password){
-        var createdHash = "";
+    generateHash : function(password, callback){
         passhash(password).hash(function(error, hash){
             if(error){
-                throw new Error('Something went wrong!');
+                callback(error, null);
             }
 
-            createdHash = hash;
+            callback(null, hash);
         });
-
-        return createdHash;
     },
-    validPassword : function(password, hash){
-        var isVerified = false;
+    validPassword : function(password, hash, callback){
         passhash(password).verifyAgainst(hash, function(error, verified){
             if(error){
-                throw new Error('Something went wrong!');
+                callback(error, null);
             }
 
             if(!verified) {
-                isVerified = false;
+                callback(null, true);
             } else {
-                isVerified = true;
+                callback(null, false);
             }
 
         });
-
-        return isVerified;
     }
 
     

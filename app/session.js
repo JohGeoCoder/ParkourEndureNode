@@ -2,6 +2,7 @@ var crypto = require('crypto');
 var expressSession = require('express-session');
 var bodyParser = require('body-parser');
 var sessionConfig = require('./../config/sessionConfig.js');
+var flash = require('connect-flash');
 
 module.exports = function(app, express, passport, db) {
 	var MongoStore = require('connect-mongo')(expressSession);
@@ -29,6 +30,7 @@ module.exports = function(app, express, passport, db) {
 
 	app.use(passport.initialize());
 	app.use(passport.session());
+	app.use(flash());
 };
 
 function genUuid(callback) {

@@ -9,23 +9,29 @@ module.exports = function(db, passport) {
 			passReqToCallback: true
 		},
 		function(req, username, password, done) {
-
-			var user = User.findUser(db, username, function(err, user){
+			console.log("LOCAL-LOGIN: " + username + " " + password)
+			User.findUser(db, username, function(err, user){
 				if(err){
 					done(err, null);
 				}
 
-				console.log(user);
+				console.log("LOCAL-LOGIN: " + user);
 
 				if(!user){
 					done(null, false, { message: 'Incorrect username.' });
 				}
 
-				if(!User.validPassword(password, user.passhash)){
-					done(null, false, { message: 'Incorrect password.' });
-				}
+				User.validPassword(password, user.passhash, function(err, isValid){
+					if(err){
+						done(err, null);
+					}
 
-				done(null, user);
+					if(isValid){
+						done(null, user);
+					} else{
+						done(null, false, { message: 'Incorrect password.' })
+					}
+				});
 			});
 		}
 	));
@@ -51,20 +57,28 @@ module.exports = function(db, passport) {
 					if(user){
 						done(null, false);
 					} else {
-						var newUser = {
-							username: '',
-							passhash: ''
-						};
 
-						newUser['username'] = username;
-						newUser['passhash'] = User.generateHash(password);
-
-						db.collection('users').insert({user: newUser}, function(err, result){
+						User.generateHash(password, function(err, hash){
 							if(err){
-								throw err;
+								done(err, null);
 							}
 
-							done(null, newUser);
+							var newUser = {
+								username: '',
+								passhash: ''
+							};
+
+							newUser['username'] = username;
+							newUser['passhash'] = hash;
+
+							db.collection('users').insert(newUser, function(err, result){
+								if(err){
+									done(err, null);
+								}
+
+								done(null, newUser);
+							});
+
 						});
 					}
 				});
@@ -80,10 +94,11 @@ module.exports = function(db, passport) {
 	});
 
 	passport.deserializeUser(function(username, done) {
-		console.log(username);
-		var user = User.findUser(db, username, function(err, user){
+		console.log("DESERIALIZE: " + username);
+		User.findUser(db, username, function(err, user){
+			console.log("DESERIALIZE: " + user);
 			if(!user){
-				done(new Error('Could not deserialize user.'), null);
+				done(err, null);
 			} else{
 				done(null, user);
 			}

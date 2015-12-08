@@ -21,6 +21,11 @@ require('./app/routes.js')(app, db, passport, mongo);
 require('./app/passport.js')(db, passport);
 
 app.get('*', function(req, res){
+	if(req.user){
+		console.log("LOGGED IN : " + req.user);
+	} else{
+		console.log("NOT LOGGED IN");
+	}
 	res.sendFile(__dirname + '/bower_components/index.html');
 });
 

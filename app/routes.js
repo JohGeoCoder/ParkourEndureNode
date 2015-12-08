@@ -37,13 +37,13 @@ module.exports = function(app, db, passport, mongo) {
 	app.post('/api/login', passport.authenticate('local-login', {
 		successRedirect: '/',
 		failureRedirect: '/coaches',
-		failureFlash: true
+		failureFlash: false
 	}));
 
 	app.post('/api/signup', passport.authenticate('local-signup', {
 		successRedirect: '/',
 		failureRedirect: '/coaches',
-		failureFlash: true
+		failureFlash: false
 	}));
 
 	app.get('/logout', function(req, res){
