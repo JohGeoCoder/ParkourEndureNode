@@ -5,6 +5,8 @@ var sessionConfig = require('./../config/sessionConfig.js');
 var flash = require('connect-flash');
 
 module.exports = function(app, express, passport, db) {
+	
+	require('./../config/passport')(passport);
 	var MongoStore = require('connect-mongo')(expressSession);
 
 	app.use(express.static('./bower_components'));

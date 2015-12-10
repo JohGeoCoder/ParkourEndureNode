@@ -12,6 +12,10 @@
     "passport" : "~0.3.2",
     "passport-local" : "~1.0.0",
     "crypto" : "~0.0.3",
-    "connect-flash" : "~0.1.1"
+    "connect-flash" : "~0.1.1",
+    "mongoose" : "~4.2.10",
+    "bcrypt-nodejs" : "~0.0.3",
+    "morgan" : "~1.6.1",
+    "cookie-parser" : "~1.4.0"
   }
 }

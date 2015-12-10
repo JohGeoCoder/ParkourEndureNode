@@ -1,50 +1,25 @@
-var passhash = require('password-hash-and-salt');
+var mongoose = require('mongoose');
+var bcrypt   = require('bcrypt-nodejs');
 
-module.exports = {
+// define the schema for our user model
+var userSchema = mongoose.Schema({
 
-    findUser : function(db, username, callback){
-        db.collection('users').find({'username' : username}).toArray(function(err, result){
-            if(err){
-                callback(err, null);
-            }
-
-            var user = {};
-
-            if(result.length > 0){
-                user = result[0];
-            } else{
-                user = null;
-            }
-
-            
-            callback(null, user);
-        });
-    },
-
-    generateHash : function(password, callback){
-        passhash(password).hash(function(error, hash){
-            if(error){
-                callback(error, null);
-            }
-
-            callback(null, hash);
-        });
-    },
-    validPassword : function(password, hash, callback){
-        passhash(password).verifyAgainst(hash, function(error, verified){
-            if(error){
-                callback(error, null);
-            }
-
-            if(!verified) {
-                callback(null, true);
-            } else {
-                callback(null, false);
-            }
-
-        });
+    local            : {
+        username     : String,
+        password     : String,
     }
+}, { collection : 'users' });
 
-    
-
+// methods ======================
+// generating a hash
+userSchema.methods.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
+
+// checking if password is valid
+userSchema.methods.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.local.password);
+};
+
+// create the model for users and expose it to our app
+module.exports = mongoose.model('User', userSchema);

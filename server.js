@@ -1,24 +1,40 @@
-var express = require('express');
+var express  = require('express');
+var app      = express();
+var port     = process.env.PORT || 8080;
+var mongoose = require('mongoose');
 var passport = require('passport');
-var mongo = require('mongoskin');
+var flash    = require('connect-flash');
 
-var app = express();
+var morgan       = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser   = require('body-parser');
+var session      = require('express-session');
 
-/* Set the Passport Strategy */
-passport.Strategy = require('passport-local').Strategy;
+var configDB = require('./config/database.js');
 
 /* Connect to the database */
-var configDB = require('./config/database.js');
-var db = mongo.db(configDB.url);
+var db = mongoose.connection;
+mongoose.connect(configDB.url);
 
-/* Initialize the session */
-require('./app/session.js')(app, express, passport, db);
+require('./config/passport')(passport);
+
+app.use(morgan('dev')); // log every request to the console
+app.use(cookieParser()); // read cookies (needed for auth)
+app.use(bodyParser.json()); // get information from html forms
+
+var sessionConfig = require('./config/sessionConfig.js');
+app.use(session({
+	secret: sessionConfig.secretKey
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+app.use(express.static('./bower_components'));
 
 /* Include the routes */
-require('./app/routes.js')(app, db, passport, mongo);
-
-/* Include the Passport authentication */
-require('./app/passport.js')(db, passport);
+require('./app/routes.js')(app, passport, db);
 
 app.get('*', function(req, res){
 	if(req.user){
