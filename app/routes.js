@@ -4,51 +4,35 @@ var Email = require('./models/email');
 module.exports = function(app, passport, db) {
 
 	app.get('/api/coaches', function(req, res){
-
 		Coach.find({}, function(err, coaches){
 			res.json(coaches);
-			console.log(coaches);
 		});
-
-		/*Coach.findOne({}, function(err, coaches){
-			console.log(coaches);
-		});*/
-
-		/*db.collection('coaches').find().toArray(function(err, result){
-			if(err){
-				throw err;
-			} else{
-				res.json(result);
-			}
-		});*/
 	});
 
 	app.post('/api/mailing-list', function(req, res) {
-
 		var newEmail = new Email({email : req.body['email']});
 		newEmail.save(function(err){
-			Email.find({ '_id' : newEmail._id }, function(err, insertedEmail){
-				console.log(insertedEmail);
-			});
-		});
-		/*db.collection('emailList').insert({email: req.body['email']}, function(err, result) {
 			if(err){
-				throw err;
+				res.json({
+					'error' : err.message
+				});
 			}
-			else{
-				res.json(result[0]);
-			}
-		});*/
+
+			res.json(newEmail);
+		});
 	});
 		
 	app.delete('/api/mailing-list/:emailId', function(req, res) {
-		/*db.collection('emailList').remove({'_id': new ObjectID(req.params.emailId)}, function(err, result){
+		Email.remove({ '_id' : req.params.emailId}, function(err) {
 			if(err){
-				throw err;
-			} else {
-				res.json({result: 'success'});
+				res.json({
+					'errorMessage' : err.message,
+					'result' : false
+				});
 			}
-		});*/
+
+			res.json({ 'result' : true })
+		});
 	});
 
 
@@ -67,16 +51,24 @@ module.exports = function(app, passport, db) {
 	app.get('/api/logout', function(req, res){
 		req.logout();
 		res.redirect('/');
-	})
+	});
+
+	app.get('/api/admin', isLoggedIn, function(req, res){
+		res.redirect('/coaches');
+	});
 
 }
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
-
+	console.log("reached isLoggedIn() function");
     // if user is authenticated in the session, carry on 
-    if (req.isAuthenticated())
+    if (req.isAuthenticated()){
+    	console.log("Logged in");
         return next();
+    }
+
+    console.log("Not logged in!");
 
     // if they aren't redirect them to the home page
     res.redirect('/');

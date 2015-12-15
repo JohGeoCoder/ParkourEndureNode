@@ -18,13 +18,15 @@ mongoose.connect(configDB.url);
 
 require('./config/passport')(passport);
 
-app.use(morgan('dev')); // log every request to the console
+//app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
 
 var sessionConfig = require('./config/sessionConfig.js');
 app.use(session({
-	secret: sessionConfig.secretKey
+	secret: sessionConfig.secretKey,
+	resave: false,
+	saveUninitialized: false
 }));
 
 app.use(passport.initialize());
