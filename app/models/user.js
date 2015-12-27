@@ -7,6 +7,7 @@ var userSchema = mongoose.Schema({
     local            : {
         username     : String,
         password     : String,
+        isAdmin		 : Boolean,
     }
 }, { collection : 'users' });
 

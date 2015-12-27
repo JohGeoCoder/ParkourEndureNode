@@ -202,6 +202,8 @@ app.controller('SignUpController', function($scope, Signup){
 	$scope.newSignup = new Signup();
 
 	$scope.attemptSignup = function(){
+		console.log($scope.newSignup);
 		$scope.newSignup.$save();
+		$scope.newSignup = new Signup();
 	}
 });

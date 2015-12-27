@@ -80,6 +80,7 @@
         </div>
 
         <div class="stuff">
+          <div id="loginRevealer" data-reveal-id="loginModal" data-nav-target></div>
           <nav class="tab-bar show-for-small-only">
             <section class="left-small">
               <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
@@ -118,6 +119,23 @@
         <a class="exit-off-canvas"></a>
       </div>
     </div>
+
+  <div id="loginModal" class="reveal-modal small" data-reveal ng-controller="LoginController">
+    <p class="text-large">Log In</p>
+    <input type="text" ng-model="newLogin.username" />
+    <input type="password" ng-model="newLogin.password" />
+    <button ng-click="attemptLogin()">Log In</button>
+    <button id="signupRevealer" data-reveal-id="signupModal" data-nav-target>Create Account</button>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+
+  <div id="signupModal" class="reveal-modal small" data-reveal ng-controller="SignUpController">
+    <p class="text-large">Sign Up</p>
+    <input type="text" ng-model="newSignup.username" />
+    <input type="password" ng-model="newSignup.password" />
+    <button ng-click="attemptSignup()">Sign Up</button>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
 
   <div id="whatIsParkourModal" class="reveal-modal medium" data-reveal>
     <h3 class="text-center">What is Parkour?</h3>

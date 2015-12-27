@@ -43,35 +43,66 @@ module.exports = function(passport) {
         // User.findOne wont fire unless data is sent back
         process.nextTick(function() {
 
-        // find a user whose email is the same as the forms email
-        // we are checking to see if the user trying to login already exists
-        User.findOne({ 'local.username' :  username }, function(err, user) {
-            // if there are any errors, return the error
-            if (err)
-                return done(err);
+            User.findOne({}, function(err, user){
+                if(err){
+                    return done(err);
+                }
 
-            // check to see if theres already a user with that email
-            if (user) {
-                return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
-            } else {
+                console.log(user);
 
-                // if there is no user with that email
-                // create the user
-                var newUser            = new User();
+                if(user){
+                    return done(null, false, req.flash('signupMessage', 'Only one admin account is permitted at this time.'));
+                }
+                else{
+                    console.log("Before user");
+                    var newUser = new User();
+                    newUser.local.username = username;
+                    newUser.local.password = newUser.generateHash(password);
+                    newUser.local.isAdmin = true;
 
-                // set the user's local credentials
-                newUser.local.username    = username;
-                newUser.local.password = newUser.generateHash(password);
+                    console.log(newUser);
 
-                // save the user
-                newUser.save(function(err) {
-                    if (err)
-                        throw err;
-                    return done(null, newUser);
-                });
-            }
+                    newUser.save(function(err){
+                        if(err){
+                            throw err;
+                        }
 
-        });    
+                        return done(null, newUser);
+                    });
+                }
+            });
+
+            /*
+            // find a user whose email is the same as the forms email
+            // we are checking to see if the user trying to login already exists
+            User.findOne({ 'local.username' :  username }, function(err, user) {
+                // if there are any errors, return the error
+                if (err)
+                    return done(err);
+
+                // check to see if theres already a user with that email
+                if (user) {
+                    return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
+                } else {
+
+                    // if there is no user with that email
+                    // create the user
+                    var newUser            = new User();
+
+                    // set the user's local credentials
+                    newUser.local.username    = username;
+                    newUser.local.password = newUser.generateHash(password);
+
+                    // save the user
+                    newUser.save(function(err) {
+                        if (err)
+                            throw err;
+                        return done(null, newUser);
+                    });
+                }
+
+            });  
+            */  
 
         });
 
