@@ -45,6 +45,10 @@ app.config(function($routeProvider, $locationProvider){
 			controller: 'ContactController',
 			templateUrl: 'views/contact.html'
 		})
+		.when('/admin/email-list', {
+			controller: 'AdminEmailListController',
+			templateUrl: 'views/email-list.html'
+		})
 		.otherwise({
 			templateUrl: 'views/404.html'
 		});
@@ -61,6 +65,12 @@ app.factory('Coaches', function ($resource) {
 
 app.factory('EmailList', function ($resource){
 	var resourceResult = $resource('/api/mailing-list/:emailId', { emailId: '@emailId' });
+	return resourceResult;
+});
+
+app.factory('AdminEmailList', function($resource){
+	console.log("entered email factory");
+	var resourceResult = $resource('/api/admin/mailing-list');
 	return resourceResult;
 });
 
@@ -160,6 +170,11 @@ app.controller('ContactController', function($scope, Page){
 	Page.setBackground('');
 });
 
+app.controller('AdminEmailListController', function($scope, AdminEmailList){
+	$scope.emailList = AdminEmailList.query();
+	console.log($scope.emailList);
+});
+
 app.controller('EmailListController', function($scope, $http, $timeout, EmailList){
 	$scope.newEmail = new EmailList();
 
@@ -194,7 +209,8 @@ app.controller('LoginController', function($scope, Login){
 	$scope.newLogin = new Login();
 
 	$scope.attemptLogin = function(){
-		$scope.newLogin.$save();
+		$scope.newLogin.$save(function(data){
+		});
 	};
 });
 
@@ -202,8 +218,8 @@ app.controller('SignUpController', function($scope, Signup){
 	$scope.newSignup = new Signup();
 
 	$scope.attemptSignup = function(){
-		console.log($scope.newSignup);
-		$scope.newSignup.$save();
+		$scope.newSignup.$save(function(data){
+		});
 		$scope.newSignup = new Signup();
 	}
 });

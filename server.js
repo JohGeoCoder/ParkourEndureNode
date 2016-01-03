@@ -39,11 +39,6 @@ app.use(express.static('./bower_components'));
 require('./app/routes.js')(app, passport, db);
 
 app.get('*', function(req, res){
-	if(req.user){
-		console.log("LOGGED IN : " + req.user);
-	} else{
-		console.log("NOT LOGGED IN");
-	}
 	res.sendFile(__dirname + '/bower_components/index.html');
 });
 

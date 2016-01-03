@@ -1,0 +1,13 @@
+<h1 class="section-title text-center">Administration: Email List</h1>
+<div id="email-list" class="small-12">
+	<div class="text-medium text-center center" ng-controller="AdminEmailListController">
+		<div ng-repeat="email in emailList">
+		<p>{{email.email}}</p>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$("[data-nav-target]").removeClass('active');
+	$("[data-nav-target='contact']").addClass('active');
+</script>
