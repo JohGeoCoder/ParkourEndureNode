@@ -1,8 +1,17 @@
 <h1 class="section-title text-center">Administration: Email List</h1>
 <div id="email-list" class="small-12">
-	<div class="text-medium text-center center" ng-controller="AdminEmailListController">
-		<div ng-repeat="email in emailList">
-		<p>{{email.email}}</p>
+	<div class="text-medium" ng-controller="AdminEmailListController">
+		<div class="center">
+			<div class="emailListRow" ng-repeat="email in emailList">
+				<div class="emailContainer">
+					<p class="email">{{email.email}}</p>
+				</div>
+				
+				<div class="emailButtonContainer">
+					<button>Delete</button>
+				</div>
+				<p style="clear: both;"></p>
+			</div>
 		</div>
 	</div>
 </div>

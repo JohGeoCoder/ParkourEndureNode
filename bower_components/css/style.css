@@ -377,6 +377,29 @@ html {
   #coaches .coach img {
     max-height: 260px; }
 
+#email-list .emailListRow {
+  display: block;
+  width: 100%; }
+#email-list .emailContainer {
+  width: 70%;
+  float: left;
+  vertical-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0; }
+#email-list .emailButtonContainer {
+  width: 30%;
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative; }
+  #email-list .emailButtonContainer button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%); }
+
 [background-image] {
   position: absolute;
   top: 0px;

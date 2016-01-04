@@ -74,11 +74,6 @@ app.factory('AdminEmailList', function($resource){
 	return resourceResult;
 });
 
-app.factory('CarouselItems', function($resource){
-	var resourceResult = $resource('/api/carousel');
-	return resourceResult;
-});
-
 app.factory('Page', function(){
 
 	var descriptions = {

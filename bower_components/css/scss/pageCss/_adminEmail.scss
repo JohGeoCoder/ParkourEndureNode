@@ -1,0 +1,34 @@
+#email-list {
+	
+	.emailListRow {
+		display: block;
+		width: 100%;
+	}
+
+	.emailContainer {
+		width: 70%;
+		float: left;
+		vertical-align: center;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin: 0;
+	}
+
+	.emailButtonContainer {
+		width: 30%;
+		float: left;
+		padding-left: 10px;
+		padding-right: 10px;
+		position: relative;
+
+		button {
+			position: absolute;
+			top: 50%;
+			transform: translateY(50%);
+		}
+	}
+
+	
+}
