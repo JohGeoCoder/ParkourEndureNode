@@ -31,17 +31,31 @@ module.exports = function(app, passport, db) {
 	});
 
 	app.get('/api/admin/mailing-list', function(req, res){
-			Email.find({}, function(err, emails){
-				if(err){
-					throw err;
-				}
+		Email.find({}, function(err, emails){
+			if(err){
+				throw err;
+			}
 
-				res.json(emails);
-				console.log(emails);
-			});
+			res.json(emails);
+			console.log(emails);
+		});
 	});
 
-
+	app.delete('/api/admin/mailing-list/:emailId', function(req, res){
+		console.log("Entered admin email remove: " + req.params.emailId);
+		Email.remove({ '_id' : req.params.emailId}, function(err){
+			if(err){
+				res.json({
+					'errorMessage' : err.message,
+					'success' : false
+				})
+			} else{
+				res.json({
+					'success' : true
+				})
+			}
+		});
+	})
 		
 	app.delete('/api/mailing-list/:emailId', function(req, res) {
 		Email.remove({ '_id' : req.params.emailId}, function(err) {
@@ -50,18 +64,42 @@ module.exports = function(app, passport, db) {
 					'errorMessage' : err.message,
 					'result' : false
 				});
+			} else{
+				res.json({ 'result' : true })
 			}
-
-			res.json({ 'result' : true })
 		});
 	});
 
+	app.post('/api/login', function(req, res, next){
 
-	app.post('/api/login', passport.authenticate('local-login', {
+		passport.authenticate('local-login', function(err, user, info){
+			if(err){
+				res.json({ 'success' : false });
+				return next(err);
+			}
+
+			if(!user){
+				res.json({ 'success' : false });
+				return res.redirect('/');
+			}
+
+			req.logIn(user, function(err){
+				if(err){
+					res.json({ 'success' : false });
+					return next(err);
+				}
+
+				res.json({ 'success' : true })
+			})
+
+		})(req, res, next);
+	})
+
+/*	app.post('/api/login', passport.authenticate('local-login', {
 		successRedirect: '/',
 		failureRedirect: '/coaches',
 		failureFlash: true
-	}));
+	}));*/
 
 	app.post('/api/signup', passport.authenticate('local-signup', {
 		successRedirect: '/',
@@ -74,10 +112,9 @@ module.exports = function(app, passport, db) {
 		res.redirect('/');
 	});
 
-/*	app.get('/api/admin/*', authenticateRoute, function(req, res){});*/
-
-
-
+	app.get('/api/loginstatus', function(req, res){
+		res.json({'isLoggedIn' : req.user !== false});
+	});
 }
 
 // route middleware to make sure a user is logged in

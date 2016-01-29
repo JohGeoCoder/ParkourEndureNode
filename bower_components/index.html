@@ -122,6 +122,7 @@
 
   <div id="loginModal" class="reveal-modal small" data-reveal ng-controller="LoginController">
     <p class="text-large">Log In</p>
+    <div ng-if="Page.isLoggedIn()">Already Logged In!</div>
     <input type="text" ng-model="newLogin.username" />
     <input type="password" ng-model="newLogin.password" />
     <button ng-click="attemptLogin()">Log In</button>

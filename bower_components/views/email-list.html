@@ -2,13 +2,13 @@
 <div id="email-list" class="small-12">
 	<div class="text-medium" ng-controller="AdminEmailListController">
 		<div class="center">
-			<div class="emailListRow" ng-repeat="email in emailList">
+			<div class="emailListRow" ng-repeat="email in emails">
 				<div class="emailContainer">
 					<p class="email">{{email.email}}</p>
 				</div>
 				
 				<div class="emailButtonContainer">
-					<button>Delete</button>
+					<button ng-click="removeEmail(email._id)">Delete</button>
 				</div>
 				<p style="clear: both;"></p>
 			</div>

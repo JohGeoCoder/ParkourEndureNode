@@ -68,9 +68,9 @@ app.factory('EmailList', function ($resource){
 	return resourceResult;
 });
 
-app.factory('AdminEmailList', function($resource){
+app.factory('AdminEmailList', function ($resource){
 	console.log("entered email factory");
-	var resourceResult = $resource('/api/admin/mailing-list');
+	var resourceResult = $resource('/api/admin/mailing-list/:emailId', {emailId: '@emailRemoveId'});
 	return resourceResult;
 });
 
@@ -91,6 +91,7 @@ app.factory('Page', function(){
 		adultClass: 'adult-class'
 	}
 	var currentBackground = '';
+	var isLoggedIn = false;
 
 	return {
 		description: function(){
@@ -114,6 +115,12 @@ app.factory('Page', function(){
 			else{
 				currentBackground = '';
 			}
+		},
+		setLoggedIn: function(loggedIn){
+			isLoggedIn = loggedIn;
+		},
+		isLoggedIn: function(){
+			return isLoggedIn;
 		}
 	};
 });
@@ -125,6 +132,11 @@ app.factory('Login', function($resource){
 
 app.factory('Signup', function($resource){
 	var resourceResult = $resource('/api/signup');
+	return resourceResult;
+});
+
+app.factory('LoginStatus', function($resource){
+	var resourceResult = $resource('/api/loginstatus');
 	return resourceResult;
 });
 
@@ -165,12 +177,24 @@ app.controller('ContactController', function($scope, Page){
 	Page.setBackground('');
 });
 
-app.controller('AdminEmailListController', function($scope, AdminEmailList){
-	$scope.emailList = AdminEmailList.query();
-	console.log($scope.emailList);
+app.controller('AdminEmailListController', function($scope, $http, AdminEmailList){
+	$scope.adminEmailList = new AdminEmailList();
+	$scope.emails = AdminEmailList.query();
+
+	$scope.removeEmail = function(removeEmailId){
+		if(removeEmailId){
+			$scope.adminEmailList.emailRemoveId = removeEmailId;
+			console.log($scope.adminEmailList.emailRemoveId);
+			$scope.adminEmailList.$delete({'emailRemoveId' : $scope.adminEmailList.emailRemoveId}, function(data, headers){
+				if(data['success'] === true){
+					$scope.emails = AdminEmailList.query();
+				}
+			});
+		}
+	}
 });
 
-app.controller('EmailListController', function($scope, $http, $timeout, EmailList){
+app.controller('EmailListController', function($scope, $http, EmailList){
 	$scope.newEmail = new EmailList();
 
 	$scope.submitEmail = function(){
@@ -200,11 +224,17 @@ app.controller('EmailListController', function($scope, $http, $timeout, EmailLis
 	};
 });
 
-app.controller('LoginController', function($scope, Login){
+app.controller('LoginController', function($scope, Login, LoginStatus, Page){
 	$scope.newLogin = new Login();
 
 	$scope.attemptLogin = function(){
 		$scope.newLogin.$save(function(data){
+			if(data['success']){
+				$('#loginModal').foundation('reveal', 'close');
+				LoginStatus.get().$promise.then(function(data){
+					Page.setLoggedIn(data.isLoggedIn);
+				});
+			}
 		});
 	};
 });
