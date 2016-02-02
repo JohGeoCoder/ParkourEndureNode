@@ -49,6 +49,10 @@ app.config(function($routeProvider, $locationProvider){
 			controller: 'AdminEmailListController',
 			templateUrl: 'views/email-list.html'
 		})
+		.when('/logout', {
+			controller: 'LogoutController',
+			templateUrl: 'views/home.html'
+		})
 		.otherwise({
 			templateUrl: 'views/404.html'
 		});
@@ -69,7 +73,6 @@ app.factory('EmailList', function ($resource){
 });
 
 app.factory('AdminEmailList', function ($resource){
-	console.log("entered email factory");
 	var resourceResult = $resource('/api/admin/mailing-list/:emailId', {emailId: '@emailRemoveId'});
 	return resourceResult;
 });
@@ -130,6 +133,11 @@ app.factory('Login', function($resource){
 	return resourceResult;
 });
 
+app.factory('Logout', function($resource){
+	var resourceResult = $resource('/api/logout');
+	return resourceResult;
+})
+
 app.factory('Signup', function($resource){
 	var resourceResult = $resource('/api/signup');
 	return resourceResult;
@@ -140,8 +148,14 @@ app.factory('LoginStatus', function($resource){
 	return resourceResult;
 });
 
-app.controller('MainController', function($scope, Page){
+app.controller('MainController', function($scope, Page, LoginStatus){
 	$scope.Page = Page;
+
+	$scope.$on('$routeChangeSuccess', function () {
+        LoginStatus.get().$promise.then(function(data){
+        	Page.setLoggedIn(data.isLoggedIn);
+        });
+    });
 });
 
 app.controller('HomeController', function($scope, $location, Page){
@@ -184,7 +198,6 @@ app.controller('AdminEmailListController', function($scope, $http, AdminEmailLis
 	$scope.removeEmail = function(removeEmailId){
 		if(removeEmailId){
 			$scope.adminEmailList.emailRemoveId = removeEmailId;
-			console.log($scope.adminEmailList.emailRemoveId);
 			$scope.adminEmailList.$delete({'emailRemoveId' : $scope.adminEmailList.emailRemoveId}, function(data, headers){
 				if(data['success'] === true){
 					$scope.emails = AdminEmailList.query();
@@ -238,6 +251,14 @@ app.controller('LoginController', function($scope, Login, LoginStatus, Page){
 		});
 	};
 });
+
+app.controller('LogoutController', function($scope, Logout, Page, LoginStatus){
+	Logout.get();
+	LoginStatus.get().$promise.then(function(data){
+		$('#loginModal').foundation('reveal', 'close');
+		Page.setLoggedIn(data.isLoggedIn);
+	});
+})
 
 app.controller('SignUpController', function($scope, Signup){
 	$scope.newSignup = new Signup();

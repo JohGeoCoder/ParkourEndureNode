@@ -121,12 +121,17 @@
     </div>
 
   <div id="loginModal" class="reveal-modal small" data-reveal ng-controller="LoginController">
-    <p class="text-large">Log In</p>
-    <div ng-if="Page.isLoggedIn()">Already Logged In!</div>
-    <input type="text" ng-model="newLogin.username" />
-    <input type="password" ng-model="newLogin.password" />
-    <button ng-click="attemptLogin()">Log In</button>
-    <button id="signupRevealer" data-reveal-id="signupModal" data-nav-target>Create Account</button>
+    <div ng-if="Page.isLoggedIn()">
+      <p>Already Logged In!</p>
+      <p><a href="{{$location.host()}}/logout">Click here to log out</a></p>
+    </div>
+    <div ng-if="!Page.isLoggedIn()">
+      <p class="text-large">Log In</p>
+      <input type="text" ng-model="newLogin.username" />
+      <input type="password" ng-model="newLogin.password" />
+      <button ng-click="attemptLogin()">Log In</button>
+      <button id="signupRevealer" data-reveal-id="signupModal" data-nav-target>Create Account</button>
+    </div>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
 

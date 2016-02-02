@@ -37,12 +37,10 @@ module.exports = function(app, passport, db) {
 			}
 
 			res.json(emails);
-			console.log(emails);
 		});
 	});
 
 	app.delete('/api/admin/mailing-list/:emailId', function(req, res){
-		console.log("Entered admin email remove: " + req.params.emailId);
 		Email.remove({ '_id' : req.params.emailId}, function(err){
 			if(err){
 				res.json({
@@ -108,12 +106,13 @@ module.exports = function(app, passport, db) {
 	}));
 
 	app.get('/api/logout', function(req, res){
-		req.logout();
-		res.redirect('/');
+		req.session.destroy(function(err){
+			res.redirect('/');
+		});
 	});
 
 	app.get('/api/loginstatus', function(req, res){
-		res.json({'isLoggedIn' : req.user !== false});
+		res.json({'isLoggedIn' : req.isAuthenticated()});
 	});
 }
 
