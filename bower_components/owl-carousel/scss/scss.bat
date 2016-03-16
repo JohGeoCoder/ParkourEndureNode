@@ -1,1 +1,0 @@
-sass owl.theme.green.scss owl-theme.css

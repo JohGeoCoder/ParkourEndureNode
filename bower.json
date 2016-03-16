@@ -1,0 +1,25 @@
+{
+  "name": "ParkourEndureNode",
+  "version": "0.0.0",
+  "private": true,
+  "authors": [
+    "Joecracko <joecracko@gmail.com>"
+  ],
+  "main": "keystone.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-resource": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "foundation": "^5.5.3",
+    "normalize-css": "^3.0.3"
+  }
+}
