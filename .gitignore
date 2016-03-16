@@ -1,6 +1,5 @@
 node_modules/
 bower_components/
-style.css.map
 .sass-cache/
 
 config/database.js
