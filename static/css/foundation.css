@@ -4364,7 +4364,7 @@ ul.pagination {
       border-radius: 2rem; }
 
 table {
-  background: #FFFFFF;
+  background: rgba(221, 221, 221, 0.7);
   border: solid 1px #DDDDDD;
   margin-bottom: 1.25rem;
   table-layout: auto; }
@@ -4396,7 +4396,7 @@ table {
     padding: 0.5625rem 0.625rem;
     text-align: left; }
   table tr.even, table tr.alt, table tr:nth-of-type(even) {
-    background: #F9F9F9; }
+    background: rgba(221, 221, 221, 0.7); }
   table thead tr th,
   table tfoot tr th,
   table tfoot tr td,
