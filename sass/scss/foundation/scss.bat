@@ -1,1 +1,1 @@
-sass foundation.scss foundation.css
+sass foundation.scss ../../../static/css/foundation.css
