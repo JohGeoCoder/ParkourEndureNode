@@ -34,12 +34,13 @@ app.use(passport.session());
 app.use(flash());
 
 app.use(express.static('./bower_components'));
+app.use(express.static('./static'))
 
 /* Include the routes */
 require('./app/routes.js')(app, passport, db);
 
 app.get('*', function(req, res){
-	res.sendFile(__dirname + '/bower_components/index.html');
+	res.sendFile(__dirname + '/static/index.html');
 });
 
 /* Start listening on port */
