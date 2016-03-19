@@ -1,6 +1,9 @@
 <h1 class="section-title text-center">Administration: Email List</h1>
 <div id="email-list" class="small-12">
 	<div class="text-medium" ng-controller="AdminEmailListController">
+		<div class="text-xsmall">
+			<span ng-repeat="email in emails">{{email.email}}{{$last ? '' : ', '}}</span>
+		</div>
 		<div class="center">
 			<div class="emailListRow" ng-repeat="email in emails">
 				<div class="emailContainer">
@@ -8,14 +11,30 @@
 				</div>
 				
 				<div class="emailButtonContainer">
-					<button ng-click="removeEmail(email._id)">Delete</button>
+					<button ng-click="setEmailIdToRemove(email._id)" data-reveal-id="deleteEmailModal">Delete</button>
+
 				</div>
 				<p style="clear: both;"></p>
 			</div>
 		</div>
+
+		<div id="deleteEmailModal" class="reveal-modal medium" data-reveal>
+			<div class="text-justify">
+
+			  <p class="text-large"><strong>Delete Email?</strong></p>
+			  <div>
+			  	<button class="close-modal" ng-click="removeEmail(emailIdToRemove)">Delete</button>
+			  	<button class="close-modal" ng-click="resetEmailIdToRemove()">Do Not Delete</button>
+			  </div>
+			</div>
+			<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+		</div>
 	</div>
 </div>
 
+
+
+<script src="/js/email-list.js"></script>
 <script type="text/javascript">
 	$("[data-nav-target]").removeClass('active');
 	$("[data-nav-target='contact']").addClass('active');

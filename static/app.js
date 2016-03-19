@@ -195,6 +195,8 @@ app.controller('AdminEmailListController', function($scope, $http, AdminEmailLis
 	$scope.adminEmailList = new AdminEmailList();
 	$scope.emails = AdminEmailList.query();
 
+	$scope.emailIdToRemove = '';
+
 	$scope.removeEmail = function(removeEmailId){
 		if(removeEmailId){
 			$scope.adminEmailList.emailRemoveId = removeEmailId;
@@ -203,8 +205,22 @@ app.controller('AdminEmailListController', function($scope, $http, AdminEmailLis
 					$scope.emails = AdminEmailList.query();
 				}
 			});
+
+			$scope.resetEmailIdToRemove();
 		}
-	}
+	};
+
+	$scope.setEmailIdToRemove = function(emailId){
+		if(emailId){
+			$scope.emailIdToRemove = emailId;
+		} else{
+			$scope.resetEmailIdToRemove();
+		}
+	};
+
+	$scope.resetEmailIdToRemove = function(){
+		$scope.emailIdToRemove = '';
+	};
 });
 
 app.controller('EmailListController', function($scope, $http, EmailList){
