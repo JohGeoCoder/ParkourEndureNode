@@ -122,7 +122,9 @@
 
   <div id="loginModal" class="reveal-modal small" data-reveal ng-controller="LoginController">
     <div ng-if="Page.isLoggedIn()">
+      <p><a class="close-modal" href="{{$location.host()}}/admin/email-list">Admin Email List</a></p>
       <p>Already Logged In!</p>
+      <p><a class="close-modal" href="{{$location.host()}}/admin/email-list">Admin Email List</a></p>
       <p><a href="{{$location.host()}}/logout">Click here to log out</a></p>
     </div>
     <div ng-if="!Page.isLoggedIn()">

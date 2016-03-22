@@ -47,7 +47,8 @@ app.config(function($routeProvider, $locationProvider){
 		})
 		.when('/admin/email-list', {
 			controller: 'AdminEmailListController',
-			templateUrl: 'views/email-list.html'
+			templateUrl: 'views/email-list.html',
+			resolve: {loggedIn:onlyLoggedIn}
 		})
 		.when('/logout', {
 			controller: 'LogoutController',
@@ -285,3 +286,12 @@ app.controller('SignUpController', function($scope, Signup){
 		$scope.newSignup = new Signup();
 	}
 });
+
+var onlyLoggedIn = function (LoginStatus, $location) {
+
+	LoginStatus.get().$promise.then(function(data){
+		if(!data.isLoggedIn){
+			$location.url('/');
+		}
+	});
+};

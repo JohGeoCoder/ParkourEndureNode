@@ -118,7 +118,7 @@ module.exports = function(app, passport, db) {
 
 // route middleware to make sure a user is logged in
 function authenticateAdminRoute(req, res, next) {
-    // if user is authenticated in the session, carry on 
+    // if user is authenticated in the session, carry on.
     if (req.isAuthenticated()){
         return next();
     }
