@@ -47,7 +47,7 @@ app.config(function($routeProvider, $locationProvider){
 		})
 		.when('/admin/email-list', {
 			controller: 'AdminEmailListController',
-			templateUrl: 'views/email-list.html',
+			templateUrl: 'views/admin/email-list.html',
 			resolve: {loggedIn:onlyLoggedIn}
 		})
 		.when('/logout', {
