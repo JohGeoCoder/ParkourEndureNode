@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var coachSchema = mongoose.Schema({
+	id: String,
 	firstName : String,
 	lastName : String,
 	imageUrl : String,

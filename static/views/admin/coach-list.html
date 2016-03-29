@@ -1,0 +1,31 @@
+<h1 class="section-title text-center">Parkour Coaches in Scranton, Pennsylvania</h1>
+<div id="coaches" class="small-12">
+	<p class="text-center show-for-medium-down">Press on an image for more details about the coach</p>
+	
+	<!-- The list of coaches -->
+	<div class="coach small-12 medium-6 columns" ng-repeat="coach in coaches">
+		<h3 class="text-center">{{coach.firstName}} {{coach.lastName}}</h3>
+		<a ng-click="selected.index = $index">
+			<div class="image-container hide-for-small-only">
+				<img class="center" src="{{coach.imageUrl}}"></img>
+			</div>
+			<div class="image-container show-for-small-only">
+				<img class="center small-6" src="{{coach.imageUrl}}"></img>
+			</div>
+		</a>
+		<div class="coach-description text-justify text-normal">
+			<p class="show-for-large-up">{{coach.details}}</p>
+		</div>
+	</div>
+	
+	<!-- The shared modal to display coach information -->
+	<div class="columns">
+		<input type="text" ng-model="coaches[selected.index]._id" />
+		<input type="text" ng-model="coaches[selected.index].firstName" />
+		<input type="text" ng-model="coaches[selected.index].lastName" />
+		<input type="text" ng-model="coaches[selected.index].imageUrl"></input>
+		<textarea ng-model="coaches[selected.index].details"></textarea>
+		<button ng-click="updateCoach()">Save Changes</button>
+		<button ng-click="createNewCoach()">Create Coach</button>
+	</div>
+</div>

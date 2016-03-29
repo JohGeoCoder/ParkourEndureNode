@@ -45,6 +45,11 @@ app.config(function($routeProvider, $locationProvider){
 			controller: 'ContactController',
 			templateUrl: 'views/contact.html'
 		})
+		.when('/admin/coach-list', {
+			controller: 'CoachesController',
+			templateUrl: 'views/admin/coach-list.html',
+			resolve: {loggedIn:onlyLoggedIn}
+		})
 		.when('/admin/email-list', {
 			controller: 'AdminEmailListController',
 			templateUrl: 'views/admin/email-list.html',
@@ -63,7 +68,8 @@ app.config(function($routeProvider, $locationProvider){
 
 app.factory('Coaches', function ($resource) {
 	var resourceResult = $resource('/api/coaches/:id', { id: '@id' }, {
-	    'update': { method: 'PUT' }
+	    'create': { method: 'PUT' },
+	    'update': { method: 'POST'}
 	});
 	return resourceResult;
 });
@@ -185,6 +191,29 @@ app.controller('CoachesController', function($scope, Coaches, Page){
 	Page.setBackground('');
 	$scope.coaches = Coaches.query();
 	$scope.selected = {index:0};
+
+	$scope.createNewCoach = function(){
+		var newCoach = new Coaches();
+		newCoach.$create(function(data, headers){
+			$scope.coaches = Coaches.query();
+		});
+	};
+
+	$scope.updateCoach = function(){
+		var selectedCoach = $scope.coaches[$scope.selected.index];
+		var newCoach = new Coaches();
+		newCoach.objectId = selectedCoach._id;
+		newCoach.firstName = selectedCoach.firstName;
+		newCoach.lastName = selectedCoach.lastName;
+		newCoach.imageUrl = selectedCoach.imageUrl;
+		newCoach.details = selectedCoach.details;
+
+		if(newCoach.firstName && newCoach.lastName && newCoach.details){
+			newCoach.$save(function(data, headers){
+				$scope.coaches = Coaches.query();
+			});
+		}
+	}
 });
 
 app.controller('ContactController', function($scope, Page){
