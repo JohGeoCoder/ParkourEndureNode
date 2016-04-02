@@ -1,11 +1,10 @@
 var Coach = require('../models/coach');
+var CoachesBL = require('../business_layer/CoachesBL.js');
 
 module.exports = function(app){
 
 	app.get('/api/coaches', function(req, res){
-		Coach.find({}, function(err, coaches){
-			res.json(coaches);
-		});
+		CoachesBL.getAllCoaches(req, res);
 	});
 
 	app.put('/api/coaches', function(req, res){

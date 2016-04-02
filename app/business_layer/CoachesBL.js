@@ -1,8 +1,11 @@
-var Coach = require('./models/coach');
+var Coach = require('../models/coach');
 
-module.exports = function(app, passport, db) {
+module.exports = {
 	
-	var getAllCoaches = function(){
-		
+	'getAllCoaches' : function(req, res){
+		Coach.find({}, function(err, coaches){
+			res.json(coaches);
+		});
 	}
-}
+	
+};
