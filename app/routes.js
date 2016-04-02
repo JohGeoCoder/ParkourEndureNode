@@ -1,6 +1,3 @@
-var Coach = require('./models/coach');
-var Email = require('./models/email');
-
 module.exports = function(app, passport, db) {
 
 	app.all('/admin/*', authenticateAdminRoute, function(req, res, next){
@@ -13,56 +10,7 @@ module.exports = function(app, passport, db) {
 
 	require('./api/CoachesAPI.js')(app);
 
-	app.post('/api/mailing-list', function(req, res) {
-		var newEmail = new Email({email : req.body['email']});
-		newEmail.save(function(err){
-			if(err){
-				res.json({
-					'error' : err.message
-				});
-			}
-
-			res.json(newEmail);
-		});
-	});
-
-	app.get('/api/admin/mailing-list', function(req, res){
-		Email.find({}, function(err, emails){
-			if(err){
-				throw err;
-			}
-
-			res.json(emails);
-		});
-	});
-
-	app.delete('/api/admin/mailing-list/:emailId', function(req, res){
-		Email.remove({ '_id' : req.params.emailId}, function(err){
-			if(err){
-				res.json({
-					'errorMessage' : err.message,
-					'success' : false
-				})
-			} else{
-				res.json({
-					'success' : true
-				})
-			}
-		});
-	})
-		
-	app.delete('/api/mailing-list/:emailId', function(req, res) {
-		Email.remove({ '_id' : req.params.emailId}, function(err) {
-			if(err){
-				res.json({
-					'errorMessage' : err.message,
-					'result' : false
-				});
-			} else{
-				res.json({ 'result' : true })
-			}
-		});
-	});
+	require('./api/EmailListAPI.js')(app);
 
 	app.post('/api/login', function(req, res, next){
 

@@ -14,4 +14,4 @@ module.exports = function(app){
 		CoachesBL.update(req, res);
 	});
 
-}
+};
