@@ -12,52 +12,7 @@ module.exports = function(app, passport, db) {
 
 	require('./api/EmailListAPI.js')(app);
 
-	app.post('/api/login', function(req, res, next){
-
-		passport.authenticate('local-login', function(err, user, info){
-			if(err){
-				res.json({ 'success' : false });
-				return next(err);
-			}
-
-			if(!user){
-				res.json({ 'success' : false });
-				return res.redirect('/');
-			}
-
-			req.logIn(user, function(err){
-				if(err){
-					res.json({ 'success' : false });
-					return next(err);
-				}
-
-				res.json({ 'success' : true })
-			})
-
-		})(req, res, next);
-	})
-
-/*	app.post('/api/login', passport.authenticate('local-login', {
-		successRedirect: '/',
-		failureRedirect: '/coaches',
-		failureFlash: true
-	}));*/
-
-	app.post('/api/signup', passport.authenticate('local-signup', {
-		successRedirect: '/',
-		failureRedirect: '/coaches',
-		failureFlash: true
-	}));
-
-	app.get('/api/logout', function(req, res){
-		req.session.destroy(function(err){
-			res.redirect('/');
-		});
-	});
-
-	app.get('/api/loginstatus', function(req, res){
-		res.json({'isLoggedIn' : req.isAuthenticated()});
-	});
+	require('./api/LoginAPI.js')(app, passport);
 }
 
 // route middleware to make sure a user is logged in
