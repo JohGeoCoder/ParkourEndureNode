@@ -1,6 +1,6 @@
 var express  = require('express');
 var app      = express();
-var port     = process.env.PORT || 8080;
+var port     = process.env.PORT || 80;
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
@@ -39,9 +39,5 @@ app.use(express.static('./static'))
 /* Include the routes */
 require('./app/routes.js')(app, passport);
 
-app.get('*', function(req, res){
-	res.sendFile(__dirname + '/static/index.html');
-});
-
 /* Start listening on port */
-app.listen(80);
+app.listen(port);
