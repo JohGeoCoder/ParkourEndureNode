@@ -13,7 +13,6 @@ var session      = require('express-session');
 var configDB = require('./config/database.js');
 
 /* Connect to the database */
-var db = mongoose.connection;
 mongoose.connect(configDB.url);
 
 require('./config/passport')(passport);
@@ -38,6 +37,10 @@ app.use(express.static('./static'))
 
 /* Include the routes */
 require('./app/routes.js')(app, passport);
+
+app.get('*', function(req, res){
+	res.sendFile(__dirname + '/static/index.html');
+});
 
 /* Start listening on port */
 app.listen(port);
