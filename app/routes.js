@@ -1,4 +1,4 @@
-module.exports = function(app, passport, db) {
+module.exports = function(app, passport) {
 
 	require('./api/AdminAPI.js');
 

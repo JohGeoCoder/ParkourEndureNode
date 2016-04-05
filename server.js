@@ -37,7 +37,7 @@ app.use(express.static('./bower_components'));
 app.use(express.static('./static'))
 
 /* Include the routes */
-require('./app/routes.js')(app, passport, db);
+require('./app/routes.js')(app, passport);
 
 app.get('*', function(req, res){
 	res.sendFile(__dirname + '/static/index.html');
