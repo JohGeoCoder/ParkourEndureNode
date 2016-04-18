@@ -4,3 +4,5 @@ bower_components/
 
 config/database.js
 config/sessionConfig.js
+
+static/js/analytics.js
