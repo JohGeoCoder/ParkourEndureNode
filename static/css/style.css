@@ -96,16 +96,15 @@ div.important {
 @media screen and (max-width: 640px) {
   .header {
     display: none; }
-
   .leftNavigation {
     display: none; }
-
   .stuff {
     position: absolute;
     top: 0px;
     bottom: 0px;
     left: 0px;
     right: 0px; } }
+
 @media screen and (min-width: 641px) {
   .header {
     position: absolute;
@@ -113,20 +112,19 @@ div.important {
     left: 0px;
     right: 0px;
     height: 42px; }
-
   .leftNavigation {
     position: absolute;
     top: 42px;
     bottom: 0px;
     left: 0px;
     width: 200px; }
-
   .stuff {
     position: absolute;
     top: 42px;
     bottom: 0px;
     left: 200px;
     right: 0px; } }
+
 .off-canvas-wrap {
   position: absolute;
   top: 0px;
@@ -230,147 +228,117 @@ html {
 @media screen and (max-width: 640px) {
   h1 {
     font-size: 2rem; }
-
   h2 {
     font-size: 1.8rem; }
-
   h3 {
     font-size: 1.5rem; }
-
   h4 {
     font-size: 1.3rem; }
-
   h5 {
     font-size: 1rem; }
-
   h6 {
     font-size: 0.8rem; }
-
   .text-xlarge {
     font-size: 2rem !important; }
     .text-xlarge p, .text-xlarge span, .text-xlarge div, .text-xlarge li, .text-xlarge ul, .text-xlarge a {
       font-size: 2rem; }
-
   .text-large {
     font-size: 1.8rem !important; }
     .text-large p, .text-large span, .text-large div, .text-large li, .text-large ul, .text-large a {
       font-size: 1.8rem; }
-
   .text-medium {
     font-size: 1.5rem !important; }
     .text-medium p, .text-medium span, .text-medium div, .text-medium li, .text-medium ul, .text-medium a {
       font-size: 1.5rem; }
-
   .text-normal {
     font-size: 1.3rem !important; }
     .text-normal p, .text-normal span, .text-normal div, .text-normal li, .text-normal ul, .text-normal a {
       font-size: 1.3rem; }
-
   .text-small {
     font-size: 1rem !important; }
     .text-small p, .text-small span, .text-small div, .text-small li, .text-small ul, .text-small a {
       font-size: 1rem; }
-
   .text-xsmall {
     font-size: 0.8rem !important; }
     .text-xsmall p, .text-xsmall span, .text-xsmall div, .text-xsmall li, .text-xsmall ul, .text-xsmall a {
       font-size: 0.8rem; } }
+
 @media screen and (min-width: 641px) {
   h1 {
     font-size: 2rem; }
-
   h2 {
     font-size: 1.8rem; }
-
   h3 {
     font-size: 1.5rem; }
-
   h4 {
     font-size: 1.3rem; }
-
   h5 {
     font-size: 1rem; }
-
   h6 {
     font-size: 0.8rem; }
-
   .text-xlarge {
     font-size: 2rem !important; }
     .text-xlarge p, .text-xlarge span, .text-xlarge div, .text-xlarge li, .text-xlarge ul, .text-xlarge a {
       font-size: 2rem; }
-
   .text-large {
     font-size: 1.8rem !important; }
     .text-large p, .text-large span, .text-large div, .text-large li, .text-large ul, .text-large a {
       font-size: 1.8rem; }
-
   .text-medium {
     font-size: 1.5rem !important; }
     .text-medium p, .text-medium span, .text-medium div, .text-medium li, .text-medium ul, .text-medium a {
       font-size: 1.5rem; }
-
   .text-normal {
     font-size: 1.3rem !important; }
     .text-normal p, .text-normal span, .text-normal div, .text-normal li, .text-normal ul, .text-normal a {
       font-size: 1.3rem; }
-
   .text-small {
     font-size: 1rem !important; }
     .text-small p, .text-small span, .text-small div, .text-small li, .text-small ul, .text-small a {
       font-size: 1rem; }
-
   .text-xsmall {
     font-size: 0.8rem !important; }
     .text-xsmall p, .text-xsmall span, .text-xsmall div, .text-xsmall li, .text-xsmall ul, .text-xsmall a {
       font-size: 0.8rem; } }
+
 @media screen and (min-width: 1025px) {
   h1 {
     font-size: 2rem; }
-
   h2 {
     font-size: 1.8rem; }
-
   h3 {
     font-size: 1.5rem; }
-
   h4 {
     font-size: 1.3rem; }
-
   h5 {
     font-size: 1rem; }
-
   h6 {
     font-size: 0.8rem; }
-
   .text-xlarge {
     font-size: 2rem !important; }
     .text-xlarge p, .text-xlarge span, .text-xlarge div, .text-xlarge li, .text-xlarge ul, .text-xlarge a {
       font-size: 2rem; }
-
   .text-large {
     font-size: 1.8rem !important; }
     .text-large p, .text-large span, .text-large div, .text-large li, .text-large ul, .text-large a {
       font-size: 1.8rem; }
-
   .text-medium {
     font-size: 1.5rem !important; }
     .text-medium p, .text-medium span, .text-medium div, .text-medium li, .text-medium ul, .text-medium a {
       font-size: 1.5rem; }
-
   .text-normal {
     font-size: 1.3rem !important; }
     .text-normal p, .text-normal span, .text-normal div, .text-normal li, .text-normal ul, .text-normal a {
       font-size: 1.3rem; }
-
   .text-small {
     font-size: 1rem !important; }
     .text-small p, .text-small span, .text-small div, .text-small li, .text-small ul, .text-small a {
       font-size: 1rem; }
-
   .text-xsmall {
     font-size: 0.8rem !important; }
     .text-xsmall p, .text-xsmall span, .text-xsmall div, .text-xsmall li, .text-xsmall ul, .text-xsmall a {
       font-size: 0.8rem; } }
+
 #coaches .coach {
   margin-bottom: 20px; }
   #coaches .coach img {
@@ -379,6 +347,7 @@ html {
 #email-list .emailListRow {
   display: block;
   width: 100%; }
+
 #email-list .emailContainer {
   width: 70%;
   float: left;
@@ -388,6 +357,7 @@ html {
   padding-left: 10px;
   padding-right: 10px;
   margin: 0; }
+
 #email-list .emailButtonContainer {
   width: 30%;
   float: left;
@@ -430,5 +400,3 @@ html {
   background-color: black;
   opacity: 0.3;
   z-index: -1; }
-
-/*# sourceMappingURL=style.css.map */
