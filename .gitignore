@@ -6,3 +6,5 @@ config/database.js
 config/sessionConfig.js
 
 static/js/analytics.js
+
+static/css/
