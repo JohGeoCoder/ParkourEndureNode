@@ -128,23 +128,23 @@ app.controller('MainController', function($scope, Page, LoginStatus){
     });
 });
 
-app.controller('HomeController', function($scope, $location, Page){
+app.controller('HomeController', function($scope, $location){
 	$scope.url = $location.absUrl();
 });
 
-app.controller('AdultClassesController', function($scope, Page){
+app.controller('AdultClassesController', function($scope){
 	
 });
 
-app.controller('KidsClassesController', function($scope, Page){
+app.controller('KidsClassesController', function($scope){
 
 });
 
-app.controller('PrivateLessonsController', function($scope, Page){
+app.controller('PrivateLessonsController', function($scope){
 
 });
 
-app.controller('CoachesController', function($scope, Coaches, Page){
+app.controller('CoachesController', function($scope, Coaches){
 	$scope.coaches = Coaches.query();
 	$scope.selected = {index:0};
 
@@ -172,7 +172,7 @@ app.controller('CoachesController', function($scope, Coaches, Page){
 	}
 });
 
-app.controller('ContactController', function($scope, Page){
+app.controller('ContactController', function($scope){
 	
 });
 
