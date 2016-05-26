@@ -2,6 +2,11 @@ html {
 	font-size: 16px;
 }
 
+p{
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: 'Gentium Book Basic', serif !important;
 	color: $text-color-primary !important;
@@ -37,10 +42,6 @@ a.button-link {
 	margin-top: 30px;
 	font-size: 2em;
 	text-decoration: none;
-}
-
-p {
-	margin-bottom: 0.5rem;
 }
 
 h1, h2, h3, h4, h5, h6, .header-button {
