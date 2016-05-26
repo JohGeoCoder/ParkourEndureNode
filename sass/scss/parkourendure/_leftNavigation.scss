@@ -8,12 +8,14 @@
 		font-size: 1.5em;
 		padding-top: 15px;
 		padding-bottom: 15px;
-		padding-left: 7px;
+		padding-left: 14px;
 		white-space: nowrap;
 	}
 
 	a.active {
 		background-color: rgba(0,0,0,0.5);
+		border-left: #008CBA 7px solid;
+		padding-left: 7px;
 	}
 
 	a:hover:not(.active){
