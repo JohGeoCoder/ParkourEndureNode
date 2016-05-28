@@ -26,49 +26,8 @@ a[data-nav-target] {
 	font-weight: normal;
 }
 
-a:not(.button, .button-link) {
-	color: $link-color !important;
-	font-weight: bold;
-	text-decoration: underline;
-	cursor: pointer;
-}
-
-a.button {
-	color: $text-color-primary !important;
-	cursor: pointer;
-}
-
-a.button-link {
-	margin-top: 30px;
-	font-size: 2em;
-	text-decoration: none;
-}
-
 h1, h2, h3, h4, h5, h6, .header-button {
 	color: $text-color-primary !important;
-}
-
-#background {
-	background: url(../img/nay-aug-bridge.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
-.main-section{
-	padding-left: 0px !important;
-	padding-right: 0px !important;
-	height: 100%;
-	overflow-y: auto;
-}
-
-#main{			
-
-	.section-title{
-		margin: 0;
-		background-color: rgba(23, 27, 99, 0.25);
-	}
 }
 
 .center{
@@ -77,44 +36,14 @@ h1, h2, h3, h4, h5, h6, .header-button {
 	margin-right: auto !important;
 }
 
-/* Makes the off-canvas navigation menu highlight properly */
-aside .off-canvas-list li.active {
-	background-color: #008CBA;
-}
-
-ul.list-indent{
-	margin-left: 20px;
-}
-
-ul.plain{
-	list-style-type: none;
-}
-
-.title {
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-
-.reveal-modal {
-	background-color: rgb(51, 51, 51);
-}
-
 div.important
 {
-  border-style : Solid;
-  border-color : #000000;
-  border-color : rgba(0, 0, 0, 1);
-  border-width : 1px;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding-left: 5px;
-  padding-right: 4px;
+	border-style : Solid;
+	border-color : #000000;
+	border-color : rgba(0, 0, 0, 1);
+	border-width : 1px;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding-left: 5px;
+	padding-right: 4px;
 }
 
-#loginRevealer {
-	position: absolute;
-	width: 10px;
-	height: 10px;
-	top: 0px;
-	right: 0px;
-	z-index: 2;
-}
