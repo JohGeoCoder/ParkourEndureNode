@@ -1,4 +1,4 @@
-a:not(.button, .button-link) {
+a:not(.button) {
 	color: $link-color !important;
 	font-weight: bold;
 	text-decoration: underline;
@@ -8,9 +8,6 @@ a:not(.button, .button-link) {
 a.button {
 	color: $text-color-primary !important;
 	cursor: pointer;
-}
-
-a.button-link {
 	margin: 0;
 	font-size: 2em;
 	text-decoration: none;

@@ -45,13 +45,13 @@
         </div>
 
         <div class="leftNavigation">
-          <a data-nav-target="home" href="{{$location.host()}}/">Home</a>
-          <a data-nav-target="adult-classes" href="{{$location.host()}}/adult-classes">Adult Classes</a>
-          <a data-nav-target="kids-classes" href="{{$location.host()}}/kids-classes">Kids Classes</a>
-          <a data-nav-target="private-lessons" href="{{$location.host()}}/private-lessons">Private Lessons</a>
-          <a data-nav-target="coaches" href="{{$location.host()}}/coaches">The Coaches</a>
-          <a data-nav-target="contact" class="contact-nav" href="{{$location.host()}}/contact">Contact Us</a>
-          <a data-reveal-id="whatIsParkourModal" data-nav-target href="#">What is Parkour?</a>
+          <a class="nav-button" data-nav-target="home" href="{{$location.host()}}/">Home</a>
+          <a class="nav-button" data-nav-target="adult-classes" href="{{$location.host()}}/adult-classes">Adult Classes</a>
+          <a class="nav-button" data-nav-target="kids-classes" href="{{$location.host()}}/kids-classes">Kids Classes</a>
+          <a class="nav-button" data-nav-target="private-lessons" href="{{$location.host()}}/private-lessons">Private Lessons</a>
+          <a class="nav-button" data-nav-target="coaches" href="{{$location.host()}}/coaches">The Coaches</a>
+          <a class="nav-button" data-nav-target="contact" class="contact-nav" href="{{$location.host()}}/contact">Contact Us</a>
+          <a class="nav-button display-modal" data-reveal-id="whatIsParkourModal" data-nav-target href="#">What is Parkour?</a>
 
           <div class="center text-justify text-normal small-11" ng-controller="EmailListController">
             <p>
@@ -66,7 +66,7 @@
                 <input type="text" ng-model="newEmail.email" placeholder="abc@email.com" />
               </div>
               <div>
-                <button class="center text-xsmall" ng-click="submitEmail()">Submit Email</button>
+                <a class="center button text-xsmall" ng-click="submitEmail()">Submit Email</a>
               </div>
             </div>
             <div ng-if="newEmail.submittedEmail">
