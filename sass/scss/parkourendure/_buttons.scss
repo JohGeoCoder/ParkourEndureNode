@@ -1,12 +1,12 @@
 a:not(.button) {
-	color: $link-color !important;
+	color: $link-color;
 	font-weight: bold;
 	text-decoration: underline;
 	cursor: pointer;
 }
 
 a.button {
-	color: $text-color-primary !important;
+	color: $text-color-primary;
 	cursor: pointer;
 	margin: 0;
 	font-size: 2em;
