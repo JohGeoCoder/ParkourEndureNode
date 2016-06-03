@@ -33,10 +33,6 @@ app.config(function($routeProvider, $locationProvider){
 			controller: 'KidsClassesController',
 			templateUrl: 'views/kids-classes.html'
 		})
-		.when('/private-lessons', {
-			controller: 'PrivateLessonsController',
-			templateUrl: 'views/private-lessons.html'
-		})
 		.when('/coaches', {
 			controller: 'CoachesController',
 			templateUrl: 'views/coaches.html'
@@ -137,10 +133,6 @@ app.controller('AdultClassesController', function($scope){
 });
 
 app.controller('KidsClassesController', function($scope){
-
-});
-
-app.controller('PrivateLessonsController', function($scope){
 
 });
 
