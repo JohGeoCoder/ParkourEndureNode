@@ -3,6 +3,7 @@ $text-color-primary: #EEE;
 $link-color: #02ABF8;
 
 html{
+
 	font-size: 16px;
 	
 	@import 'general';
@@ -16,8 +17,6 @@ html{
 	@import 'modals';
 	@import 'buttons';
 	@import 'pageCss/pageCss';
-
-
 
 }
 
