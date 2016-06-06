@@ -30,7 +30,7 @@ $l-xsmall-text: 0.8rem;
 	.text-xlarge{
 		font-size: $s-xlarge-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $s-xlarge-text;
 		}
 	}
@@ -38,7 +38,7 @@ $l-xsmall-text: 0.8rem;
 	.text-large{
 		font-size: $s-large-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $s-large-text;
 		}
 	}
@@ -46,7 +46,7 @@ $l-xsmall-text: 0.8rem;
 	.text-medium{
 		font-size: $s-medium-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $s-medium-text;
 		}
 	}
@@ -54,7 +54,7 @@ $l-xsmall-text: 0.8rem;
 	.text-normal{
 		font-size: $s-normal-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $s-normal-text;
 		}
 	}
@@ -62,7 +62,7 @@ $l-xsmall-text: 0.8rem;
 	.text-small{
 		font-size: $s-small-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $s-small-text;
 		}
 	}
@@ -70,7 +70,7 @@ $l-xsmall-text: 0.8rem;
 	.text-xsmall{
 		font-size: $s-xsmall-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $s-xsmall-text;
 		}
 	}
@@ -87,7 +87,7 @@ $l-xsmall-text: 0.8rem;
 	.text-xlarge{
 		font-size: $m-xlarge-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $m-xlarge-text;
 		}
 	}
@@ -95,7 +95,7 @@ $l-xsmall-text: 0.8rem;
 	.text-large{
 		font-size: $m-large-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $m-large-text;
 		}
 	}
@@ -103,7 +103,7 @@ $l-xsmall-text: 0.8rem;
 	.text-medium{
 		font-size: $m-medium-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $m-medium-text;
 		}
 	}
@@ -111,7 +111,7 @@ $l-xsmall-text: 0.8rem;
 	.text-normal{
 		font-size: $m-normal-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $m-normal-text;
 		}
 	}
@@ -119,7 +119,7 @@ $l-xsmall-text: 0.8rem;
 	.text-small{
 		font-size: $m-small-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $m-small-text;
 		}
 	}
@@ -127,7 +127,7 @@ $l-xsmall-text: 0.8rem;
 	.text-xsmall{
 		font-size: $m-xsmall-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $m-xsmall-text;
 		}
 	}
@@ -144,7 +144,7 @@ $l-xsmall-text: 0.8rem;
 	.text-xlarge{
 		font-size: $l-xlarge-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $l-xlarge-text;
 		}
 	}
@@ -152,7 +152,7 @@ $l-xsmall-text: 0.8rem;
 	.text-large{
 		font-size: $l-large-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $l-large-text;
 		}
 	}
@@ -160,7 +160,7 @@ $l-xsmall-text: 0.8rem;
 	.text-medium{
 		font-size: $l-medium-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $l-medium-text;
 		}
 	}
@@ -168,7 +168,7 @@ $l-xsmall-text: 0.8rem;
 	.text-normal{
 		font-size: $l-normal-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $l-normal-text;
 		}
 	}
@@ -176,7 +176,7 @@ $l-xsmall-text: 0.8rem;
 	.text-small{
 		font-size: $l-small-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $l-small-text;
 		}
 	}
@@ -184,7 +184,7 @@ $l-xsmall-text: 0.8rem;
 	.text-xsmall{
 		font-size: $l-xsmall-text !important;
 
-		p,span,div,li,ul,a {
+		p,span,div,li,ul,a,td,strong {
 			font-size: $l-xsmall-text;
 		}
 	}
