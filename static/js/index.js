@@ -2,7 +2,7 @@
 	var header = function(){
 		var init = function(){
 			$('.close-modal').on('click', modalClose);
-			$("#spring2016ClassesModal").foundation('reveal', 'open');
+			//$("#ImportantMessageModal").foundation('reveal', 'open');
 		};
 
 		var modalClose = function(){

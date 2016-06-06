@@ -1,4 +1,4 @@
-a:not(.button) {
+a:not(.button,.close-reveal-modal) {
 	color: $link-color;
 	font-weight: bold;
 	text-decoration: underline;
