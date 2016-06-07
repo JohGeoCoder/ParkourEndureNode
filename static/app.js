@@ -22,15 +22,12 @@ app.config(function($routeProvider, $locationProvider){
 
 	$routeProvider
 		.when('/', {
-			controller: 'HomeController',
 			templateUrl: 'views/home.html'
 		})
 		.when('/adult-classes', {
-			controller: 'AdultClassesController',
 			templateUrl: 'views/adult-classes.html'
 		})
 		.when('/kids-classes', {
-			controller: 'KidsClassesController',
 			templateUrl: 'views/kids-classes.html'
 		})
 		.when('/coaches', {
@@ -38,8 +35,10 @@ app.config(function($routeProvider, $locationProvider){
 			templateUrl: 'views/coaches.html'
 		})
 		.when('/contact', {
-			controller: 'ContactController',
 			templateUrl: 'views/contact.html'
+		})
+		.when('/faq', {
+			templateUrl: 'views/faq.html'
 		})
 		.when('/admin/coach-list', {
 			controller: 'CoachesController',
@@ -128,14 +127,6 @@ app.controller('HomeController', function($scope, $location){
 	$scope.url = $location.absUrl();
 });
 
-app.controller('AdultClassesController', function($scope){
-	
-});
-
-app.controller('KidsClassesController', function($scope){
-
-});
-
 app.controller('CoachesController', function($scope, Coaches){
 	$scope.coaches = Coaches.query();
 	$scope.selected = {index:0};
@@ -162,10 +153,6 @@ app.controller('CoachesController', function($scope, Coaches){
 			});
 		}
 	}
-});
-
-app.controller('ContactController', function($scope){
-	
 });
 
 app.controller('AdminEmailListController', function($scope, $http, AdminEmailList){
