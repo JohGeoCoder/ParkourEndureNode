@@ -41,6 +41,9 @@ $social-media-icon-size: 35px;
 				.social-media-icon {
 					height: $social-media-icon-size;
 					width: $social-media-icon-size;
+					background-color: #40638c;
+					border-radius: 5px;
+					text-align: center;
 				}
 
 				a {
@@ -64,6 +67,9 @@ $social-media-icon-size: 35px;
 					height: $social-media-icon-size;
 					width: $social-media-icon-size;
 					float: left;
+					background-color: #40638c;
+					border-radius: 5px;
+					text-align: center;
 				}
 
 				.social-media-text {
