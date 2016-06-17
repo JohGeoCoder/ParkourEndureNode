@@ -55,6 +55,24 @@ module.exports = {
 				});
 			}
 		});
+	},
+	delete : function(req, res){
+		console.log("deleting BL");
+		console.log(req.params);
+		console.log(req.body);
+		Coach.remove({ '_id' : req.params.id}, function(err){
+			if(err){
+				console.log(err);
+				res.json({
+					'errorMessage' : err.message,
+					'success' : false
+				})
+			} else{
+				res.json({
+					'success' : true
+				})
+			}
+		});
 	}
 
 };

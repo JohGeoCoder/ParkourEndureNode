@@ -27,7 +27,7 @@ module.exports = {
 
 	},
 	delete : function(req, res){
-		Email.remove({ '_id' : req.params.emailId}, function(err){
+		Email.remove({ '_id' : req.params._id}, function(err){
 			if(err){
 				res.json({
 					'errorMessage' : err.message,

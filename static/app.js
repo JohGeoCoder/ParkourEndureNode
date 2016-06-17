@@ -69,6 +69,11 @@ app.factory('Coaches', function ($resource) {
 	return resourceResult;
 });
 
+app.factory('AdminCoaches', function($resource){
+	var resourceResult = $resource('api/admin/coaches/:id', { id: '@id'});
+	return resourceResult;
+})
+
 app.factory('EmailList', function ($resource){
 	var resourceResult = $resource('/api/mailing-list/:emailId', { emailId: '@emailId' });
 	return resourceResult;
@@ -127,7 +132,7 @@ app.controller('HomeController', function($scope, $location){
 	$scope.url = $location.absUrl();
 });
 
-app.controller('CoachesController', function($scope, Coaches){
+app.controller('CoachesController', function($scope, Coaches, AdminCoaches){
 	$scope.coaches = Coaches.query();
 	$scope.selected = {index:0};
 
@@ -152,6 +157,14 @@ app.controller('CoachesController', function($scope, Coaches){
 				$scope.coaches = Coaches.query();
 			});
 		}
+	}
+
+	$scope.deleteCoach = function(){
+		var selectedCoach = $scope.coaches[$scope.selected.index];
+		console.log(selectedCoach);
+		(new AdminCoaches()).$delete({'id' : selectedCoach._id}, function(data, headers){
+			$scope.coaches = Coaches.query();
+		});
 	}
 });
 

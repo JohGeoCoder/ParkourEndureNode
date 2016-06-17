@@ -14,4 +14,9 @@ module.exports = function(app){
 		CoachesBL.update(req, res);
 	});
 
+	app.delete('/api/admin/coaches/:id', function(req, res){
+		console.log("deleting API");
+		CoachesBL.delete(req, res);
+	});
+
 };

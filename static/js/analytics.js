@@ -1,7 +1,7 @@
 (function(){
 	var header = function(){
 		var init = function(){
-			startAnalytics();
+			//startAnalytics();
 		};
 
 		var startAnalytics = function(){

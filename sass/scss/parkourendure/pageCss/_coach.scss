@@ -1,9 +1,20 @@
 #coaches{
 	.coach{
-		margin-bottom: 20px;
+		height: 430px;
+		padding-bottom: 20px;
 
 		img{
 			max-height: 260px;
+		}
+
+		.coach-description{
+			padding: 0 15px;
+
+			p{
+				max-height: 132px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
 		}
 	}
 }
