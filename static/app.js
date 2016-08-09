@@ -27,9 +27,9 @@ app.config(function($routeProvider, $locationProvider){
 		.when('/adult-classes', {
 			templateUrl: 'views/adult-classes.html'
 		})
-		.when('/kids-classes', {
+		/*.when('/kids-classes', {
 			templateUrl: 'views/kids-classes.html'
-		})
+		})*/
 		.when('/coaches', {
 			controller: 'CoachesController',
 			templateUrl: 'views/coaches.html'
