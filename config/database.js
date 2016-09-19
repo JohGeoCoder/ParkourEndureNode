@@ -1,5 +1,10 @@
 module.exports = {
 
-    'url' : 'mongodb://localhost:27017/pkendure' // looks like mongodb://<user>:<pass>@mongo.onmodulus.net:27017/Mikha4ot
+	'dbName' : 'floorcrasher',
+	'username' : 'root',
+	'password' : 'password',
+	'host' : 'localhost',
+	'port' : 3306,
+	'dialect' : 'mysql'
 
 };
